@@ -22,13 +22,13 @@ export default function Home({ onStart }: { onStart: () => void }) {
         style={box(L('title-sign'))}
       >
         <Img r={rel(L('title-sign'), L('title-sign'))} bleed={false} />
-        <Box r={inset(rel(L('title-sign'), L('title-sign')), [130, 70, 60, 70])} className="center col" fit>
+        <Box r={inset(rel(L('title-sign'), L('title-sign')), [130, 70, 60, 70])} className="center col t-logo-box" fit>
           <span className="t-logo">{C.home.title}</span>
           <span className="t-tagline">{C.home.tagline}</span>
         </Box>
       </motion.div>
       <Btn layers={btn} label={C.home.start} onClick={() => (sfx('tap'), onStart())} className="pulse">
-        <Box r={inset(rel(L('button-wood'), u), [10, 40, 30, 190])} className="center t-button nowrap" fit>
+        <Box r={inset(rel(L('button-wood'), u), [14, 30, 34, 166])} className="center t-button nowrap" fit>
           {C.home.start}
         </Box>
       </Btn>

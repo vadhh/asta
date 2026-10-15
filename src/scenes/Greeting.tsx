@@ -8,7 +8,7 @@ export default function Greeting({ onNext }: { onNext: () => void }) {
     <>
       <Img r={L('asta-wave')} {...float(0, 12)} />
       <Img r={L('speech-bubble')} {...pop(0.3)} />
-      <Box r={inset(L('speech-bubble'), [40, 40, 90, 50])} className="center t-speech" {...pop(0.4)}>
+      <Box r={inset(L('speech-bubble'), [40, 40, 90, 50])} className="center t-speech" fit {...pop(0.4)}>
         {C.greeting.speech}
       </Box>
       <Img r={L('info-card')} {...pop(0.7)} />

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
-import { Img, Box, Btn, useArt, useOrient, inset, box, pick, float, pop, artSrc, type Rect } from '../stage'
+import { Img, Box, Btn, Panel, useArt, useOrient, inset, box, pick, float, pop, artSrc, type Rect } from '../stage'
 import { sfx, buzz } from '../audio'
 import C from '../content.json'
 
@@ -18,11 +18,16 @@ export default function Titen({ onDone }: { onDone: () => void }) {
   const solved = picked !== null && options[picked].correct
 
   // Option slots follow the exported cards; all use card-b's size (card-a is the selected art with its green ring).
+  // Portrait: cards are a bit shorter (9-slice) so the explanation panel below can be taller.
   const b = L('card-b')
-  const slots: Rect[] = ['card-a-selected', 'card-b', 'card-c'].map((n) => {
+  const slots: Rect[] = ['card-a-selected', 'card-b', 'card-c'].map((n, i) => {
     const c = L(n)
-    return { x: c.x + c.w / 2 - b.w / 2, y: c.y + c.h - b.h, w: b.w, h: b.h }
+    const x = c.x + c.w / 2 - b.w / 2
+    return pick(o, { x: 170, y: 338 + i * 214, w: 560, h: 200 }, { x, y: c.y + c.h - b.h, w: b.w, h: b.h })
   })
+  const tip = pick<Rect>(o, { ...L('tip-panel'), y: 985, h: 290 }, L('tip-panel'))
+  const dy = tip.y - L('tip-panel').y
+  const down = (n: string) => ({ ...L(n), y: L(n).y + dy })
 
   const choose = (i: number) => {
     if (solved || wrong.includes(i)) return
@@ -77,11 +82,10 @@ export default function Titen({ onDone }: { onDone: () => void }) {
                 transition={{ duration: 0.45 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <img
-                  className="layer"
-                  src={artSrc(isRight ? 'layers/p8-titen/card-a-selected.webp' : 'layers/p8-titen/card-b.webp')}
-                  alt=""
-                  style={isRight ? { left: 0, top: -10, width: s.w, height: s.h + 20 } : { inset: 0, width: '100%', height: '100%' }}
+                <Panel
+                  r={isRight ? { x: 0, y: -10, w: s.w, h: s.h + 20 } : { x: 0, y: 0, w: s.w, h: s.h }}
+                  src={isRight ? 'layers/p8-titen/card-a-selected.webp' : 'layers/p8-titen/card-b.webp'}
+                  slice={34}
                 />
                 {isRight && <img className="layer check" src={artSrc('layers/p8-titen/icon-check.webp')} alt="" style={{ right: -26, top: -40, width: 96, height: 76 }} />}
                 <span className={`opt-body ${opt.icon ? '' : 'text-only'}`}>
@@ -96,16 +100,16 @@ export default function Titen({ onDone }: { onDone: () => void }) {
         </motion.div>
       </AnimatePresence>
 
-      <Img r={L('tip-panel')} />
-      <Img r={L('leaf-3')} />
-      <Img r={L('tip-header')} />
-      <Img r={L('sparkles')} />
-      <Box r={inset(L('tip-header'), [8, 20, 16, 40])} className="center-y t-chip-dark" fit>
+      <Panel r={tip} src={L('tip-panel').src} slice={50} />
+      <Img r={down('leaf-3')} />
+      <Img r={down('tip-header')} />
+      <Img r={down('sparkles')} />
+      <Box r={inset(down('tip-header'), [8, 20, 16, 40])} className="center-y t-chip-dark" fit>
         {T.tipTitle}
       </Box>
       <Box
           key={`${qi}-${picked}`}
-          r={inset(L('tip-panel'), [L('tip-header').h + 28, 50, 24, 70])}
+          r={inset(tip, [L('tip-header').h + 28, 50, 26, 70])}
           className="t-body"
           fit
           initial={{ opacity: 0, y: 6 }}

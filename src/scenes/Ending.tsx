@@ -29,7 +29,7 @@ export default function Ending({ onMap }: { onMap: () => void }) {
       <Img r={{ ...asta, src: L('asta-wave').src }} {...float(0, 16, 1.6)} />
       <motion.div className="layer" style={{ left: L('title-sign').x, top: L('title-sign').y, width: L('title-sign').w, height: L('title-sign').h }} {...pop(0.1)}>
         <Img r={rel(L('title-sign'), L('title-sign'))} bleed={false} />
-        <Box r={inset(rel(L('title-sign'), L('title-sign')), [130, 70, 60, 70])} className="center col" fit>
+        <Box r={inset(rel(L('title-sign'), L('title-sign')), [130, 70, 60, 70])} className="center col t-logo-box" fit>
           <span className="t-logo">{E.title}</span>
           <span className="t-tagline">{E.tagline}</span>
         </Box>
@@ -38,7 +38,7 @@ export default function Ending({ onMap }: { onMap: () => void }) {
         {E.speech}
       </Box>
       <Btn layers={btn} label={E.button} onClick={() => (sfx('tap'), onMap())} className="pulse">
-        <Box r={inset(rel(L('button-wood'), union(btn)), [10, 40, 30, 190])} className="center t-button nowrap" fit>
+        <Box r={inset(rel(L('button-wood'), union(btn)), [14, 30, 34, 166])} className="center t-button nowrap" fit>
           {E.button}
         </Box>
       </Btn>

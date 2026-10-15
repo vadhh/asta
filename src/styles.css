@@ -74,12 +74,12 @@ button:focus-visible { outline: 6px solid #ffd54a; outline-offset: 4px; border-r
 .t-sm-caps { font-size: 40px; }
 .t-plank-sub { font-size: 30px; font-weight: 600; color: var(--brown); line-height: 1.1; }
 .t-heading { font-size: 44px; font-weight: 800; color: var(--brown); line-height: 1.15; }
-.t-chip { font-size: 32px; font-weight: 700; -webkit-text-stroke: 5px var(--brown); }
+.t-chip { font-size: 36px; font-weight: 700; -webkit-text-stroke: 5px var(--brown); }
 .t-chip-dark { font-size: 36px; font-weight: 800; color: var(--brown); }
 .t-sign { font-size: 42px; font-weight: 800; color: var(--brown); line-height: 1; }
-.t-sign-sub { display: block; font-size: 0.6em; font-weight: 600; color: #6b4a2b; line-height: 1.05; }
+.t-sign-sub { display: block; font-size: 0.62em; font-weight: 600; color: #6b4a2b; line-height: 1.05; }
 .t-label-light { font-size: 40px; font-weight: 800; -webkit-text-stroke: 7px var(--brown); }
-.t-photo { font-size: 32px; font-weight: 700; color: var(--ink); gap: 20px; transform: rotate(-6deg); overflow: visible; }
+.t-photo { font-size: 30px; font-weight: 700; color: var(--ink); gap: 20px; transform: rotate(-6deg); overflow: visible; }
 .t-breath { font-size: 66px; font-weight: 800; color: #2e7d4f; line-height: 1.1; margin-bottom: 18px; }
 .t-question { font-size: 44px; font-weight: 800; color: var(--brown); line-height: 1.2; }
 .t-option { font-size: 32px; font-weight: 700; color: var(--brown); line-height: 1.15; }
@@ -199,9 +199,9 @@ textarea.tell {
 .option.wrong { opacity: 0.55; filter: grayscale(0.6); }
 .opt-body {
   position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: 8px; padding: 18px 26px; text-align: center;
+  gap: 6px; padding: 14px 26px; text-align: center;
 }
-.opt-body img { max-height: 100px; max-width: 60%; object-fit: contain; }
+.opt-body img { max-height: 92px; max-width: 60%; object-fit: contain; }
 .opt-body.text-only .t-option { font-size: 36px; }
 .option .check { position: absolute; pointer-events: none; }
 
@@ -250,3 +250,10 @@ textarea.tell {
 .fill button, .fill textarea, .fill canvas { pointer-events: auto; }
 .t-breath-done { font-size: 46px; font-weight: 700; color: #2e7d4f; line-height: 1.25; }
 .t-logo, .t-tagline { display: block; }
+
+/* Title sign: sizes are relative to the box so text fitting can shrink them together. */
+.t-logo-box { font-size: 170px; }
+.t-logo-box .t-logo { font-size: 1em; -webkit-text-stroke-width: 0.08em; }
+.t-logo-box .t-tagline { font-size: 0.235em; margin-top: 0.45em; }
+/* Short multi-line labels: even line lengths instead of a lone last word. */
+.t-tagline, .t-speech, .t-question, .t-small, .t-heading, .t-sign, .t-chip, .t-breath-done, .center.t-body { text-wrap: balance; }

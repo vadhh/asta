@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { AnimatePresence, motion } from 'motion/react'
-import { Img, Box, Btn, useArt, useOrient, inset, float, pop } from '../stage'
+import { motion } from 'motion/react'
+import { Img, Box, Btn, Panel, useArt, useOrient, inset, pick, float, pop, type Rect } from '../stage'
 import { sfx, playMusic } from '../audio'
 import C from '../content.json'
 
@@ -30,15 +30,24 @@ export default function Tataati({ onDone }: { onDone: () => void }) {
   }, [step])
 
   const page = L('paper-page')
+  const hp = L('header-plank')
+  const header = { ...hp, x: hp.x - 50, w: hp.w + 100 } // widened (9-slice) so its label isn't squeezed by the leaf ends
+  // Tarik / Tahan / Hembuskan sit between Asta and the photo's right edge.
+  const photo = L('photo-breathing'), asta = L('asta-breathing')
+  const photoLabels = { x: asta.x + asta.w - 40, y: asta.y + 30, w: photo.x + photo.w - 30 - (asta.x + asta.w - 40), h: 200 }
   const body = inset(page, [L('header-plank').h + 30, 40, 40, 40])
+  // Ingat ya! card (done step): the exported one is too small for its text, so it's drawn 9-slice, taller.
+  const tc = L('tip-card')
+  const tip = pick<Rect>(o, { x: 175, y: 1080, w: 550, h: 290 }, { ...tc, y: tc.y - 60, h: tc.h + 60 })
   const scale = step !== 'breathe' ? 1 : phase.id === 'out' ? 0.94 : 1.12
   return (
     <>
+      {o === 'landscape' && <Img r={L('book-panel')} />}
       <Img r={L('title-plank')} {...pop(0)} />
-      <Box r={inset(L('title-plank'), [26, 60, 50, 60])} className="center t-plank-dark">
+      <Box r={inset(L('title-plank'), [26, 60, 50, 60])} className="center t-plank-dark nowrap" fit>
         {T.title}
       </Box>
-      <Box r={inset(L('title-plank'), [88, 60, 22, 60])} className="center t-plank-sub">
+      <Box r={inset(L('title-plank'), [88, 60, 22, 60])} className="center t-plank-sub" fit>
         {T.sub}
       </Box>
       <Img r={L('binder-clip')} />
@@ -60,7 +69,7 @@ export default function Tataati({ onDone }: { onDone: () => void }) {
       />
       <Img r={L('wind-swoosh')} animate={{ x: [0, 14, 0], opacity: [0.6, 1, 0.6] }} transition={{ duration: 2.5, repeat: Infinity }} />
       {step === 'intro' && (
-        <Box r={{ x: L('asta-breathing').x + L('asta-breathing').w - 30, y: L('asta-breathing').y + 30, w: 220, h: 200 }} className="col t-photo">
+        <Box r={photoLabels} className="col t-photo">
           {T.photo.map((t, i) => (
             <motion.span key={t} initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.6 + i * 0.5 }} style={{ marginLeft: i * 14 }}>
               {t}
@@ -70,10 +79,10 @@ export default function Tataati({ onDone }: { onDone: () => void }) {
       )}
       <Img r={page} {...pop(0.25)} />
       <Img r={L('tape-1')} />
-      <Img r={L('header-plank')} />
-      <AnimatePresence mode="wait">
-        <motion.div key={step} className="layer fill" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-          <Box r={inset(L('header-plank'), [8, 50, 14, 50])} className="center t-chip-dark" fit>
+      <Panel r={header} src={L('header-plank').src} slice={36} />
+      {/* keyed remounts, not exit animations: those stall when the tab is in the background */}
+      <motion.div key={step} className="layer fill" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+          <Box r={inset(header, [10, 70, 16, 70])} className="center t-chip-dark nowrap" fit>
             {step === 'intro' ? T.whatTitle : T.exerciseTitle.text}
           </Box>
           {step === 'intro' && (
@@ -82,17 +91,15 @@ export default function Tataati({ onDone }: { onDone: () => void }) {
             </Box>
           )}
           {step === 'done' && (
-            <Box r={inset(body, [0, 0, L('tip-card').h - 10, 0])} className="center t-breath-done" fit>
+            <Box r={{ ...body, h: tip.y - 16 - body.y }} className="center t-breath-done" fit>
               {T.doneText.text}
             </Box>
           )}
           {step === 'breathe' && (
             <Box r={inset(body, [0, 0, L('tip-card').h - 20, 0])} className="center col">
-              <AnimatePresence mode="wait">
-                <motion.div key={tick} className="t-breath" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }}>
-                  {phase.label}
-                </motion.div>
-              </AnimatePresence>
+              <motion.div key={tick} className="t-breath" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }}>
+                {phase.label}
+              </motion.div>
               <div className="t-body t-muted">{T.round.text.replace('{n}', String(round)).replace('{total}', String(T.rounds))}</div>
               <div className="dots" aria-hidden>
                 {Array.from({ length: T.rounds }, (_, i) => (
@@ -101,23 +108,22 @@ export default function Tataati({ onDone }: { onDone: () => void }) {
               </div>
             </Box>
           )}
-        </motion.div>
-      </AnimatePresence>
+      </motion.div>
       {step === 'done' && (
         <>
-          <Img r={L('tip-card')} {...pop(0.1)} />
-          <Img r={L('leaf-1')} />
-          <Img r={L('cloud-calm')} {...float(0, 6, 2.5)} />
-          <Box r={inset(L('tip-card'), [16, 200, L('tip-card').h - 82, 80])} className="center-y t-chip-dark" {...pop(0.3)}>
+          <Panel r={tip} src={L('tip-card').src} slice={40} {...pop(0.1)} />
+          <Img r={{ ...L('leaf-1'), x: tip.x + 19, y: tip.y }} />
+          <Img r={{ ...L('cloud-calm'), x: tip.x + tip.w - L('cloud-calm').w - 20, y: tip.y + 6 }} {...float(0, 6, 2.5)} />
+          <Box r={inset(tip, [16, 200, tip.h - 82, 80])} className="center-y t-chip-dark nowrap" fit {...pop(0.3)}>
             {T.rememberTitle}
           </Box>
-          {/* portrait: Asta's wave overlaps the card's left edge */}
-          <Box r={inset(L('tip-card'), [86, L('cloud-calm').w + 20, 22, o === 'portrait' ? 100 : 40])} className="t-body t-small" fit {...pop(0.35)}>
+          <Box r={inset(tip, [100, 36, 26, 40])} className="t-body" fit {...pop(0.35)}>
             {T.remember}
           </Box>
         </>
       )}
-      <Img r={L('asta-wave')} {...float(0.4, 10)} />
+      {/* portrait: Asta's wave would cover the left of the Ingat ya! card */}
+      {!(step === 'done' && o === 'portrait') && <Img r={L('asta-wave')} {...float(0.4, 10)} />}
       {step !== 'breathe' && (
         <Btn
           layers={[L('button-next-orange'), L('leaf-2')]}

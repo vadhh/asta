@@ -62,10 +62,10 @@ export default function Srawung({ onDone }: { onDone: () => void }) {
     <>
       <Img r={L('title-plank')} {...pop(0)} />
       <Img r={L('binder-clip')} />
-      <Box r={inset(L('title-plank'), [30, 60, 62, 60])} className="center t-plank-dark">
+      <Box r={inset(L('title-plank'), [30, 60, 62, 60])} className="center t-plank-dark nowrap" fit>
         {S.title}
       </Box>
-      <Box r={inset(L('title-plank'), [88, 60, 26, 60])} className="center t-plank-sub" fit>
+      <Box r={inset(L('title-plank'), [88, 90, 26, 90])} className="center t-plank-sub" fit>
         {S.sub}
       </Box>
 

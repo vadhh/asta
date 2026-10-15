@@ -35,13 +35,19 @@ export default function Reronce({ onDone }: { onDone: () => void }) {
   return (
     <>
       {o === 'landscape' && <Img r={L('panel')} />}
+      {o === 'landscape' && step === 'choose' && (
+        <>
+          <Img r={L('star-small')} />
+          <Img r={L('tape-blue')} />
+        </>
+      )}
       <Img r={L('title-plank')} {...pop(0)} />
       <Img r={L('binder-clip')} />
       <Img r={L('bookmark-red')} />
-      <Box r={inset(L('title-plank'), [30, 60, 62, 60])} className="center t-plank-dark">
+      <Box r={inset(L('title-plank'), [30, 60, 62, 60])} className="center t-plank-dark nowrap" fit>
         {R.title}
       </Box>
-      <Box r={inset(L('title-plank'), [88, 60, 26, 60])} className="center t-plank-sub" fit>
+      <Box r={inset(L('title-plank'), [88, 90, 26, 90])} className="center t-plank-sub" fit>
         {step === 'draw' ? R.drawing.hint : R.sub}
       </Box>
 
@@ -65,7 +71,7 @@ export default function Reronce({ onDone }: { onDone: () => void }) {
             return (
               <motion.div key={m} {...pop(0.15 + i * 0.12)} className="layer fill">
                 <Btn layers={[...layers]} label={R[m].label} pressed={mode === m} onClick={() => choose(m)} className={`card-choice ${mode === m ? 'chosen' : ''}`}>
-                  <Box r={inset(rel(label, u), [8, 20, 18, 20])} className="center t-label-light">
+                  <Box r={inset(rel(label, u), [8, 20, 18, 20])} className="center t-label-light nowrap" fit>
                     {R[m].label}
                   </Box>
                   <Box r={rel(desc(card, label), u)} className="center t-small" fit>

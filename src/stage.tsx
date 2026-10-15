@@ -1,4 +1,4 @@
-import { createContext, useContext, useLayoutEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react'
+import { createContext, useContext, useEffect, useLayoutEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react'
 import { AnimatePresence, motion, type HTMLMotionProps } from 'motion/react'
 import manifest from './manifest.json'
 
@@ -94,10 +94,29 @@ export function Img({ r, bleed = true, style, className = '', ...rest }: ImgProp
   return <motion.img src={artSrc(r.src)} alt="" draggable={false} className={`layer ${className}`} style={{ ...box({ ...r, x, y }), ...style }} {...rest} />
 }
 
+type PanelProps = Omit<HTMLMotionProps<'div'>, 'children'> & { r: Rect; src: string; slice: number }
+/** A panel/plank/bubble art layer drawn 9-slice, so it can be resized to `r` without stretching its
+ *  corners. `slice` is the corner size in art px (layers are exported 1:1 with frame px). */
+export function Panel({ r, src, slice, style, className = '', ...rest }: PanelProps) {
+  return (
+    <motion.div
+      className={`layer ${className}`}
+      style={{
+        ...box(r),
+        borderStyle: 'solid',
+        borderWidth: slice,
+        borderImage: `url(${artSrc(src)}) ${slice} fill / ${slice}px stretch`,
+        ...style,
+      }}
+      {...rest}
+    />
+  )
+}
+
 /** Absolutely positioned text/content box in frame px. `fit` shrinks the font until the content fits the box. */
 export function Box({ r, fit, className = '', style, children, ...rest }: HTMLMotionProps<'div'> & { r: Rect; fit?: boolean }) {
   const ref = useRef<HTMLDivElement>(null)
-  useLayoutEffect(() => {
+  const refit = () => {
     const el = ref.current
     const inner = el?.firstElementChild as HTMLElement | null
     if (!fit || !el || !inner) return
@@ -107,6 +126,12 @@ export function Box({ r, fit, className = '', style, children, ...rest }: HTMLMo
     const roomW = el.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight)
     let size = parseFloat(cs.fontSize)
     while ((inner.offsetHeight > roomH || inner.scrollWidth > roomW) && size > 20) el.style.fontSize = `${(size -= 1)}px`
+  }
+  useLayoutEffect(refit)
+  // A late-arriving web font changes text width; measure again.
+  useEffect(() => {
+    document.fonts.addEventListener('loadingdone', refit)
+    return () => document.fonts.removeEventListener('loadingdone', refit)
   })
   return (
     <motion.div ref={ref} className={`box ${className}`} style={{ ...box(r), ...style }} {...rest}>
@@ -115,9 +140,10 @@ export function Box({ r, fit, className = '', style, children, ...rest }: HTMLMo
   )
 }
 
-/** A tappable group of layers. Children are positioned relative to the union of `layers`. */
+/** A tappable group of layers. Children are positioned relative to the union of `layers`.
+ *  A layer with `slice` is drawn 9-slice (see Panel) so it can be resized. */
 export function Btn({ layers, label, onClick, disabled, className = '', children, pressed }: {
-  layers: Layer[]; label: string; onClick: () => void; disabled?: boolean; className?: string; children?: ReactNode; pressed?: boolean
+  layers: (Layer & { slice?: number })[]; label: string; onClick: () => void; disabled?: boolean; className?: string; children?: ReactNode; pressed?: boolean
 }) {
   const u = union(layers)
   return (
@@ -131,9 +157,13 @@ export function Btn({ layers, label, onClick, disabled, className = '', children
       whileTap={disabled ? undefined : { scale: 0.93 }}
       whileHover={disabled ? undefined : { scale: 1.03 }}
     >
-      {layers.map((l) => (
-        <img key={l.layer} src={artSrc(l.src)} alt="" draggable={false} className="layer" style={box({ ...l, x: l.x - u.x, y: l.y - u.y })} />
-      ))}
+      {layers.map((l) =>
+        l.slice ? (
+          <Panel key={l.layer} r={rel(l, u)} src={l.src} slice={l.slice} />
+        ) : (
+          <img key={l.layer} src={artSrc(l.src)} alt="" draggable={false} className="layer" style={box(rel(l, u))} />
+        ),
+      )}
       {children}
     </motion.button>
   )

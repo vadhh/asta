@@ -1,0 +1,186 @@
+[
+ {
+  "file": "00.png",
+  "x": 0,
+  "y": 0,
+  "w": 267,
+  "h": 169,
+  "name": "book-corner"
+ },
+ {
+  "file": "01.png",
+  "x": 266,
+  "y": 0,
+  "w": 115,
+  "h": 94,
+  "name": "dice"
+ },
+ {
+  "file": "02.png",
+  "x": 0,
+  "y": 225,
+  "w": 77,
+  "h": 94,
+  "name": "coin"
+ },
+ {
+  "file": "03.png",
+  "x": 1085,
+  "y": 0,
+  "w": 77,
+  "h": 57,
+  "name": "coin-small"
+ },
+ {
+  "file": "04.png",
+  "x": 1238,
+  "y": 0,
+  "w": 153,
+  "h": 94,
+  "name": "gem"
+ },
+ {
+  "file": "05.png",
+  "x": 1352,
+  "y": 0,
+  "w": 248,
+  "h": 207,
+  "name": "chest"
+ },
+ {
+  "file": "06.png",
+  "x": 0,
+  "y": 581,
+  "w": 191,
+  "h": 282,
+  "name": "spyglass"
+ },
+ {
+  "file": "07.png",
+  "x": 438,
+  "y": 637,
+  "w": 153,
+  "h": 95,
+  "name": "whale"
+ },
+ {
+  "file": "08.png",
+  "x": 1219,
+  "y": 112,
+  "w": 153,
+  "h": 113,
+  "name": "compass"
+ },
+ {
+  "file": "09.png",
+  "x": 419,
+  "y": 93,
+  "w": 439,
+  "h": 301,
+  "name": "island-reronce"
+ },
+ {
+  "file": "10.png",
+  "x": 552,
+  "y": 37,
+  "w": 153,
+  "h": 132,
+  "name": "icon-reronce"
+ },
+ {
+  "file": "11.png",
+  "x": 495,
+  "y": 150,
+  "w": 248,
+  "h": 132,
+  "name": "sign-reronce"
+ },
+ {
+  "file": "12.png",
+  "x": 876,
+  "y": 150,
+  "w": 458,
+  "h": 282,
+  "name": "island-titen"
+ },
+ {
+  "file": "13.png",
+  "x": 1066,
+  "y": 93,
+  "w": 134,
+  "h": 151,
+  "name": "icon-titen"
+ },
+ {
+  "file": "14.png",
+  "x": 1009,
+  "y": 225,
+  "w": 249,
+  "h": 132,
+  "name": "sign-titen"
+ },
+ {
+  "file": "15.png",
+  "x": 152,
+  "y": 318,
+  "w": 420,
+  "h": 357,
+  "name": "island-tataati"
+ },
+ {
+  "file": "16.png",
+  "x": 285,
+  "y": 300,
+  "w": 154,
+  "h": 132,
+  "name": "icon-tataati"
+ },
+ {
+  "file": "17.png",
+  "x": 228,
+  "y": 431,
+  "w": 268,
+  "h": 132,
+  "name": "sign-tataati"
+ },
+ {
+  "file": "18.png",
+  "x": 704,
+  "y": 412,
+  "w": 477,
+  "h": 301,
+  "name": "island-srawung"
+ },
+ {
+  "file": "19.png",
+  "x": 914,
+  "y": 375,
+  "w": 134,
+  "h": 132,
+  "name": "icon-srawung"
+ },
+ {
+  "file": "20.png",
+  "x": 857,
+  "y": 487,
+  "w": 267,
+  "h": 132,
+  "name": "sign-srawung"
+ },
+ {
+  "file": "21.png",
+  "x": 1161,
+  "y": 600,
+  "w": 211,
+  "h": 150,
+  "name": "speech-bubble"
+ },
+ {
+  "file": "22.png",
+  "x": 1295,
+  "y": 581,
+  "w": 305,
+  "h": 319,
+  "name": "asta-peek"
+ }
+]

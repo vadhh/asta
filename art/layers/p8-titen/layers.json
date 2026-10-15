@@ -1,0 +1,154 @@
+[
+ {
+  "file": "00.png",
+  "x": 114,
+  "y": 56,
+  "w": 1391,
+  "h": 788,
+  "name": "panel"
+ },
+ {
+  "file": "01.png",
+  "x": 304,
+  "y": 18,
+  "w": 154,
+  "h": 132,
+  "name": "binder-clip"
+ },
+ {
+  "file": "02.png",
+  "x": 552,
+  "y": 37,
+  "w": 515,
+  "h": 113,
+  "name": "title-plank"
+ },
+ {
+  "file": "03.png",
+  "x": 590,
+  "y": 75,
+  "w": 58,
+  "h": 38,
+  "name": "leaf-1"
+ },
+ {
+  "file": "04.png",
+  "x": 990,
+  "y": 75,
+  "w": 39,
+  "h": 38,
+  "name": "leaf-2"
+ },
+ {
+  "file": "05.png",
+  "x": 342,
+  "y": 281,
+  "w": 344,
+  "h": 244,
+  "name": "card-a-selected"
+ },
+ {
+  "file": "06.png",
+  "x": 419,
+  "y": 318,
+  "w": 191,
+  "h": 95,
+  "name": "icon-calm-cloud"
+ },
+ {
+  "file": "07.png",
+  "x": 609,
+  "y": 281,
+  "w": 96,
+  "h": 76,
+  "name": "icon-check"
+ },
+ {
+  "file": "08.png",
+  "x": 704,
+  "y": 300,
+  "w": 344,
+  "h": 225,
+  "name": "card-b"
+ },
+ {
+  "file": "09.png",
+  "x": 800,
+  "y": 300,
+  "w": 134,
+  "h": 132,
+  "name": "icon-storm-cloud"
+ },
+ {
+  "file": "10.png",
+  "x": 1047,
+  "y": 300,
+  "w": 363,
+  "h": 225,
+  "name": "card-c"
+ },
+ {
+  "file": "11.png",
+  "x": 1142,
+  "y": 318,
+  "w": 173,
+  "h": 114,
+  "name": "icon-angry"
+ },
+ {
+  "file": "12.png",
+  "x": 380,
+  "y": 525,
+  "w": 973,
+  "h": 244,
+  "name": "tip-panel"
+ },
+ {
+  "file": "13.png",
+  "x": 400,
+  "y": 543,
+  "w": 58,
+  "h": 76,
+  "name": "leaf-3"
+ },
+ {
+  "file": "14.png",
+  "x": 457,
+  "y": 543,
+  "w": 363,
+  "h": 76,
+  "name": "tip-header"
+ },
+ {
+  "file": "15.png",
+  "x": 819,
+  "y": 543,
+  "w": 39,
+  "h": 57,
+  "name": "sparkles"
+ },
+ {
+  "file": "16.png",
+  "x": 19,
+  "y": 375,
+  "w": 362,
+  "h": 525,
+  "name": "asta-wave"
+ },
+ {
+  "file": "17.png",
+  "x": 1333,
+  "y": 656,
+  "w": 172,
+  "h": 169,
+  "name": "button-green-round"
+ },
+ {
+  "file": "18.png",
+  "x": 1371,
+  "y": 693,
+  "w": 96,
+  "h": 95,
+  "name": "icon-arrow"
+ }
+]

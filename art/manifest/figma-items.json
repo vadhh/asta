@@ -1,0 +1,1392 @@
+[
+{
+"scene": "p1-home",
+"name": "bg",
+"file": "export/landscape/p1-home/bg.png",
+"w": 1600,
+"h": 900,
+"x": 0,
+"y": 0,
+"node": "3:7"
+},
+{
+"scene": "p1-home",
+"name": "tree-branch",
+"file": "export/landscape/p1-home/tree-branch.png",
+"w": 648,
+"h": 432,
+"x": 0,
+"y": 0,
+"node": "3:8"
+},
+{
+"scene": "p1-home",
+"name": "lantern",
+"file": "export/landscape/p1-home/lantern.png",
+"w": 248,
+"h": 357,
+"x": 1352,
+"y": 56,
+"node": "3:9"
+},
+{
+"scene": "p1-home",
+"name": "signpost",
+"file": "export/landscape/p1-home/signpost.png",
+"w": 191,
+"h": 432,
+"x": 1409,
+"y": 393,
+"node": "3:10"
+},
+{
+"scene": "p1-home",
+"name": "fence",
+"file": "export/landscape/p1-home/fence.png",
+"w": 629,
+"h": 170,
+"x": 857,
+"y": 693,
+"node": "3:11"
+},
+{
+"scene": "p1-home",
+"name": "asta-wave",
+"file": "export/landscape/p1-home/asta-wave.png",
+"w": 572,
+"h": 638,
+"x": 38,
+"y": 225,
+"node": "3:12"
+},
+{
+"scene": "p1-home",
+"name": "title-sign",
+"file": "export/landscape/p1-home/title-sign.png",
+"w": 724,
+"h": 432,
+"x": 438,
+"y": 37,
+"node": "3:13"
+},
+{
+"scene": "p1-home",
+"name": "button-wood",
+"file": "export/landscape/p1-home/button-wood.png",
+"w": 401,
+"h": 150,
+"x": 609,
+"y": 600,
+"node": "3:14"
+},
+{
+"scene": "p1-home",
+"name": "icon-play",
+"file": "export/landscape/p1-home/icon-play.png",
+"w": 77,
+"h": 95,
+"x": 704,
+"y": 618,
+"node": "3:15"
+},
+{
+"scene": "p1-home",
+"name": "sparkles",
+"file": "export/landscape/p1-home/sparkles.png",
+"w": 134,
+"h": 132,
+"x": 933,
+"y": 543,
+"node": "3:16"
+},
+{
+"scene": "p1-home",
+"name": "bush-left",
+"file": "export/landscape/p1-home/bush-left.png",
+"w": 610,
+"h": 244,
+"x": 0,
+"y": 656,
+"node": "3:17"
+},
+{
+"scene": "p1-home",
+"name": "bush-flowers-right",
+"file": "export/landscape/p1-home/bush-flowers-right.png",
+"w": 362,
+"h": 207,
+"x": 1238,
+"y": 693,
+"node": "3:18"
+},
+{
+"scene": "p1-home",
+"name": "bg-portrait",
+"file": "export/portrait/p1-home-bg.png",
+"w": 900,
+"h": 1600,
+"x": 0,
+"y": 0,
+"node": "3:19"
+},
+{
+"scene": "p2-greeting",
+"name": "bg",
+"file": "export/landscape/p2-greeting/bg.png",
+"w": 1600,
+"h": 900,
+"x": 0,
+"y": 0,
+"node": "3:21"
+},
+{
+"scene": "p2-greeting",
+"name": "asta-wave",
+"file": "export/landscape/p2-greeting/asta-wave.png",
+"w": 534,
+"h": 657,
+"x": 76,
+"y": 243,
+"node": "3:22"
+},
+{
+"scene": "p2-greeting",
+"name": "speech-bubble",
+"file": "export/landscape/p2-greeting/speech-bubble.png",
+"w": 534,
+"h": 282,
+"x": 457,
+"y": 150,
+"node": "3:23"
+},
+{
+"scene": "p2-greeting",
+"name": "info-card",
+"file": "export/landscape/p2-greeting/info-card.png",
+"w": 553,
+"h": 376,
+"x": 990,
+"y": 281,
+"node": "3:24"
+},
+{
+"scene": "p2-greeting",
+"name": "info-label",
+"file": "export/landscape/p2-greeting/info-label.png",
+"w": 287,
+"h": 94,
+"x": 1028,
+"y": 281,
+"node": "3:25"
+},
+{
+"scene": "p2-greeting",
+"name": "icon-bulb",
+"file": "export/landscape/p2-greeting/icon-bulb.png",
+"w": 77,
+"h": 57,
+"x": 1047,
+"y": 300,
+"node": "3:26"
+},
+{
+"scene": "p2-greeting",
+"name": "button-next-blue",
+"file": "export/landscape/p2-greeting/button-next-blue.png",
+"w": 153,
+"h": 132,
+"x": 1390,
+"y": 712,
+"node": "3:27"
+},
+{
+"scene": "p2-greeting",
+"name": "sparkles",
+"file": "export/landscape/p2-greeting/sparkles.png",
+"w": 58,
+"h": 94,
+"x": 1523,
+"y": 731,
+"node": "3:28"
+},
+{
+"scene": "p2-greeting",
+"name": "bg-portrait",
+"file": "export/portrait/p2-greeting-bg.png",
+"w": 900,
+"h": 1600,
+"x": 0,
+"y": 0,
+"node": "3:29"
+},
+{
+"scene": "p3-emotion",
+"name": "bg",
+"file": "export/landscape/p3-emotion/bg.png",
+"w": 1600,
+"h": 900,
+"x": 0,
+"y": 0,
+"node": "3:31"
+},
+{
+"scene": "p3-emotion",
+"name": "title-plank",
+"file": "export/landscape/p3-emotion/title-plank.png",
+"w": 572,
+"h": 114,
+"x": 38,
+"y": 18,
+"node": "3:32"
+},
+{
+"scene": "p3-emotion",
+"name": "asta-full",
+"file": "export/landscape/p3-emotion/asta-full.png",
+"w": 515,
+"h": 713,
+"x": 95,
+"y": 150,
+"node": "3:33"
+},
+{
+"scene": "p3-emotion",
+"name": "speech-bubble",
+"file": "export/landscape/p3-emotion/speech-bubble.png",
+"w": 267,
+"h": 150,
+"x": 400,
+"y": 150,
+"node": "3:34"
+},
+{
+"scene": "p3-emotion",
+"name": "board",
+"file": "export/landscape/p3-emotion/board.png",
+"w": 800,
+"h": 714,
+"x": 685,
+"y": 75,
+"node": "3:35"
+},
+{
+"scene": "p3-emotion",
+"name": "board-header",
+"file": "export/landscape/p3-emotion/board-header.png",
+"w": 706,
+"h": 114,
+"x": 742,
+"y": 93,
+"node": "3:36"
+},
+{
+"scene": "p3-emotion",
+"name": "card-senang",
+"file": "export/landscape/p3-emotion/card-senang.png",
+"w": 192,
+"h": 188,
+"x": 723,
+"y": 187,
+"node": "3:37"
+},
+{
+"scene": "p3-emotion",
+"name": "card-sedih-selected",
+"file": "export/landscape/p3-emotion/card-sedih-selected.png",
+"w": 210,
+"h": 207,
+"x": 895,
+"y": 187,
+"node": "3:38"
+},
+{
+"scene": "p3-emotion",
+"name": "card-marah",
+"file": "export/landscape/p3-emotion/card-marah.png",
+"w": 192,
+"h": 188,
+"x": 1085,
+"y": 187,
+"node": "3:39"
+},
+{
+"scene": "p3-emotion",
+"name": "card-takut",
+"file": "export/landscape/p3-emotion/card-takut.png",
+"w": 172,
+"h": 188,
+"x": 1276,
+"y": 187,
+"node": "3:40"
+},
+{
+"scene": "p3-emotion",
+"name": "card-cemas",
+"file": "export/landscape/p3-emotion/card-cemas.png",
+"w": 192,
+"h": 188,
+"x": 723,
+"y": 375,
+"node": "3:41"
+},
+{
+"scene": "p3-emotion",
+"name": "card-bingung",
+"file": "export/landscape/p3-emotion/card-bingung.png",
+"w": 191,
+"h": 188,
+"x": 914,
+"y": 375,
+"node": "3:42"
+},
+{
+"scene": "p3-emotion",
+"name": "card-kesepian",
+"file": "export/landscape/p3-emotion/card-kesepian.png",
+"w": 192,
+"h": 188,
+"x": 1085,
+"y": 375,
+"node": "3:43"
+},
+{
+"scene": "p3-emotion",
+"name": "card-lelah",
+"file": "export/landscape/p3-emotion/card-lelah.png",
+"w": 172,
+"h": 188,
+"x": 1276,
+"y": 375,
+"node": "3:44"
+},
+{
+"scene": "p3-emotion",
+"name": "tip-panel",
+"file": "export/landscape/p3-emotion/tip-panel.png",
+"w": 763,
+"h": 207,
+"x": 704,
+"y": 562,
+"node": "3:45"
+},
+{
+"scene": "p3-emotion",
+"name": "tip-header",
+"file": "export/landscape/p3-emotion/tip-header.png",
+"w": 439,
+"h": 57,
+"x": 876,
+"y": 581,
+"node": "3:46"
+},
+{
+"scene": "p3-emotion",
+"name": "asta-head-badge",
+"file": "export/landscape/p3-emotion/asta-head-badge.png",
+"w": 135,
+"h": 150,
+"x": 761,
+"y": 600,
+"node": "3:47"
+},
+{
+"scene": "p3-emotion",
+"name": "button-green",
+"file": "export/landscape/p3-emotion/button-green.png",
+"w": 248,
+"h": 95,
+"x": 1238,
+"y": 768,
+"node": "3:48"
+},
+{
+"scene": "p3-emotion",
+"name": "icon-arrow-white",
+"file": "export/landscape/p3-emotion/icon-arrow-white.png",
+"w": 58,
+"h": 57,
+"x": 1390,
+"y": 787,
+"node": "3:49"
+},
+{
+"scene": "p3-emotion",
+"name": "plant-desk-left",
+"file": "export/landscape/p3-emotion/plant-desk-left.png",
+"w": 267,
+"h": 282,
+"x": 0,
+"y": 618,
+"node": "3:50"
+},
+{
+"scene": "p3-emotion",
+"name": "plant-right",
+"file": "export/landscape/p3-emotion/plant-right.png",
+"w": 134,
+"h": 263,
+"x": 1466,
+"y": 637,
+"node": "3:51"
+},
+{
+"scene": "p3-emotion",
+"name": "bg-portrait",
+"file": "export/portrait/p3-emotion-bg.png",
+"w": 900,
+"h": 1600,
+"x": 0,
+"y": 0,
+"node": "3:52"
+},
+{
+"scene": "p4-map",
+"name": "bg",
+"file": "export/landscape/p4-map/bg.png",
+"w": 1600,
+"h": 900,
+"x": 0,
+"y": 0,
+"node": "3:54"
+},
+{
+"scene": "p4-map",
+"name": "book-corner",
+"file": "export/landscape/p4-map/book-corner.png",
+"w": 267,
+"h": 169,
+"x": 0,
+"y": 0,
+"node": "3:55"
+},
+{
+"scene": "p4-map",
+"name": "dice",
+"file": "export/landscape/p4-map/dice.png",
+"w": 115,
+"h": 94,
+"x": 266,
+"y": 0,
+"node": "3:56"
+},
+{
+"scene": "p4-map",
+"name": "coin",
+"file": "export/landscape/p4-map/coin.png",
+"w": 77,
+"h": 94,
+"x": 0,
+"y": 225,
+"node": "3:57"
+},
+{
+"scene": "p4-map",
+"name": "coin-small",
+"file": "export/landscape/p4-map/coin-small.png",
+"w": 77,
+"h": 57,
+"x": 1085,
+"y": 0,
+"node": "3:58"
+},
+{
+"scene": "p4-map",
+"name": "gem",
+"file": "export/landscape/p4-map/gem.png",
+"w": 153,
+"h": 94,
+"x": 1238,
+"y": 0,
+"node": "3:59"
+},
+{
+"scene": "p4-map",
+"name": "chest",
+"file": "export/landscape/p4-map/chest.png",
+"w": 248,
+"h": 207,
+"x": 1352,
+"y": 0,
+"node": "3:60"
+},
+{
+"scene": "p4-map",
+"name": "spyglass",
+"file": "export/landscape/p4-map/spyglass.png",
+"w": 191,
+"h": 282,
+"x": 0,
+"y": 581,
+"node": "3:61"
+},
+{
+"scene": "p4-map",
+"name": "whale",
+"file": "export/landscape/p4-map/whale.png",
+"w": 153,
+"h": 95,
+"x": 438,
+"y": 637,
+"node": "3:62"
+},
+{
+"scene": "p4-map",
+"name": "compass",
+"file": "export/landscape/p4-map/compass.png",
+"w": 153,
+"h": 113,
+"x": 1219,
+"y": 112,
+"node": "3:63"
+},
+{
+"scene": "p4-map",
+"name": "island-reronce",
+"file": "export/landscape/p4-map/island-reronce.png",
+"w": 439,
+"h": 301,
+"x": 419,
+"y": 93,
+"node": "3:64"
+},
+{
+"scene": "p4-map",
+"name": "icon-reronce",
+"file": "export/landscape/p4-map/icon-reronce.png",
+"w": 153,
+"h": 132,
+"x": 552,
+"y": 37,
+"node": "3:65"
+},
+{
+"scene": "p4-map",
+"name": "sign-reronce",
+"file": "export/landscape/p4-map/sign-reronce.png",
+"w": 248,
+"h": 132,
+"x": 495,
+"y": 150,
+"node": "3:66"
+},
+{
+"scene": "p4-map",
+"name": "island-titen",
+"file": "export/landscape/p4-map/island-titen.png",
+"w": 458,
+"h": 282,
+"x": 876,
+"y": 150,
+"node": "3:67"
+},
+{
+"scene": "p4-map",
+"name": "icon-titen",
+"file": "export/landscape/p4-map/icon-titen.png",
+"w": 134,
+"h": 151,
+"x": 1066,
+"y": 93,
+"node": "3:68"
+},
+{
+"scene": "p4-map",
+"name": "sign-titen",
+"file": "export/landscape/p4-map/sign-titen.png",
+"w": 249,
+"h": 132,
+"x": 1009,
+"y": 225,
+"node": "3:69"
+},
+{
+"scene": "p4-map",
+"name": "island-tataati",
+"file": "export/landscape/p4-map/island-tataati.png",
+"w": 420,
+"h": 357,
+"x": 152,
+"y": 318,
+"node": "3:70"
+},
+{
+"scene": "p4-map",
+"name": "icon-tataati",
+"file": "export/landscape/p4-map/icon-tataati.png",
+"w": 154,
+"h": 132,
+"x": 285,
+"y": 300,
+"node": "3:71"
+},
+{
+"scene": "p4-map",
+"name": "sign-tataati",
+"file": "export/landscape/p4-map/sign-tataati.png",
+"w": 268,
+"h": 132,
+"x": 228,
+"y": 431,
+"node": "3:72"
+},
+{
+"scene": "p4-map",
+"name": "island-srawung",
+"file": "export/landscape/p4-map/island-srawung.png",
+"w": 477,
+"h": 301,
+"x": 704,
+"y": 412,
+"node": "3:73"
+},
+{
+"scene": "p4-map",
+"name": "icon-srawung",
+"file": "export/landscape/p4-map/icon-srawung.png",
+"w": 134,
+"h": 132,
+"x": 914,
+"y": 375,
+"node": "3:74"
+},
+{
+"scene": "p4-map",
+"name": "sign-srawung",
+"file": "export/landscape/p4-map/sign-srawung.png",
+"w": 267,
+"h": 132,
+"x": 857,
+"y": 487,
+"node": "3:75"
+},
+{
+"scene": "p4-map",
+"name": "speech-bubble",
+"file": "export/landscape/p4-map/speech-bubble.png",
+"w": 211,
+"h": 150,
+"x": 1161,
+"y": 600,
+"node": "3:76"
+},
+{
+"scene": "p4-map",
+"name": "asta-peek",
+"file": "export/landscape/p4-map/asta-peek.png",
+"w": 305,
+"h": 319,
+"x": 1295,
+"y": 581,
+"node": "3:77"
+},
+{
+"scene": "p4-map",
+"name": "bg-portrait",
+"file": "export/portrait/p4-map-bg.png",
+"w": 900,
+"h": 1600,
+"x": 0,
+"y": 0,
+"node": "3:78"
+},
+{
+"scene": "p5-tataati",
+"name": "bg",
+"file": "export/landscape/p5-tataati/bg.png",
+"w": 1600,
+"h": 900,
+"x": 0,
+"y": 0,
+"node": "3:80"
+},
+{
+"scene": "p5-tataati",
+"name": "book-panel",
+"file": "export/landscape/p5-tataati/book-panel.png",
+"w": 1391,
+"h": 750,
+"x": 114,
+"y": 75,
+"node": "3:81"
+},
+{
+"scene": "p5-tataati",
+"name": "title-plank",
+"file": "export/landscape/p5-tataati/title-plank.png",
+"w": 610,
+"h": 151,
+"x": 495,
+"y": 18,
+"node": "3:82"
+},
+{
+"scene": "p5-tataati",
+"name": "binder-clip",
+"file": "export/landscape/p5-tataati/binder-clip.png",
+"w": 115,
+"h": 113,
+"x": 285,
+"y": 37,
+"node": "3:83"
+},
+{
+"scene": "p5-tataati",
+"name": "tape-1",
+"file": "export/landscape/p5-tataati/tape-1.png",
+"w": 115,
+"h": 75,
+"x": 1314,
+"y": 75,
+"node": "3:84"
+},
+{
+"scene": "p5-tataati",
+"name": "photo-breathing",
+"file": "export/landscape/p5-tataati/photo-breathing.png",
+"w": 554,
+"h": 564,
+"x": 266,
+"y": 168,
+"node": "3:85"
+},
+{
+"scene": "p5-tataati",
+"name": "asta-breathing",
+"file": "export/landscape/p5-tataati/asta-breathing.png",
+"w": 287,
+"h": 413,
+"x": 304,
+"y": 262,
+"node": "3:86"
+},
+{
+"scene": "p5-tataati",
+"name": "wind-swoosh",
+"file": "export/landscape/p5-tataati/wind-swoosh.png",
+"w": 96,
+"h": 57,
+"x": 552,
+"y": 431,
+"node": "3:87"
+},
+{
+"scene": "p5-tataati",
+"name": "tape-2",
+"file": "export/landscape/p5-tataati/tape-2.png",
+"w": 96,
+"h": 76,
+"x": 438,
+"y": 168,
+"node": "3:88"
+},
+{
+"scene": "p5-tataati",
+"name": "paper-page",
+"file": "export/landscape/p5-tataati/paper-page.png",
+"w": 610,
+"h": 582,
+"x": 800,
+"y": 168,
+"node": "3:89"
+},
+{
+"scene": "p5-tataati",
+"name": "header-plank",
+"file": "export/landscape/p5-tataati/header-plank.png",
+"w": 420,
+"h": 76,
+"x": 876,
+"y": 168,
+"node": "3:90"
+},
+{
+"scene": "p5-tataati",
+"name": "tip-card",
+"file": "export/landscape/p5-tataati/tip-card.png",
+"w": 534,
+"h": 226,
+"x": 838,
+"y": 506,
+"node": "3:91"
+},
+{
+"scene": "p5-tataati",
+"name": "leaf-1",
+"file": "export/landscape/p5-tataati/leaf-1.png",
+"w": 58,
+"h": 76,
+"x": 857,
+"y": 506,
+"node": "3:92"
+},
+{
+"scene": "p5-tataati",
+"name": "cloud-calm",
+"file": "export/landscape/p5-tataati/cloud-calm.png",
+"w": 153,
+"h": 113,
+"x": 1200,
+"y": 562,
+"node": "3:93"
+},
+{
+"scene": "p5-tataati",
+"name": "button-next-orange",
+"file": "export/landscape/p5-tataati/button-next-orange.png",
+"w": 172,
+"h": 169,
+"x": 1390,
+"y": 675,
+"node": "3:94"
+},
+{
+"scene": "p5-tataati",
+"name": "asta-wave",
+"file": "export/landscape/p5-tataati/asta-wave.png",
+"w": 343,
+"h": 507,
+"x": 0,
+"y": 375,
+"node": "3:95"
+},
+{
+"scene": "p5-tataati",
+"name": "leaf-2",
+"file": "export/landscape/p5-tataati/leaf-2.png",
+"w": 58,
+"h": 57,
+"x": 1333,
+"y": 731,
+"node": "3:96"
+},
+{
+"scene": "p5-tataati",
+"name": "bg-portrait",
+"file": "export/portrait/p5-tataati-bg.png",
+"w": 900,
+"h": 1600,
+"x": 0,
+"y": 0,
+"node": "3:97"
+},
+{
+"scene": "reference",
+"name": "page-1-flat",
+"file": "source/page-1.png",
+"w": 1600,
+"h": 900,
+"x": 0,
+"y": 0,
+"node": "3:99"
+},
+{
+"scene": "reference",
+"name": "page-2-flat",
+"file": "source/page-2.png",
+"w": 1600,
+"h": 900,
+"x": 0,
+"y": 0,
+"node": "3:100"
+},
+{
+"scene": "reference",
+"name": "page-3-flat",
+"file": "source/page-3.png",
+"w": 1600,
+"h": 900,
+"x": 0,
+"y": 0,
+"node": "3:101"
+},
+{
+"scene": "reference",
+"name": "page-4-flat",
+"file": "source/page-4.png",
+"w": 1600,
+"h": 900,
+"x": 0,
+"y": 0,
+"node": "3:102"
+},
+{
+"scene": "reference",
+"name": "page-5-flat",
+"file": "source/page-5.png",
+"w": 1600,
+"h": 900,
+"x": 0,
+"y": 0,
+"node": "3:103"
+},
+{
+"scene": "reference",
+"name": "page-6-flat",
+"file": "source/page-6.png",
+"w": 1600,
+"h": 900,
+"x": 0,
+"y": 0,
+"node": "3:104"
+},
+{
+"scene": "reference",
+"name": "page-7-flat",
+"file": "source/page-7.png",
+"w": 1600,
+"h": 900,
+"x": 0,
+"y": 0,
+"node": "3:105"
+},
+{
+"scene": "reference",
+"name": "page-8-flat",
+"file": "source/page-8.png",
+"w": 1600,
+"h": 900,
+"x": 0,
+"y": 0,
+"node": "3:106"
+},
+{
+"scene": "p6-reronce",
+"name": "bg",
+"file": "export/backgrounds/p6-reronce-landscape.png",
+"w": 1600,
+"h": 900,
+"x": 0,
+"y": 0,
+"node": "10:3"
+},
+{
+"scene": "p6-reronce",
+"name": "panel",
+"file": "export/layers/p6-reronce/panel.png",
+"w": 1429,
+"h": 788,
+"x": 95,
+"y": 37,
+"node": "10:4"
+},
+{
+"scene": "p6-reronce",
+"name": "title-plank",
+"file": "export/layers/p6-reronce/title-plank.png",
+"w": 534,
+"h": 151,
+"x": 533,
+"y": 18,
+"node": "10:5"
+},
+{
+"scene": "p6-reronce",
+"name": "binder-clip",
+"file": "export/layers/p6-reronce/binder-clip.png",
+"w": 134,
+"h": 132,
+"x": 209,
+"y": 18,
+"node": "10:6"
+},
+{
+"scene": "p6-reronce",
+"name": "bookmark-red",
+"file": "export/layers/p6-reronce/bookmark-red.png",
+"w": 172,
+"h": 132,
+"x": 1295,
+"y": 37,
+"node": "10:7"
+},
+{
+"scene": "p6-reronce",
+"name": "card-draw",
+"file": "export/layers/p6-reronce/card-draw.png",
+"w": 497,
+"h": 451,
+"x": 342,
+"y": 281,
+"node": "10:8"
+},
+{
+"scene": "p6-reronce",
+"name": "drawing",
+"file": "export/layers/p6-reronce/drawing.png",
+"w": 362,
+"h": 282,
+"x": 419,
+"y": 300,
+"node": "10:9"
+},
+{
+"scene": "p6-reronce",
+"name": "crayon-red",
+"file": "export/layers/p6-reronce/crayon-red.png",
+"w": 78,
+"h": 114,
+"x": 361,
+"y": 393,
+"node": "10:10"
+},
+{
+"scene": "p6-reronce",
+"name": "crayon-blue",
+"file": "export/layers/p6-reronce/crayon-blue.png",
+"w": 78,
+"h": 113,
+"x": 761,
+"y": 412,
+"node": "10:11"
+},
+{
+"scene": "p6-reronce",
+"name": "crayon-yellow",
+"file": "export/layers/p6-reronce/crayon-yellow.png",
+"w": 97,
+"h": 57,
+"x": 723,
+"y": 506,
+"node": "10:12"
+},
+{
+"scene": "p6-reronce",
+"name": "sparkles-1",
+"file": "export/layers/p6-reronce/sparkles-1.png",
+"w": 78,
+"h": 95,
+"x": 361,
+"y": 487,
+"node": "10:13"
+},
+{
+"scene": "p6-reronce",
+"name": "label-draw",
+"file": "export/layers/p6-reronce/label-draw.png",
+"w": 305,
+"h": 76,
+"x": 476,
+"y": 543,
+"node": "10:14"
+},
+{
+"scene": "p6-reronce",
+"name": "card-tell",
+"file": "export/layers/p6-reronce/card-tell.png",
+"w": 515,
+"h": 470,
+"x": 857,
+"y": 262,
+"node": "10:15"
+},
+{
+"scene": "p6-reronce",
+"name": "asta-reading",
+"file": "export/layers/p6-reronce/asta-reading.png",
+"w": 248,
+"h": 263,
+"x": 914,
+"y": 300,
+"node": "10:16"
+},
+{
+"scene": "p6-reronce",
+"name": "speech-bubble-dots",
+"file": "export/layers/p6-reronce/speech-bubble-dots.png",
+"w": 116,
+"h": 114,
+"x": 1142,
+"y": 318,
+"node": "10:17"
+},
+{
+"scene": "p6-reronce",
+"name": "sparkles-2",
+"file": "export/layers/p6-reronce/sparkles-2.png",
+"w": 97,
+"h": 113,
+"x": 1180,
+"y": 412,
+"node": "10:18"
+},
+{
+"scene": "p6-reronce",
+"name": "label-tell",
+"file": "export/layers/p6-reronce/label-tell.png",
+"w": 363,
+"h": 76,
+"x": 914,
+"y": 543,
+"node": "10:19"
+},
+{
+"scene": "p6-reronce",
+"name": "asta-wave",
+"file": "export/layers/p6-reronce/asta-wave.png",
+"w": 362,
+"h": 526,
+"x": 38,
+"y": 356,
+"node": "10:20"
+},
+{
+"scene": "p6-reronce",
+"name": "button-next-blue",
+"file": "export/layers/p6-reronce/button-next-blue.png",
+"w": 229,
+"h": 132,
+"x": 1295,
+"y": 693,
+"node": "10:21"
+},
+{
+"scene": "p6-reronce",
+"name": "leaf",
+"file": "export/layers/p6-reronce/leaf.png",
+"w": 77,
+"h": 57,
+"x": 1390,
+"y": 637,
+"node": "10:22"
+},
+{
+"scene": "p6-reronce",
+"name": "star-small",
+"file": "export/layers/p6-reronce/star-small.png",
+"w": 39,
+"h": 39,
+"x": 1390,
+"y": 168,
+"node": "10:23"
+},
+{
+"scene": "p6-reronce",
+"name": "tape-blue",
+"file": "export/layers/p6-reronce/tape-blue.png",
+"w": 135,
+"h": 57,
+"x": 304,
+"y": 750,
+"node": "10:24"
+},
+{
+"scene": "p6-reronce",
+"name": "bg-portrait",
+"file": "export/backgrounds/p6-reronce-portrait.png",
+"w": 900,
+"h": 1600,
+"x": 0,
+"y": 0,
+"node": "10:25"
+},
+{
+"scene": "p8-titen",
+"name": "bg",
+"file": "export/backgrounds/p8-titen-landscape.png",
+"w": 1600,
+"h": 900,
+"x": 0,
+"y": 0,
+"node": "10:27"
+},
+{
+"scene": "p8-titen",
+"name": "panel",
+"file": "export/layers/p8-titen/panel.png",
+"w": 1391,
+"h": 788,
+"x": 114,
+"y": 56,
+"node": "10:28"
+},
+{
+"scene": "p8-titen",
+"name": "binder-clip",
+"file": "export/layers/p8-titen/binder-clip.png",
+"w": 154,
+"h": 132,
+"x": 304,
+"y": 18,
+"node": "10:29"
+},
+{
+"scene": "p8-titen",
+"name": "title-plank",
+"file": "export/layers/p8-titen/title-plank.png",
+"w": 515,
+"h": 113,
+"x": 552,
+"y": 37,
+"node": "10:30"
+},
+{
+"scene": "p8-titen",
+"name": "leaf-1",
+"file": "export/layers/p8-titen/leaf-1.png",
+"w": 58,
+"h": 38,
+"x": 590,
+"y": 75,
+"node": "10:31"
+},
+{
+"scene": "p8-titen",
+"name": "leaf-2",
+"file": "export/layers/p8-titen/leaf-2.png",
+"w": 39,
+"h": 38,
+"x": 990,
+"y": 75,
+"node": "10:32"
+},
+{
+"scene": "p8-titen",
+"name": "card-a-selected",
+"file": "export/layers/p8-titen/card-a-selected.png",
+"w": 344,
+"h": 244,
+"x": 342,
+"y": 281,
+"node": "10:33"
+},
+{
+"scene": "p8-titen",
+"name": "icon-calm-cloud",
+"file": "export/layers/p8-titen/icon-calm-cloud.png",
+"w": 191,
+"h": 95,
+"x": 419,
+"y": 318,
+"node": "10:34"
+},
+{
+"scene": "p8-titen",
+"name": "icon-check",
+"file": "export/layers/p8-titen/icon-check.png",
+"w": 96,
+"h": 76,
+"x": 609,
+"y": 281,
+"node": "10:35"
+},
+{
+"scene": "p8-titen",
+"name": "card-b",
+"file": "export/layers/p8-titen/card-b.png",
+"w": 344,
+"h": 225,
+"x": 704,
+"y": 300,
+"node": "10:36"
+},
+{
+"scene": "p8-titen",
+"name": "icon-storm-cloud",
+"file": "export/layers/p8-titen/icon-storm-cloud.png",
+"w": 134,
+"h": 132,
+"x": 800,
+"y": 300,
+"node": "10:37"
+},
+{
+"scene": "p8-titen",
+"name": "card-c",
+"file": "export/layers/p8-titen/card-c.png",
+"w": 363,
+"h": 225,
+"x": 1047,
+"y": 300,
+"node": "10:38"
+},
+{
+"scene": "p8-titen",
+"name": "icon-angry",
+"file": "export/layers/p8-titen/icon-angry.png",
+"w": 173,
+"h": 114,
+"x": 1142,
+"y": 318,
+"node": "10:39"
+},
+{
+"scene": "p8-titen",
+"name": "tip-panel",
+"file": "export/layers/p8-titen/tip-panel.png",
+"w": 973,
+"h": 244,
+"x": 380,
+"y": 525,
+"node": "10:40"
+},
+{
+"scene": "p8-titen",
+"name": "leaf-3",
+"file": "export/layers/p8-titen/leaf-3.png",
+"w": 58,
+"h": 76,
+"x": 400,
+"y": 543,
+"node": "10:41"
+},
+{
+"scene": "p8-titen",
+"name": "tip-header",
+"file": "export/layers/p8-titen/tip-header.png",
+"w": 363,
+"h": 76,
+"x": 457,
+"y": 543,
+"node": "10:42"
+},
+{
+"scene": "p8-titen",
+"name": "sparkles",
+"file": "export/layers/p8-titen/sparkles.png",
+"w": 39,
+"h": 57,
+"x": 819,
+"y": 543,
+"node": "10:43"
+},
+{
+"scene": "p8-titen",
+"name": "asta-wave",
+"file": "export/layers/p8-titen/asta-wave.png",
+"w": 362,
+"h": 525,
+"x": 19,
+"y": 375,
+"node": "10:44"
+},
+{
+"scene": "p8-titen",
+"name": "button-green-round",
+"file": "export/layers/p8-titen/button-green-round.png",
+"w": 172,
+"h": 169,
+"x": 1333,
+"y": 656,
+"node": "10:45"
+},
+{
+"scene": "p8-titen",
+"name": "icon-arrow",
+"file": "export/layers/p8-titen/icon-arrow.png",
+"w": 96,
+"h": 95,
+"x": 1371,
+"y": 693,
+"node": "10:46"
+},
+{
+"scene": "p8-titen",
+"name": "bg-portrait",
+"file": "export/backgrounds/p8-titen-portrait.png",
+"w": 900,
+"h": 1600,
+"x": 0,
+"y": 0,
+"node": "10:47"
+}
+]

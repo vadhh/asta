@@ -1,0 +1,162 @@
+[
+ {
+  "file": "00.png",
+  "x": 38,
+  "y": 18,
+  "w": 572,
+  "h": 114,
+  "name": "title-plank"
+ },
+ {
+  "file": "01.png",
+  "x": 95,
+  "y": 150,
+  "w": 515,
+  "h": 713,
+  "name": "asta-full"
+ },
+ {
+  "file": "02.png",
+  "x": 400,
+  "y": 150,
+  "w": 267,
+  "h": 150,
+  "name": "speech-bubble"
+ },
+ {
+  "file": "03.png",
+  "x": 685,
+  "y": 75,
+  "w": 800,
+  "h": 714,
+  "name": "board"
+ },
+ {
+  "file": "04.png",
+  "x": 742,
+  "y": 93,
+  "w": 706,
+  "h": 114,
+  "name": "board-header"
+ },
+ {
+  "file": "05.png",
+  "x": 723,
+  "y": 187,
+  "w": 192,
+  "h": 188,
+  "name": "card-senang"
+ },
+ {
+  "file": "06.png",
+  "x": 895,
+  "y": 187,
+  "w": 210,
+  "h": 207,
+  "name": "card-sedih-selected"
+ },
+ {
+  "file": "07.png",
+  "x": 1085,
+  "y": 187,
+  "w": 192,
+  "h": 188,
+  "name": "card-marah"
+ },
+ {
+  "file": "08.png",
+  "x": 1276,
+  "y": 187,
+  "w": 172,
+  "h": 188,
+  "name": "card-takut"
+ },
+ {
+  "file": "09.png",
+  "x": 723,
+  "y": 375,
+  "w": 192,
+  "h": 188,
+  "name": "card-cemas"
+ },
+ {
+  "file": "10.png",
+  "x": 914,
+  "y": 375,
+  "w": 191,
+  "h": 188,
+  "name": "card-bingung"
+ },
+ {
+  "file": "11.png",
+  "x": 1085,
+  "y": 375,
+  "w": 192,
+  "h": 188,
+  "name": "card-kesepian"
+ },
+ {
+  "file": "12.png",
+  "x": 1276,
+  "y": 375,
+  "w": 172,
+  "h": 188,
+  "name": "card-lelah"
+ },
+ {
+  "file": "13.png",
+  "x": 704,
+  "y": 562,
+  "w": 763,
+  "h": 207,
+  "name": "tip-panel"
+ },
+ {
+  "file": "14.png",
+  "x": 876,
+  "y": 581,
+  "w": 439,
+  "h": 57,
+  "name": "tip-header"
+ },
+ {
+  "file": "15.png",
+  "x": 761,
+  "y": 600,
+  "w": 135,
+  "h": 150,
+  "name": "asta-head-badge"
+ },
+ {
+  "file": "16.png",
+  "x": 1238,
+  "y": 768,
+  "w": 248,
+  "h": 95,
+  "name": "button-green"
+ },
+ {
+  "file": "17.png",
+  "x": 1390,
+  "y": 787,
+  "w": 58,
+  "h": 57,
+  "name": "icon-arrow-white"
+ },
+ {
+  "file": "18.png",
+  "x": 0,
+  "y": 618,
+  "w": 267,
+  "h": 282,
+  "name": "plant-desk-left"
+ },
+ {
+  "file": "19.png",
+  "x": 1466,
+  "y": 637,
+  "w": 134,
+  "h": 263,
+  "name": "plant-right"
+ }
+]

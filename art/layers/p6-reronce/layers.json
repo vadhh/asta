@@ -1,0 +1,170 @@
+[
+ {
+  "file": "00.png",
+  "x": 95,
+  "y": 37,
+  "w": 1429,
+  "h": 788,
+  "name": "panel"
+ },
+ {
+  "file": "01.png",
+  "x": 533,
+  "y": 18,
+  "w": 534,
+  "h": 151,
+  "name": "title-plank"
+ },
+ {
+  "file": "02.png",
+  "x": 209,
+  "y": 18,
+  "w": 134,
+  "h": 132,
+  "name": "binder-clip"
+ },
+ {
+  "file": "03.png",
+  "x": 1295,
+  "y": 37,
+  "w": 172,
+  "h": 132,
+  "name": "bookmark-red"
+ },
+ {
+  "file": "04.png",
+  "x": 342,
+  "y": 281,
+  "w": 497,
+  "h": 451,
+  "name": "card-draw"
+ },
+ {
+  "file": "05.png",
+  "x": 419,
+  "y": 300,
+  "w": 362,
+  "h": 282,
+  "name": "drawing"
+ },
+ {
+  "file": "06.png",
+  "x": 361,
+  "y": 393,
+  "w": 78,
+  "h": 114,
+  "name": "crayon-red"
+ },
+ {
+  "file": "07.png",
+  "x": 761,
+  "y": 412,
+  "w": 78,
+  "h": 113,
+  "name": "crayon-blue"
+ },
+ {
+  "file": "08.png",
+  "x": 723,
+  "y": 506,
+  "w": 97,
+  "h": 57,
+  "name": "crayon-yellow"
+ },
+ {
+  "file": "09.png",
+  "x": 361,
+  "y": 487,
+  "w": 78,
+  "h": 95,
+  "name": "sparkles-1"
+ },
+ {
+  "file": "10.png",
+  "x": 476,
+  "y": 543,
+  "w": 305,
+  "h": 76,
+  "name": "label-draw"
+ },
+ {
+  "file": "11.png",
+  "x": 857,
+  "y": 262,
+  "w": 515,
+  "h": 470,
+  "name": "card-tell"
+ },
+ {
+  "file": "12.png",
+  "x": 914,
+  "y": 300,
+  "w": 248,
+  "h": 263,
+  "name": "asta-reading"
+ },
+ {
+  "file": "13.png",
+  "x": 1142,
+  "y": 318,
+  "w": 116,
+  "h": 114,
+  "name": "speech-bubble-dots"
+ },
+ {
+  "file": "14.png",
+  "x": 1180,
+  "y": 412,
+  "w": 97,
+  "h": 113,
+  "name": "sparkles-2"
+ },
+ {
+  "file": "15.png",
+  "x": 914,
+  "y": 543,
+  "w": 363,
+  "h": 76,
+  "name": "label-tell"
+ },
+ {
+  "file": "16.png",
+  "x": 38,
+  "y": 356,
+  "w": 362,
+  "h": 526,
+  "name": "asta-wave"
+ },
+ {
+  "file": "17.png",
+  "x": 1295,
+  "y": 693,
+  "w": 229,
+  "h": 132,
+  "name": "button-next-blue"
+ },
+ {
+  "file": "18.png",
+  "x": 1390,
+  "y": 637,
+  "w": 77,
+  "h": 57,
+  "name": "leaf"
+ },
+ {
+  "file": "19.png",
+  "x": 1390,
+  "y": 168,
+  "w": 39,
+  "h": 39,
+  "name": "star-small"
+ },
+ {
+  "file": "20.png",
+  "x": 304,
+  "y": 750,
+  "w": 135,
+  "h": 57,
+  "name": "tape-blue"
+ }
+]

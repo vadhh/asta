@@ -1,0 +1,58 @@
+[
+ {
+  "file": "00.png",
+  "x": 76,
+  "y": 243,
+  "w": 534,
+  "h": 657,
+  "name": "asta-wave"
+ },
+ {
+  "file": "01.png",
+  "x": 457,
+  "y": 150,
+  "w": 534,
+  "h": 282,
+  "name": "speech-bubble"
+ },
+ {
+  "file": "02.png",
+  "x": 990,
+  "y": 281,
+  "w": 553,
+  "h": 376,
+  "name": "info-card"
+ },
+ {
+  "file": "03.png",
+  "x": 1028,
+  "y": 281,
+  "w": 287,
+  "h": 94,
+  "name": "info-label"
+ },
+ {
+  "file": "04.png",
+  "x": 1047,
+  "y": 300,
+  "w": 77,
+  "h": 57,
+  "name": "icon-bulb"
+ },
+ {
+  "file": "05.png",
+  "x": 1390,
+  "y": 712,
+  "w": 153,
+  "h": 132,
+  "name": "button-next-blue"
+ },
+ {
+  "file": "06.png",
+  "x": 1523,
+  "y": 731,
+  "w": 58,
+  "h": 94,
+  "name": "sparkles"
+ }
+]

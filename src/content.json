@@ -1,0 +1,356 @@
+{
+  "_note": "All on-screen copy. Items with \"draft\": true were written for the web build (not in the Canva deck) and need review by the team before release.",
+  "home": {
+    "title": "ASTA",
+    "tagline": "Mengulurkan Tangan, Menumbuhkan Harapan",
+    "start": "Mulai"
+  },
+  "greeting": {
+    "speech": "Hai, bagaimana kabarmu hari ini?",
+    "infoLabel": "Info Penting",
+    "info": "Hai, aku disini menjadi teman nyaman dan amanmu. Ceritakan semampumu dan semaumu, aku akan setia mendengarkan kamu."
+  },
+  "emotion": {
+    "title": "EMOTIONAL CHECK",
+    "question": "Apa yang sedang kamu rasakan?",
+    "speech": "Aku di sini untuk mendengarkanmu.",
+    "next": "Lanjut",
+    "empty": {
+      "draft": true,
+      "title": "Pilih satu perasaan, ya",
+      "text": "Tidak ada jawaban yang salah. Semua perasaan boleh dirasakan."
+    },
+    "items": [
+      {
+        "id": "senang",
+        "label": "Senang",
+        "draft": true,
+        "title": "Asyik, kamu merasa senang!",
+        "text": "Senang adalah perasaan yang menyenangkan. Kamu boleh membagikan kebahagiaanmu bersama teman."
+      },
+      {
+        "id": "sedih",
+        "label": "Sedih",
+        "title": "Tidak apa-apa merasa sedih",
+        "text": "Sedih adalah perasaan yang wajar. Kamu boleh menangis, bercerita, atau beristirahat ketika membutuhkannya."
+      },
+      {
+        "id": "marah",
+        "label": "Marah",
+        "draft": true,
+        "title": "Tidak apa-apa merasa marah",
+        "text": "Marah boleh dirasakan. Coba tarik napas pelan-pelan, lalu ceritakan perasaanmu tanpa menyakiti siapa pun."
+      },
+      {
+        "id": "takut",
+        "label": "Takut",
+        "draft": true,
+        "title": "Tidak apa-apa merasa takut",
+        "text": "Kamu tidak harus menghadapinya sendirian. Kamu boleh meminta bantuan orang dewasa yang kamu percaya."
+      },
+      {
+        "id": "cemas",
+        "label": "Cemas",
+        "draft": true,
+        "title": "Tidak apa-apa merasa cemas",
+        "text": "Coba tarik napas perlahan dan hembuskan pelan-pelan. Kita bisa berlatih bersama di Pulau Tataati."
+      },
+      {
+        "id": "bingung",
+        "label": "Bingung",
+        "draft": true,
+        "title": "Tidak apa-apa merasa bingung",
+        "text": "Bingung itu wajar. Kamu boleh bertanya dan mencari jawabannya pelan-pelan bersama orang lain."
+      },
+      {
+        "id": "kesepian",
+        "label": "Kesepian",
+        "draft": true,
+        "title": "Tidak apa-apa merasa kesepian",
+        "text": "Kamu tidak sendirian, aku ada di sini menemanimu. Coba sapa teman atau keluarga yang kamu sayangi, ya."
+      },
+      {
+        "id": "lelah",
+        "label": "Lelah",
+        "draft": true,
+        "title": "Tidak apa-apa merasa lelah",
+        "text": "Tubuh dan pikiranmu butuh istirahat. Kamu boleh berhenti sejenak, minum air, atau tidur sebentar."
+      }
+    ]
+  },
+  "map": {
+    "speech": "Yuk, jelajahi setiap posnya!",
+    "speechProgress": {
+      "draft": true,
+      "text": "Hebat! Ayo ke pulau berikutnya!"
+    },
+    "islands": {
+      "reronce": {
+        "name": "RERONCE",
+        "sub": "Aksi menggambar dan bercerita"
+      },
+      "titen": {
+        "name": "TITEN",
+        "sub": "Kuis dan edukasi"
+      },
+      "tataati": {
+        "name": "TATAATI",
+        "sub": "Menata hati dengan pernapasan"
+      },
+      "srawung": {
+        "name": "SRAWUNG",
+        "sub": "Membangun kepedulian melalui permainan"
+      }
+    }
+  },
+  "tataati": {
+    "title": "TATAATI",
+    "sub": "Menata hati dengan pernapasan",
+    "photo": [
+      "Tarik...",
+      "Tahan...",
+      "Hembuskan..."
+    ],
+    "whatTitle": "Apa itu Tataati?",
+    "what": "Tataati adalah kegiatan menata hati melalui pernapasan. Saat kita merasa lelah, cemas, atau marah, kita bisa berhenti sejenak, menarik napas dengan tenang, dan menghembuskannya perlahan. Ini membantu tubuh dan pikiran menjadi lebih rileks.",
+    "exerciseTitle": {
+      "draft": true,
+      "text": "Ayo bernapas bersama"
+    },
+    "phases": [
+      {
+        "id": "in",
+        "label": "Tarik napas...",
+        "seconds": 4
+      },
+      {
+        "id": "hold",
+        "label": "Tahan...",
+        "seconds": 2
+      },
+      {
+        "id": "out",
+        "label": "Hembuskan perlahan...",
+        "seconds": 5
+      }
+    ],
+    "rounds": 3,
+    "round": {
+      "draft": true,
+      "text": "Putaran {n} dari {total}"
+    },
+    "rememberTitle": "Ingat ya!",
+    "remember": "Pernapasan yang tenang dapat membantu kita merasa lebih baik dan siap menghadapi aktivitas berikutnya.",
+    "doneText": {
+      "draft": true,
+      "text": "Hebat! Kamu sudah bernapas dengan tenang. Bagaimana perasaanmu sekarang?"
+    }
+  },
+  "reronce": {
+    "title": "RERONCE",
+    "sub": "Aksi menggambar dan bercerita",
+    "prompt": "Yuk, pilih cara kamu untuk mengekspresikan cerita dan perasaanmu!",
+    "draw": {
+      "label": "Gambar",
+      "desc": "Ekspresikan perasaanmu melalui gambar."
+    },
+    "tell": {
+      "label": "Bercerita",
+      "desc": "Ceritakan apa yang kamu rasakan dengan kata-kata."
+    },
+    "drawing": {
+      "draft": true,
+      "hint": "Gambarlah apa yang kamu rasakan hari ini",
+      "clear": "Hapus",
+      "save": "Simpan",
+      "done": "Selesai"
+    },
+    "telling": {
+      "draft": true,
+      "hint": "Ceritakan apa yang kamu rasakan hari ini...",
+      "privacy": "Ceritamu tidak disimpan dan tidak dikirim ke mana pun.",
+      "done": "Selesai"
+    }
+  },
+  "srawung": {
+    "title": "SRAWUNG",
+    "sub": "Membangun kepedulian melalui permainan",
+    "speech": {
+      "draft": true,
+      "text": "Cocokkan hewan dengan perasaannya!"
+    },
+    "aksi": "AKSI",
+    "next": "Lanjut",
+    "pairs": [
+      {
+        "animal": "burung",
+        "animalName": "Burung",
+        "emotion": "senang",
+        "emotionName": "Senang",
+        "summary": "Senang adalah perasaan yang menyenangkan. Kita boleh membagikan kebahagiaan bersama teman.",
+        "aksi": [
+          "Ikut merayakan kebahagiaan teman.",
+          "Berikan pujian yang tulus.",
+          "Ajak teman bermain bersama.",
+          "Dengarkan ceritanya dengan antusias.",
+          "Jangan mengejek atau membandingkan pencapaiannya."
+        ]
+      },
+      {
+        "animal": "gajah",
+        "animalName": "Gajah",
+        "emotion": "sedih",
+        "emotionName": "Sedih",
+        "summary": "Sedih adalah perasaan yang wajar. Kamu boleh menangis, bercerita, atau beristirahat ketika membutuhkannya.",
+        "aksi": [
+          "Dengarkan tanpa menghakimi.",
+          "Tanyakan, \"Kamu ingin ditemani?\"",
+          "Jangan memaksa teman bercerita.",
+          "Ajak orang dewasa tepercaya jika teman membutuhkan bantuan."
+        ]
+      },
+      {
+        "animal": "kuda",
+        "animalName": "Kuda",
+        "emotion": "bingung",
+        "emotionName": "Bingung",
+        "summary": "Rasa bingung dan takut dapat muncul saat kita merasa tidak aman. Kita boleh meminta bantuan dan tidak harus menghadapi semuanya sendirian.",
+        "aksi": [
+          "Dengarkan apa yang membuat teman bingung.",
+          "Jelaskan sesuatu dengan sabar.",
+          "Tawarkan bantuan jika ia kesulitan.",
+          "Ajak mencari jawaban bersama.",
+          "Jangan mengejek teman yang belum memahami sesuatu."
+        ]
+      },
+      {
+        "animal": "ikan",
+        "animalName": "Ikan",
+        "emotion": "marah",
+        "emotionName": "Marah",
+        "summary": "Marah adalah perasaan yang boleh dirasakan. Kita bisa belajar menyampaikan kemarahan tanpa menyakiti diri sendiri atau orang lain.",
+        "aksi": [
+          "Beri teman waktu untuk menenangkan diri.",
+          "Jangan membalas dengan ejekan atau teriakan.",
+          "Dengarkan ketika ia siap bercerita.",
+          "Tanyakan apa yang bisa kamu bantu.",
+          "Ajak mencari solusi tanpa menyakiti siapa pun."
+        ]
+      }
+    ]
+  },
+  "titen": {
+    "title": "TITEN",
+    "sub": "KUIS & EDUKASI",
+    "tipTitle": "Yuk, pahami bersama!",
+    "pick": {
+      "draft": true,
+      "text": "Pilih jawaban yang menurutmu paling tepat."
+    },
+    "questions": [
+      {
+        "q": "Saat merasa cemas, apa yang bisa kamu lakukan untuk membantu dirimu lebih tenang?",
+        "options": [
+          {
+            "text": "Menarik napas perlahan",
+            "icon": "icon-calm-cloud",
+            "correct": true
+          },
+          {
+            "text": "Memendam semua perasaan",
+            "icon": "icon-storm-cloud",
+            "draft": true,
+            "feedback": "Memendam perasaan bisa membuat hati makin berat. Coba pilih lagi, ya."
+          },
+          {
+            "text": "Memarahi diri sendiri",
+            "icon": "icon-angry",
+            "draft": true,
+            "feedback": "Kamu pantas diperlakukan dengan lembut, termasuk oleh dirimu sendiri. Coba lagi, ya."
+          }
+        ],
+        "explain": "Menarik napas perlahan dapat membantu tubuh lebih rileks. Coba tarik napas dengan lembut, lalu embuskan pelan-pelan. Kamu tidak harus langsung merasa tenang—beri dirimu waktu."
+      },
+      {
+        "draft": true,
+        "q": "Temanmu terlihat sedih dan diam saja. Apa yang bisa kamu lakukan?",
+        "options": [
+          {
+            "text": "Menertawakannya",
+            "feedback": "Ditertawakan bisa membuat temanmu makin sedih. Coba pilih lagi, ya."
+          },
+          {
+            "text": "Bertanya, \"Kamu ingin ditemani?\"",
+            "correct": true
+          },
+          {
+            "text": "Memaksanya bercerita",
+            "feedback": "Temanmu butuh waktu. Biarkan ia bercerita saat ia siap. Coba lagi, ya."
+          }
+        ],
+        "explain": "Menemani dan mendengarkan tanpa menghakimi membuat temanmu merasa aman. Biarkan ia bercerita saat ia siap."
+      },
+      {
+        "draft": true,
+        "q": "Saat kamu merasa sangat marah, apa yang sebaiknya kamu lakukan?",
+        "options": [
+          {
+            "text": "Membanting barang",
+            "feedback": "Membanting barang bisa menyakiti dirimu atau orang lain. Coba pilih lagi, ya."
+          },
+          {
+            "text": "Berteriak pada teman",
+            "feedback": "Berteriak bisa membuat temanmu sedih atau takut. Coba lagi, ya."
+          },
+          {
+            "text": "Berhenti sejenak dan menarik napas",
+            "correct": true
+          }
+        ],
+        "explain": "Marah itu boleh. Berhenti sejenak membantumu tenang, lalu kamu bisa menyampaikan perasaanmu tanpa menyakiti siapa pun."
+      },
+      {
+        "draft": true,
+        "q": "Kalau kamu merasa takut atau bingung, siapa yang bisa kamu mintai bantuan?",
+        "options": [
+          {
+            "text": "Orang dewasa yang kamu percaya",
+            "correct": true
+          },
+          {
+            "text": "Tidak ada, harus sendiri",
+            "feedback": "Kamu tidak harus menghadapi semuanya sendirian. Coba pilih lagi, ya."
+          },
+          {
+            "text": "Orang asing di internet",
+            "feedback": "Orang asing belum tentu aman. Pilih orang yang kamu kenal dan percaya, ya."
+          }
+        ],
+        "explain": "Kamu tidak harus menghadapi semuanya sendirian. Guru, orang tua, atau keluarga yang kamu percaya siap membantumu."
+      }
+    ]
+  },
+  "complete": {
+    "draft": true,
+    "title": "Hebat!",
+    "back": "Kembali ke Peta",
+    "messages": {
+      "tataati": "Kamu sudah berlatih menata hati dengan pernapasan.",
+      "reronce": "Terima kasih sudah mengekspresikan perasaanmu.",
+      "srawung": "Kamu sudah belajar cara peduli pada perasaan teman.",
+      "titen": "Kamu sudah menyelesaikan semua kuis. Kamu pintar!"
+    }
+  },
+  "ending": {
+    "draft": true,
+    "title": "Hebat!",
+    "tagline": "Kamu sudah menjelajahi semua pulau",
+    "speech": "Terima kasih sudah bermain bersamaku. Semua perasaanmu berharga, dan kamu tidak sendirian!",
+    "button": "Ke Peta"
+  },
+  "hud": {
+    "map": "Kembali ke peta",
+    "mute": "Matikan suara",
+    "unmute": "Nyalakan suara"
+  }
+}

@@ -1,0 +1,90 @@
+[
+ {
+  "file": "00.png",
+  "x": 0,
+  "y": 0,
+  "w": 648,
+  "h": 432,
+  "name": "tree-branch"
+ },
+ {
+  "file": "01.png",
+  "x": 1352,
+  "y": 56,
+  "w": 248,
+  "h": 357,
+  "name": "lantern"
+ },
+ {
+  "file": "02.png",
+  "x": 1409,
+  "y": 393,
+  "w": 191,
+  "h": 432,
+  "name": "signpost"
+ },
+ {
+  "file": "03.png",
+  "x": 857,
+  "y": 693,
+  "w": 629,
+  "h": 170,
+  "name": "fence"
+ },
+ {
+  "file": "04.png",
+  "x": 38,
+  "y": 225,
+  "w": 572,
+  "h": 638,
+  "name": "asta-wave"
+ },
+ {
+  "file": "05.png",
+  "x": 438,
+  "y": 37,
+  "w": 724,
+  "h": 432,
+  "name": "title-sign"
+ },
+ {
+  "file": "06.png",
+  "x": 609,
+  "y": 600,
+  "w": 401,
+  "h": 150,
+  "name": "button-wood"
+ },
+ {
+  "file": "07.png",
+  "x": 704,
+  "y": 618,
+  "w": 77,
+  "h": 95,
+  "name": "icon-play"
+ },
+ {
+  "file": "08.png",
+  "x": 933,
+  "y": 543,
+  "w": 134,
+  "h": 132,
+  "name": "sparkles"
+ },
+ {
+  "file": "09.png",
+  "x": 0,
+  "y": 656,
+  "w": 610,
+  "h": 244,
+  "name": "bush-left"
+ },
+ {
+  "file": "10.png",
+  "x": 1238,
+  "y": 693,
+  "w": 362,
+  "h": 207,
+  "name": "bush-flowers-right"
+ }
+]

@@ -34,7 +34,8 @@ export default function Tataati({ onDone }: { onDone: () => void }) {
   const header = { ...hp, x: hp.x - 50, w: hp.w + 100 } // widened (9-slice) so its label isn't squeezed by the leaf ends
   // Tarik / Tahan / Hembuskan sit between Asta and the photo's right edge.
   const photo = L('photo-breathing'), asta = L('asta-breathing')
-  const photoLabels = { x: asta.x + asta.w - 40, y: asta.y + 30, w: photo.x + photo.w - 30 - (asta.x + asta.w - 40), h: 200 }
+  const labelsX = asta.x + asta.w - 10 // right of the photo's Asta, so the labels never cover her
+  const photoLabels = { x: labelsX, y: asta.y + 30, w: photo.x + photo.w - 50 - labelsX, h: 200 }
   const body = inset(page, [L('header-plank').h + 30, 40, 40, 40])
   // Ingat ya! card (done step): the exported one is too small for its text, so it's drawn 9-slice, taller.
   const tc = L('tip-card')
@@ -69,9 +70,10 @@ export default function Tataati({ onDone }: { onDone: () => void }) {
       />
       <Img r={L('wind-swoosh')} animate={{ x: [0, 14, 0], opacity: [0.6, 1, 0.6] }} transition={{ duration: 2.5, repeat: Infinity }} />
       {step === 'intro' && (
-        <Box r={photoLabels} className="col t-photo">
+        <Box r={photoLabels} className="col t-photo nowrap" fit>
           {T.photo.map((t, i) => (
-            <motion.span key={t} initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.6 + i * 0.5 }} style={{ marginLeft: i * 14 }}>
+            // stepped diagonal like the design, kept inside the box: start, centre, end
+            <motion.span key={t} initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.6 + i * 0.5 }} style={{ alignSelf: ['flex-start', 'center', 'flex-end'][i] }}>
               {t}
             </motion.span>
           ))}
@@ -96,7 +98,7 @@ export default function Tataati({ onDone }: { onDone: () => void }) {
             </Box>
           )}
           {step === 'breathe' && (
-            <Box r={inset(body, [0, 0, L('tip-card').h - 20, 0])} className="center col">
+            <Box r={body} className="center col">
               <motion.div key={tick} className="t-breath" initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }}>
                 {phase.label}
               </motion.div>
@@ -113,7 +115,8 @@ export default function Tataati({ onDone }: { onDone: () => void }) {
         <>
           <Panel r={tip} src={L('tip-card').src} slice={40} {...pop(0.1)} />
           <Img r={{ ...L('leaf-1'), x: tip.x + 19, y: tip.y }} />
-          <Img r={{ ...L('cloud-calm'), x: tip.x + tip.w - L('cloud-calm').w - 20, y: tip.y + 6 }} {...float(0, 6, 2.5)} />
+          {/* cloud peeks over the card's top edge beside the title, clear of the body text */}
+          <Img r={{ ...L('cloud-calm'), x: tip.x + tip.w - L('cloud-calm').w - 20, y: tip.y - 24 }} {...float(0, 6, 2.5)} />
           <Box r={inset(tip, [16, 200, tip.h - 82, 80])} className="center-y t-chip-dark nowrap" fit {...pop(0.3)}>
             {T.rememberTitle}
           </Box>

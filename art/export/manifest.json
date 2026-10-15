@@ -402,31 +402,31 @@
      "src": "layers/p3-emotion/card-senang.png",
      "x": 723,
      "y": 187,
-     "w": 192,
+     "w": 181,
      "h": 188
     },
     {
      "layer": "card-sedih-selected",
      "src": "layers/p3-emotion/card-sedih-selected.png",
-     "x": 895,
+     "x": 904,
      "y": 187,
-     "w": 210,
-     "h": 207
+     "w": 181,
+     "h": 188
     },
     {
      "layer": "card-marah",
      "src": "layers/p3-emotion/card-marah.png",
-     "x": 1085,
+     "x": 1086,
      "y": 187,
-     "w": 192,
+     "w": 181,
      "h": 188
     },
     {
      "layer": "card-takut",
      "src": "layers/p3-emotion/card-takut.png",
-     "x": 1276,
+     "x": 1267,
      "y": 187,
-     "w": 172,
+     "w": 181,
      "h": 188
     },
     {
@@ -434,31 +434,31 @@
      "src": "layers/p3-emotion/card-cemas.png",
      "x": 723,
      "y": 375,
-     "w": 192,
+     "w": 181,
      "h": 188
     },
     {
      "layer": "card-bingung",
      "src": "layers/p3-emotion/card-bingung.png",
-     "x": 914,
+     "x": 904,
      "y": 375,
-     "w": 191,
+     "w": 181,
      "h": 188
     },
     {
      "layer": "card-kesepian",
      "src": "layers/p3-emotion/card-kesepian.png",
-     "x": 1085,
+     "x": 1086,
      "y": 375,
-     "w": 192,
+     "w": 181,
      "h": 188
     },
     {
      "layer": "card-lelah",
      "src": "layers/p3-emotion/card-lelah.png",
-     "x": 1276,
+     "x": 1267,
      "y": 375,
-     "w": 172,
+     "w": 181,
      "h": 188
     },
     {
@@ -572,31 +572,31 @@
      "src": "layers/p3-emotion/card-senang.png",
      "x": 88,
      "y": 302,
-     "w": 192,
+     "w": 181,
      "h": 188
     },
     {
      "layer": "card-sedih-selected",
      "src": "layers/p3-emotion/card-sedih-selected.png",
-     "x": 260,
+     "x": 269,
      "y": 302,
-     "w": 210,
-     "h": 207
+     "w": 181,
+     "h": 188
     },
     {
      "layer": "card-marah",
      "src": "layers/p3-emotion/card-marah.png",
      "x": 450,
      "y": 302,
-     "w": 192,
+     "w": 181,
      "h": 188
     },
     {
      "layer": "card-takut",
      "src": "layers/p3-emotion/card-takut.png",
-     "x": 641,
+     "x": 632,
      "y": 302,
-     "w": 172,
+     "w": 181,
      "h": 188
     },
     {
@@ -604,15 +604,15 @@
      "src": "layers/p3-emotion/card-cemas.png",
      "x": 88,
      "y": 490,
-     "w": 192,
+     "w": 181,
      "h": 188
     },
     {
      "layer": "card-bingung",
      "src": "layers/p3-emotion/card-bingung.png",
-     "x": 279,
+     "x": 269,
      "y": 490,
-     "w": 191,
+     "w": 181,
      "h": 188
     },
     {
@@ -620,15 +620,15 @@
      "src": "layers/p3-emotion/card-kesepian.png",
      "x": 450,
      "y": 490,
-     "w": 192,
+     "w": 181,
      "h": 188
     },
     {
      "layer": "card-lelah",
      "src": "layers/p3-emotion/card-lelah.png",
-     "x": 641,
+     "x": 632,
      "y": 490,
-     "w": 172,
+     "w": 181,
      "h": 188
     },
     {
@@ -870,10 +870,10 @@
     {
      "layer": "speech-bubble",
      "src": "layers/p4-map/speech-bubble.png",
-     "x": 1161,
-     "y": 600,
-     "w": 211,
-     "h": 150
+     "x": 1180,
+     "y": 392,
+     "w": 295,
+     "h": 210
     },
     {
      "layer": "asta-peek",
@@ -1008,8 +1008,8 @@
     {
      "layer": "whale",
      "src": "layers/p4-map/whale.png",
-     "x": 80,
-     "y": 1150,
+     "x": 650,
+     "y": 1335,
      "w": 153,
      "h": 95
     },
@@ -1032,7 +1032,7 @@
     {
      "layer": "asta-peek",
      "src": "layers/p4-map/asta-peek.png",
-     "x": 595,
+     "x": 40,
      "y": 1281,
      "w": 305,
      "h": 319
@@ -1040,10 +1040,10 @@
     {
      "layer": "speech-bubble",
      "src": "layers/p4-map/speech-bubble.png",
-     "x": 380,
-     "y": 1380,
-     "w": 211,
-     "h": 150
+     "x": 0,
+     "y": 1062,
+     "w": 316,
+     "h": 225
     }
    ]
   },

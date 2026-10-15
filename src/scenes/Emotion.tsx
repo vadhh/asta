@@ -9,17 +9,18 @@ export default function Emotion({ onNext }: { onNext: () => void }) {
   const o = useOrient()
   const [picked, setPicked] = useState<string | null>(null)
   const item = C.emotion.items.find((e) => e.id === picked) ?? C.emotion.empty
-  // Only "sedih" was exported in its selected look, so tiles are drawn in CSS on the card grid.
-  const tileRect = (id: string) =>
-    id === 'sedih' ? { ...L('card-bingung'), y: L('card-senang').y, h: L('card-senang').h } : L(`card-${id}`)
-  const next = [L('button-green'), L('icon-arrow-white')]
+  // Tiles are drawn in CSS on the exported card grid (only "sedih" was exported in its selected look).
+  const tileRect = (id: string) => L(id === 'sedih' ? 'card-sedih-selected' : `card-${id}`)
+  // Landscape: the tip panel grows downward (9-slice) for readable text, so the Lanjut button moves down with it.
+  const next = [L('button-green'), L('icon-arrow-white')].map((l) => pick(o, l, { ...l, y: l.y + 30 }))
   // Portrait: the exported board leaves a tall empty strip under the tiles and the tip panel is too
   // small for the response text, so shorten the board and grow the tip panel (9-slice, no stretching).
   const board = pick<Rect>(o, { ...L('board'), h: 530 }, L('board'))
-  const tip = pick<Rect>(o, { ...L('tip-panel'), y: 735, h: 300 }, L('tip-panel'))
-  const tipHeader = pick<Rect>(o, { x: 150, y: 755, w: 600, h: 60 }, L('tip-header'))
-  const bubble = pick<Rect>(o, { x: 345, y: 1150, w: 360, h: 202 }, L('speech-bubble')) // portrait: uniform 1.35x for legible text
-  const badge = pick<Rect>(o, { ...L('asta-head-badge'), x: 100, y: 830 }, L('asta-head-badge'))
+  const tip = pick<Rect>(o, { ...L('tip-panel'), y: 735, h: 300 }, { ...L('tip-panel'), h: 236 })
+  // Landscape: wider header, smaller badge and bigger bubble so text stays readable on phones held sideways.
+  const tipHeader = pick<Rect>(o, { x: 140, y: 752, w: 620, h: 72 }, { x: 840, y: 572, w: 520, h: 62 })
+  const bubble = pick<Rect>(o, { x: 345, y: 1150, w: 360, h: 202 }, { x: 372, y: 128, w: 334, h: 188 }) // uniform scale-up for legible text
+  const badge = pick<Rect>(o, { ...L('asta-head-badge'), x: 100, y: 830 }, { ...L('asta-head-badge'), y: L('asta-head-badge').y + 18 })
   return (
     <>
       <Img r={L('plant-desk-left')} />
@@ -56,13 +57,13 @@ export default function Emotion({ onNext }: { onNext: () => void }) {
       })}
       <Panel r={tip} src={L('tip-panel').src} slice={48} />
       <Panel r={tipHeader} src={L('tip-header').src} slice={28} />
-      <Img r={{ ...badge, src: L('asta-head-badge').src }} animate={{ rotate: picked ? [0, -8, 8, 0] : 0 }} key={picked} />
+      <Img r={{ ...badge, src: L('asta-head-badge').src }} animate={{ rotate: picked ? [0, -8, 8, 0] : 0 }} key={`badge-${picked}`} />
       <motion.div key={picked ?? 'none'} className="layer fill" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} aria-live="polite">
-        <Box r={inset(tipHeader, [6, 28, 12, 28])} className="center t-chip nowrap" fit>
+        <Box r={inset(tipHeader, [4, 28, 10, 28])} className="center t-chip nowrap" fit>
           {item.title}
         </Box>
         <Box
-          r={inset(tip, [tipHeader.y + tipHeader.h - tip.y + 16, 40, 26, badge.x + badge.w - tip.x + 24])}
+          r={inset(tip, [tipHeader.y + tipHeader.h - tip.y + pick(o, 16, 10), pick(o, 40, 62), pick(o, 26, 30), badge.x + badge.w - tip.x + pick(o, 24, 16)])}
           className="center-y t-body"
           fit
         >
@@ -75,7 +76,7 @@ export default function Emotion({ onNext }: { onNext: () => void }) {
         {C.emotion.speech}
       </Box>
       <Btn layers={next} label={C.emotion.next} disabled={!picked} onClick={() => (sfx('tap'), onNext())} className={picked ? 'pulse' : 'dim'}>
-        <Box r={inset(rel(L('button-green'), union(next)), [10, 80, 22, 24])} className="center t-button t-button-sm" fit>
+        <Box r={inset(rel(next[0], union(next)), [10, 80, 22, 24])} className="center t-button t-button-sm" fit>
           {C.emotion.next}
         </Box>
       </Btn>

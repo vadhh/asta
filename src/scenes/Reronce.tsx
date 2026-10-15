@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion } from 'motion/react'
-import { Img, Box, Btn, useArt, useOrient, inset, rel, union, box, pick, float, pop, artSrc, type Rect } from '../stage'
+import { Img, Box, Btn, useArt, useOrient, inset, rel, union, box, pick, float, pop, artSrc, type Rect, scaledPlank } from '../stage'
 import { sfx, buzz } from '../audio'
 import C from '../content.json'
 
@@ -19,12 +19,16 @@ const PAPER = '#fffaf0'
 export default function Reronce({ onDone }: { onDone: () => void }) {
   const L = useArt('p6-reronce')
   const o = useOrient()
+  // Portrait gets a bigger plank: the frame is narrow, so its subtitle would otherwise be tiny on phones.
+  const tp = L('title-plank')
+  const P = scaledPlank(tp, pick(o, 1.45, 1.27))
+  const plank = P.plank
   const [step, setStep] = useState<Step>('choose')
   const [mode, setMode] = useState<'draw' | 'tell' | null>(null)
   const drawCard = ['card-draw', 'drawing', 'crayon-red', 'crayon-blue', 'crayon-yellow', 'sparkles-1', 'label-draw'].map(L)
   const tellCard = ['card-tell', 'asta-reading', 'speech-bubble-dots', 'sparkles-2', 'label-tell'].map(L)
   const desc = (card: Rect, label: Rect): Rect => inset(card, [label.y + label.h - card.y + 4, 50, 24, 50])
-  const paper = pick<Rect>(o, { x: 50, y: 210, w: 800, h: 990 }, { x: 400, y: 180, w: 760, h: 630 })
+  const paper = pick<Rect>(o, { x: 50, y: 240, w: 800, h: 960 }, { x: 400, y: 180, w: 700, h: 630 })
 
   const choose = (m: 'draw' | 'tell') => {
     sfx('emotion-select')
@@ -41,14 +45,14 @@ export default function Reronce({ onDone }: { onDone: () => void }) {
           <Img r={L('tape-blue')} />
         </>
       )}
-      <Img r={L('title-plank')} {...pop(0)} />
+      <Img r={{ ...plank, src: tp.src }} bleed={false} {...pop(0)} />
       <Img r={L('binder-clip')} />
       <Img r={L('bookmark-red')} />
-      <Box r={inset(L('title-plank'), [30, 60, 62, 60])} className="center t-plank-dark nowrap" fit>
+      <Box r={P.title} className="center t-plank-dark nowrap" fit>
         {R.title}
       </Box>
-      <Box r={inset(L('title-plank'), [88, 90, 26, 90])} className="center t-plank-sub" fit>
-        {step === 'draw' ? R.drawing.hint : R.sub}
+      <Box r={P.sub} className="center t-plank-sub nowrap" fit>
+        {R.sub}
       </Box>
 
       {step === 'choose' && (
@@ -146,7 +150,7 @@ function DrawPad({ paper, onDone }: { paper: Rect; onDone: () => void }) {
 
   const swatch = (i: number): Rect =>
     pick(o, { x: 60 + i * 132, y: 1215, w: 112, h: 100 }, { x: paper.x + paper.w + 25, y: paper.y + 10 + i * 102, w: 92, h: 92 })
-  const actions = pick<Rect>(o, { x: 250, y: 1340, w: 620, h: 110 }, { x: paper.x + paper.w + 140, y: paper.y + 220, w: 260, h: 400 })
+  const actions = pick<Rect>(o, { x: 250, y: 1340, w: 620, h: 110 }, { x: paper.x + paper.w + 132, y: paper.y + 220, w: 215, h: 400 })
 
   return (
     <>
@@ -168,6 +172,11 @@ function DrawPad({ paper, onDone }: { paper: Rect; onDone: () => void }) {
           onPointerCancel={() => (last.current = null)}
         />
       </Box>
+      {!drew && (
+        <Box r={inset(paper, [40, 40, 40, 40])} className="center t-hint" style={{ pointerEvents: 'none' }}>
+          {C.reronce.drawing.hint}
+        </Box>
+      )}
       {COLORS.map((c, i) => (
         <motion.button
           key={c.c}

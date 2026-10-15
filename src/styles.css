@@ -76,10 +76,11 @@ button:focus-visible { outline: 6px solid #ffd54a; outline-offset: 4px; border-r
 .t-heading { font-size: 44px; font-weight: 800; color: var(--brown); line-height: 1.15; }
 .t-chip { font-size: 36px; font-weight: 700; -webkit-text-stroke: 5px var(--brown); }
 .t-chip-dark { font-size: 36px; font-weight: 800; color: var(--brown); }
-.t-sign { font-size: 42px; font-weight: 800; color: var(--brown); line-height: 1; }
-.t-sign-sub { display: block; font-size: 0.62em; font-weight: 600; color: #6b4a2b; line-height: 1.05; }
+.t-sign { font-size: 34px; font-weight: 800; color: var(--brown); line-height: 1; }
+.t-sign-sub { display: block; font-size: 0.74em; font-weight: 600; color: #6b4a2b; line-height: 1.05; }
 .t-label-light { font-size: 40px; font-weight: 800; -webkit-text-stroke: 7px var(--brown); }
-.t-photo { font-size: 30px; font-weight: 700; color: var(--ink); gap: 20px; transform: rotate(-6deg); overflow: visible; }
+.t-photo { font-size: 30px; font-weight: 700; color: var(--ink); transform: rotate(-6deg); }
+.t-photo .fit-inner { display: flex; flex-direction: column; gap: 0.6em; }
 .t-breath { font-size: 66px; font-weight: 800; color: #2e7d4f; line-height: 1.1; margin-bottom: 18px; }
 .t-question { font-size: 44px; font-weight: 800; color: var(--brown); line-height: 1.2; }
 .t-option { font-size: 32px; font-weight: 700; color: var(--brown); line-height: 1.15; }
@@ -170,7 +171,7 @@ textarea.tell {
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
   box-shadow: 0 8px 0 rgba(30, 90, 140, 0.35);
 }
-.face.back { background: radial-gradient(circle, #8fd3fb 0 35%, var(--sky) 36%); }
+.face.back { background: radial-gradient(circle, #8fd3fb 0 35%, var(--sky) 36%); box-shadow: inset 0 0 0 7px rgba(255, 255, 255, 0.55), 0 8px 0 rgba(30, 90, 140, 0.35); }
 .face.back img { width: 52%; max-height: 70%; object-fit: contain; }
 .face.front { transform: rotateY(180deg); }
 .face .photo, .tip-top .photo {
@@ -192,7 +193,7 @@ textarea.tell {
 .aksi { margin: 0; }
 .aksi-list { margin: 0; padding-left: 40px; }
 .aksi-list li { margin: 4px 0; }
-.tip-card .pill { margin-top: auto; align-self: center; min-width: 320px; }
+.tip-card .pill { margin-top: 10px; align-self: center; min-width: 320px; }
 
 /* Titen */
 .option { background: none; border: 0; padding: 0; }
@@ -257,3 +258,11 @@ textarea.tell {
 .t-logo-box .t-tagline { font-size: 0.235em; margin-top: 0.45em; }
 /* Short multi-line labels: even line lengths instead of a lone last word. */
 .t-tagline, .t-speech, .t-question, .t-small, .t-heading, .t-sign, .t-chip, .t-breath-done, .center.t-body { text-wrap: balance; }
+
+/* Play button: icon + label as one centred group; the icon scales with the fitted label. */
+.play-label .fit-inner { display: flex; align-items: center; gap: 0.12em; }
+.play-label img { height: 1.4em; width: auto; flex: none; margin-top: -0.06em; /* icon art sits a touch low in its file */ }
+.tip-card.landscape { row-gap: 14px; }
+.tip-card.landscape .t-body { font-size: 30px; }
+.tip-card.landscape .pill { justify-self: center; min-width: 320px; margin-top: 0; }
+.t-hint { font-size: 40px; font-weight: 600; color: #c4a98a; text-wrap: balance; }

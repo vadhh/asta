@@ -16,8 +16,9 @@ export const artSrc = (src: string) => asset(`art/${src}`)
 
 const OrientCtx = createContext<Orient>('portrait')
 export const useOrient = () => useContext(OrientCtx)
-// Frame px of screen beyond the stage on each axis (tall phones, wide desktops).
-const BleedCtx = createContext({ x: 0, y: 0 })
+// Frame px of screen beyond the stage on each axis (tall phones, wide desktops), plus `bg`: where the cover-scaled
+// background's frame lands in stage px (stage = bg.x/y + frame * bg.k).
+const BleedCtx = createContext({ x: 0, y: 0, bg: { k: 1, x: 0, y: 0 } })
 
 /** Look up a layer's rect for the current orientation: `const L = useArt('p1-home'); L('asta-wave')`. */
 export function useArt(art: Art) {
@@ -37,9 +38,13 @@ export const pick = <T,>(orient: Orient, portrait: T, landscape: T) => (orient =
 
 export function Viewport({ art, children }: { art: Art; children: ReactNode }) {
   const ref = useRef<HTMLDivElement>(null)
-  const [size, setSize] = useState({ w: window.innerWidth, h: window.innerHeight })
+  // Safe-area box (w, h at offset l, t) inside the full screen (vw, vh) that the background covers.
+  const [size, setSize] = useState({ w: window.innerWidth, h: window.innerHeight, l: 0, t: 0, vw: window.innerWidth, vh: window.innerHeight })
   useLayoutEffect(() => {
-    const ro = new ResizeObserver(([e]) => setSize({ w: e.contentRect.width, h: e.contentRect.height }))
+    const ro = new ResizeObserver(([e]) => {
+      const el = e.target as HTMLElement, vp = el.parentElement!
+      setSize({ w: e.contentRect.width, h: e.contentRect.height, l: el.offsetLeft, t: el.offsetTop, vw: vp.clientWidth, vh: vp.clientHeight })
+    })
     ro.observe(ref.current!)
     return () => ro.disconnect()
   }, [])
@@ -48,7 +53,13 @@ export function Viewport({ art, children }: { art: Art; children: ReactNode }) {
   const s = Math.min(size.w / f.w, size.h / f.h) || 1 // 0x0 while the page is hidden or mid-resize
   const bg = layouts[art][orient][0].src
   useEffect(() => preload(orient), [orient])
-  const bleed = { x: (size.w / s - f.w) / 2, y: (size.h / s - f.h) / 2 }
+  // .bg is object-fit: cover on the full screen, so it scales by S (>= s) about the screen centre.
+  const S = Math.max(size.vw / f.w, size.vh / f.h) || s
+  const bleed = {
+    x: (size.w / s - f.w) / 2,
+    y: (size.h / s - f.h) / 2,
+    bg: { k: S / s, x: ((size.vw - f.w * S) / 2 - size.l - (size.w - f.w * s) / 2) / s, y: ((size.vh - f.h * S) / 2 - size.t - (size.h - f.h * s) / 2) / s },
+  }
   return (
     <OrientCtx.Provider value={orient}>
     <BleedCtx.Provider value={bleed}>
@@ -79,12 +90,23 @@ export function Viewport({ art, children }: { art: Art; children: ReactNode }) {
   )
 }
 
-type ImgProps = Omit<HTMLMotionProps<'img'>, 'src'> & { r: Layer | (Rect & { src: string; cut?: string }); bleed?: boolean }
+type ImgProps = Omit<HTMLMotionProps<'img'>, 'src'> & { r: Layer | (Rect & { src: string; cut?: string }); bleed?: boolean; onBg?: boolean }
 /** An art layer placed at its manifest rect. A layer touching a frame edge where its art is cut flat (manifest
- *  `cut`, e.g. bushes) is pushed out to the screen edge. Pass bleed={false} for rects relative to a parent. */
-export function Img({ r, bleed = true, style, className = '', ...rest }: ImgProps) {
+ *  `cut`, e.g. bushes) is pushed out to the screen edge. Pass bleed={false} for rects relative to a parent.
+ *  onBg: scenery that stands on the background art (fences, posts) scales and crops with the background instead of
+ *  the stage, so it stays on its path at any screen shape. */
+export function Img({ r, bleed = true, onBg, style, className = '', ...rest }: ImgProps) {
   const b = useContext(BleedCtx)
   const F = FRAME[useOrient()]
+  if (onBg) {
+    const g = b.bg, w = r.w * g.k
+    // Where the cover crop would cut it, slide it along the ground (x) back on screen, keeping only the overhang
+    // the design itself had past the frame edge.
+    const lo = -b.x - Math.max(0, -r.x) * g.k
+    const hi = F.w + b.x + Math.max(0, r.x + r.w - F.w) * g.k - w
+    r = { ...r, x: Math.min(Math.max(g.x + r.x * g.k, lo), hi), y: g.y + r.y * g.k, w, h: r.h * g.k }
+    bleed = false
+  }
   let { x, y } = r
   const cut = ('cut' in r && r.cut) || ''
   if (bleed) {
@@ -195,4 +217,13 @@ const preload = (orient: Orient) => {
   const srcs = new Set<string>()
   for (const art of Object.values(layouts)) for (const l of art[orient]) srcs.add(l.src)
   for (const src of srcs) new Image().src = artSrc(src)
+}
+
+/** Title plank scaled up uniformly (art stays undistorted) so long subtitles stay readable; returns the plank
+ *  rect and its title/subtitle text boxes. Insets were tuned at k = 1.27 and scale with k. */
+export function scaledPlank(tp: Rect, k: number) {
+  const plank = { x: tp.x + tp.w / 2 - (tp.w * k) / 2, y: tp.y - 14, w: tp.w * k, h: tp.h * k }
+  const s = k / 1.27
+  const at = (t: number, rt: number, b: number, l: number) => inset(plank, [t * s, rt * s, b * s, l * s])
+  return { plank, title: at(36, 90, 82, 90), sub: at(110, 130, 40, 130) }
 }

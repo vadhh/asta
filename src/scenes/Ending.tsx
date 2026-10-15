@@ -1,5 +1,6 @@
 import { motion } from 'motion/react'
-import { Img, Box, Btn, useArt, useOrient, inset, rel, union, pick, float, pop, type Rect } from '../stage'
+import { Img, Box, useArt, useOrient, inset, rel, pick, float, pop, type Rect } from '../stage'
+import { PlayButton } from './Home'
 import { sfx } from '../audio'
 import C from '../content.json'
 
@@ -9,9 +10,8 @@ const CONFETTI = ['#f5c431', '#e5483b', '#4fae4a', '#3a7fd6', '#9a62d8', '#ff9f4
 export default function Ending({ onMap }: { onMap: () => void }) {
   const L = useArt('p1-home')
   const o = useOrient()
-  const btn = [L('button-wood'), L('icon-play'), L('sparkles')]
   const asta = pick<Rect>(o, { x: 0, y: 700, w: 486, h: 542 }, L('asta-wave'))
-  const bubble = pick<Rect>(o, { x: 380, y: 610, w: 500, h: 300 }, { x: 1010, y: 260, w: 540, h: 300 })
+  const bubble = pick<Rect>(o, { x: 380, y: 610, w: 500, h: 300 }, { x: 1185, y: 120, w: 390, h: 290 }) // landscape: open sky right of the title sign, below the mute button
   return (
     <>
       {Array.from({ length: 36 }, (_, i) => (
@@ -24,8 +24,8 @@ export default function Ending({ onMap }: { onMap: () => void }) {
           transition={{ duration: 3 + (i % 5) * 0.5, delay: (i % 9) * 0.25, repeat: Infinity, ease: 'linear' }}
         />
       ))}
-      <Img r={L('fence')} />
-      <Img r={L('signpost')} />
+      <Img r={L('fence')} onBg />
+      <Img r={L('signpost')} onBg />
       <Img r={{ ...asta, src: L('asta-wave').src }} {...float(0, 16, 1.6)} />
       <motion.div className="layer" style={{ left: L('title-sign').x, top: L('title-sign').y, width: L('title-sign').w, height: L('title-sign').h }} {...pop(0.1)}>
         <Img r={rel(L('title-sign'), L('title-sign'))} bleed={false} />
@@ -37,11 +37,7 @@ export default function Ending({ onMap }: { onMap: () => void }) {
       <Box r={bubble} className="center t-body speech-box" fit {...pop(0.6)}>
         {E.speech}
       </Box>
-      <Btn layers={btn} label={E.button} onClick={() => (sfx('tap'), onMap())} className="pulse">
-        <Box r={inset(rel(L('button-wood'), union(btn)), [14, 30, 34, 166])} className="center t-button nowrap" fit>
-          {E.button}
-        </Box>
-      </Btn>
+      <PlayButton L={L} label={E.button} onClick={() => (sfx('tap'), onMap())} />
       <Img r={L('bush-left')} />
       <Img r={L('bush-flowers-right')} />
     </>

@@ -28,6 +28,8 @@ export default function Titen({ onDone }: { onDone: () => void }) {
   const tip = pick<Rect>(o, { ...L('tip-panel'), y: 985, h: 290 }, L('tip-panel'))
   const dy = tip.y - L('tip-panel').y
   const down = (n: string) => ({ ...L(n), y: L(n).y + dy })
+  // Portrait: header widened (9-slice) so its label isn't shrunk below phone-readable size.
+  const header = pick(o, { ...down('tip-header'), w: L('tip-header').w + 110 }, down('tip-header'))
 
   const choose = (i: number) => {
     if (solved || wrong.includes(i)) return
@@ -49,7 +51,7 @@ export default function Titen({ onDone }: { onDone: () => void }) {
   }
 
   const tipText = picked === null ? T.pick.text : solved ? q.explain : options[picked].feedback
-  const question = pick<Rect>(o, { x: 60, y: 172, w: 780, h: 150 }, { x: 250, y: 158, w: 1100, h: 116 })
+  const question = pick<Rect>(o, { x: 60, y: 172, w: 780, h: 150 }, { x: 250, y: 150, w: 1100, h: 104 })
 
   return (
     <>
@@ -87,7 +89,7 @@ export default function Titen({ onDone }: { onDone: () => void }) {
                   src={isRight ? 'layers/p8-titen/card-a-selected.webp' : 'layers/p8-titen/card-b.webp'}
                   slice={34}
                 />
-                {isRight && <img className="layer check" src={artSrc('layers/p8-titen/icon-check.webp')} alt="" style={{ right: -26, top: -40, width: 96, height: 76 }} />}
+                {isRight && <img className="layer check" src={artSrc('layers/p8-titen/icon-check.webp')} alt="" style={{ right: -26, top: -30, width: 96, height: 76 }} />}
                 <span className={`opt-body ${opt.icon ? '' : 'text-only'}`}>
                   {opt.icon && <img src={artSrc(`layers/p8-titen/${opt.icon}.webp`)} alt="" />}
                   <span className="t-option">
@@ -102,9 +104,9 @@ export default function Titen({ onDone }: { onDone: () => void }) {
 
       <Panel r={tip} src={L('tip-panel').src} slice={50} />
       <Img r={down('leaf-3')} />
-      <Img r={down('tip-header')} />
+      <Panel r={header} src={L('tip-header').src} slice={30} />
       <Img r={down('sparkles')} />
-      <Box r={inset(down('tip-header'), [8, 20, 16, 40])} className="center-y t-chip-dark" fit>
+      <Box r={inset(header, [5, 24, 11, 44])} className="center-y t-chip-dark" fit>
         {T.tipTitle}
       </Box>
       <Box

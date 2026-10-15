@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
-import { Img, Box, useArt, useOrient, inset, box, pick, float, pop, artSrc, type Rect } from '../stage'
+import { Img, Box, useArt, useOrient, inset, box, pick, float, pop, artSrc, type Rect, scaledPlank } from '../stage'
 import { sfx, buzz } from '../audio'
 import C from '../content.json'
 
@@ -50,7 +50,12 @@ export default function Srawung({ onDone }: { onDone: () => void }) {
     if (matched.length === S.pairs.length) onDone()
   }
 
-  const grid = pick<Rect>(o, { x: 70, y: 205, w: 760, h: 1110 }, { x: 360, y: 185, w: 1120, h: 630 })
+  // Grid stays clear of Asta (portrait: bottom-left, landscape: left of the panel).
+  const grid = pick<Rect>(o, { x: 70, y: 250, w: 760, h: 970 }, { x: 450, y: 200, w: 960, h: 545 })
+  // Portrait gets a bigger plank: the frame is narrow, so its subtitle would otherwise be tiny on phones.
+  const tp = L('title-plank')
+  const P = scaledPlank(tp, pick(o, 1.45, 1.4))
+  const plank = P.plank
   const cols = pick(o, 2, 4)
   const rows = deck.length / cols
   const gap = 24
@@ -60,12 +65,13 @@ export default function Srawung({ onDone }: { onDone: () => void }) {
 
   return (
     <>
-      <Img r={L('title-plank')} {...pop(0)} />
+      {o === 'landscape' && <Img r={L('panel')} />}
+      <Img r={{ ...plank, src: tp.src }} bleed={false} {...pop(0)} />
       <Img r={L('binder-clip')} />
-      <Box r={inset(L('title-plank'), [30, 60, 62, 60])} className="center t-plank-dark nowrap" fit>
+      <Box r={P.title} className="center t-plank-dark nowrap" fit>
         {S.title}
       </Box>
-      <Box r={inset(L('title-plank'), [88, 90, 26, 90])} className="center t-plank-sub" fit>
+      <Box r={P.sub} className="center t-plank-sub nowrap" fit>
         {S.sub}
       </Box>
 
@@ -122,11 +128,11 @@ export default function Srawung({ onDone }: { onDone: () => void }) {
 function MatchTip({ pair, onNext }: { pair: number; onNext: () => void }) {
   const o = useOrient()
   const p = S.pairs[pair]
-  const r = pick<Rect>(o, { x: 60, y: 230, w: 780, h: 1140 }, { x: 280, y: 90, w: 1040, h: 740 })
+  const r = pick<Rect>(o, { x: 60, y: 230, w: 780, h: 1140 }, { x: 230, y: 60, w: 1140, h: 790 })
   return (
     <>
       <motion.div className="layer scrim" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} />
-      <motion.div className={`layer tip-card ${o}`} role="dialog" aria-label={`${p.animalName} ${p.emotionName}`} style={box(r)} {...pop(0.05)}>
+      <motion.div className={`layer tip-card ${o}`} role="dialog" aria-label={`${p.animalName} ${p.emotionName}`} style={{ ...box(r), height: 'auto', maxHeight: r.h, top: r.y + r.h / 2, y: '-50%' }} {...pop(0.05)}>
         <div className="tip-top">
           <img className="photo" src={artSrc(`layers/extra/animal-${p.animal}.webp`)} alt="" />
           <span className="t-heading">+</span>

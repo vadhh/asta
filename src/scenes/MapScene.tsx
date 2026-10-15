@@ -1,11 +1,11 @@
-import { Img, Box, Btn, useArt, useOrient, inset, rel, union, pick, float, pop, artSrc, type Rect } from '../stage'
+import { Img, Box, Btn, useArt, inset, rel, union, float, pop, artSrc } from '../stage'
 import { sfx } from '../audio'
 import { ISLANDS, type Island } from '../App'
 import C from '../content.json'
 
 export default function MapScene({ done, onOpen }: { done: Island[]; onOpen: (i: Island) => void }) {
   const L = useArt('p4-map')
-  const bubble = pick<Rect>(useOrient(), { x: 270, y: 1300, w: 316, h: 225 }, { x: 1000, y: 650, w: 295, h: 210 }) // enlarged for legible text
+  const bubble = L('speech-bubble')
   const decor = ['book-corner', 'dice', 'coin', 'coin-small', 'gem', 'chest', 'spyglass', 'compass']
   return (
     <>
@@ -20,13 +20,14 @@ export default function MapScene({ done, onOpen }: { done: Island[]; onOpen: (i:
       {ISLANDS.map((id, i) => {
         // Signs are widened 9-slice so the subtitle stays legible on phones.
         const s0 = L(`sign-${id}`)
-        const layers = [L(`island-${id}`), L(`icon-${id}`), { ...s0, x: s0.x - 40, w: s0.w + 80, h: s0.h + 14, slice: 40 }]
+        const layers = [L(`island-${id}`), L(`icon-${id}`), { ...s0, x: s0.x - 60, w: s0.w + 120, h: s0.h + 44, slice: 40 }]
         const u = union(layers)
         const sign = rel(layers[2], u)
         const isDone = done.includes(id)
         return (
           <Btn key={id} layers={layers} label={C.map.islands[id].name} onClick={() => (sfx('tap'), onOpen(id))} className={`island float-${i}`}>
-            <Box r={inset(sign, [28, 30, 24, 30])} className="center col t-sign" fit>
+            {/* inset to the sign's flat face: its bottom ~40px is the frame and logs */}
+            <Box r={inset(sign, [34, 36, 40, 36])} className="center col t-sign" fit>
               <span>{C.map.islands[id].name}</span>
               <span className="t-sign-sub">{C.map.islands[id].sub}</span>
             </Box>
@@ -34,8 +35,7 @@ export default function MapScene({ done, onOpen }: { done: Island[]; onOpen: (i:
           </Btn>
         )
       })}
-      {/* mirrored so the tail points at Asta, who peeks in from the right */}
-      <Img r={{ ...bubble, src: L('speech-bubble').src }} {...pop(0.6)} style={{ scaleX: -1 }} />
+      <Img r={bubble} {...pop(0.6)} />
       <Box r={inset(bubble, [26, 26, 62, 26])} className="center t-small" fit {...pop(0.65)}>
         {done.length ? C.map.speechProgress.text : C.map.speech}
       </Box>

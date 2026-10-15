@@ -1,6 +1,6 @@
 import { useEffect, useState, type ReactElement } from 'react'
 import { AnimatePresence, MotionConfig, motion } from 'motion/react'
-import { Viewport, preloadAll, asset, type Art } from './stage'
+import { Viewport, asset, type Art } from './stage'
 import { playMusic, sfx, isMuted, setMuted, MUSIC_VOL, type Track } from './audio'
 import C from './content.json'
 import Home from './scenes/Home'
@@ -43,7 +43,6 @@ export default function App() {
   const [celebrate, setCelebrate] = useState<Island | null>(null)
   const [muted, setMutedState] = useState(isMuted)
 
-  useEffect(preloadAll, [])
   // Browsers keep audio locked until the first tap (Mulai); Howler plays the queued track then.
   useEffect(() => playMusic(MUSIC[scene], scene === 'tataati' ? 0.25 : MUSIC_VOL), [scene])
 

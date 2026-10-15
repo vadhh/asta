@@ -9,8 +9,9 @@ export default function Home({ onStart }: { onStart: () => void }) {
   const u = union(btn)
   return (
     <>
-      <Img r={L('tree-branch')} animate={{ rotate: [0, 1.2, 0] }} transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }} style={{ transformOrigin: '0 0' }} />
-      <Img r={L('lantern')} animate={{ rotate: [-2, 2, -2] }} transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }} style={{ transformOrigin: '50% 10%' }} />
+      {/* whole tree sways gently from its trunk; the lamp post stands still */}
+      <Img r={L('tree-branch')} animate={{ rotate: [0, 0.8, 0] }} transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }} style={{ transformOrigin: '50% 100%' }} />
+      <Img r={L('lantern')} />
       <Img r={L('signpost')} />
       <Img r={L('fence')} />
       <Img r={L('asta-wave')} {...float(0, 14)} />

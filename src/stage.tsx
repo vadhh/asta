@@ -4,7 +4,7 @@ import manifest from './manifest.json'
 
 export type Orient = 'portrait' | 'landscape'
 export type Rect = { x: number; y: number; w: number; h: number }
-type Layer = Rect & { layer: string; src: string }
+type Layer = Rect & { layer: string; src: string; cut?: string } // cut: image edges cut flat, of 'tblr'
 export type Art = keyof typeof manifest
 
 // Every scene is laid out on a fixed frame (from the Canva/Figma export) and scaled to fit.
@@ -47,6 +47,7 @@ export function Viewport({ art, children }: { art: Art; children: ReactNode }) {
   const f = FRAME[orient]
   const s = Math.min(size.w / f.w, size.h / f.h) || 1 // 0x0 while the page is hidden or mid-resize
   const bg = layouts[art][orient][0].src
+  useEffect(() => preload(orient), [orient])
   const bleed = { x: (size.w / s - f.w) / 2, y: (size.h / s - f.h) / 2 }
   return (
     <OrientCtx.Provider value={orient}>
@@ -78,18 +79,19 @@ export function Viewport({ art, children }: { art: Art; children: ReactNode }) {
   )
 }
 
-type ImgProps = Omit<HTMLMotionProps<'img'>, 'src'> & { r: Layer | (Rect & { src: string }); bleed?: boolean }
-/** An art layer placed at its manifest rect. Layers touching a frame edge are pushed out to the screen edge,
- *  since their art is cut flat there (bushes, branches). Pass bleed={false} for rects relative to a parent. */
+type ImgProps = Omit<HTMLMotionProps<'img'>, 'src'> & { r: Layer | (Rect & { src: string; cut?: string }); bleed?: boolean }
+/** An art layer placed at its manifest rect. A layer touching a frame edge where its art is cut flat (manifest
+ *  `cut`, e.g. bushes) is pushed out to the screen edge. Pass bleed={false} for rects relative to a parent. */
 export function Img({ r, bleed = true, style, className = '', ...rest }: ImgProps) {
   const b = useContext(BleedCtx)
   const F = FRAME[useOrient()]
   let { x, y } = r
+  const cut = ('cut' in r && r.cut) || ''
   if (bleed) {
-    if (r.y <= 0) y -= b.y
-    else if (r.y + r.h >= F.h) y += b.y
-    if (r.x <= 0) x -= b.x
-    else if (r.x + r.w >= F.w) x += b.x
+    if (r.y <= 0 && cut.includes('t')) y -= b.y
+    else if (r.y + r.h >= F.h && cut.includes('b')) y += b.y
+    if (r.x <= 0 && cut.includes('l')) x -= b.x
+    else if (r.x + r.w >= F.w && cut.includes('r')) x += b.x
   }
   return <motion.img src={artSrc(r.src)} alt="" draggable={false} className={`layer ${className}`} style={{ ...box({ ...r, x, y }), ...style }} {...rest} />
 }
@@ -188,8 +190,9 @@ export const pop = (delay = 0) => ({
   transition: { type: 'spring' as const, stiffness: 260, damping: 18, delay },
 })
 
-export const preloadAll = () => {
+/** Warm the cache with every scene's art for the current orientation. */
+const preload = (orient: Orient) => {
   const srcs = new Set<string>()
-  for (const art of Object.values(layouts)) for (const l of Object.values(art).flat()) srcs.add(l.src)
+  for (const art of Object.values(layouts)) for (const l of art[orient]) srcs.add(l.src)
   for (const src of srcs) new Image().src = artSrc(src)
 }

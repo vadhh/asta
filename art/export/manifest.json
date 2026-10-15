@@ -1,7 +1,7 @@
 {
- "note": "Text-free ASTA art. Coordinates in px; landscape frame 1600x900, portrait 900x1600. Layers listed back-to-front. Backgrounds are stored at 2x (3200x1800 / 1800x3200, Upscayl) and drawn into the 1x box given by w/h.",
+ "note": "Text-free ASTA art. Coordinates in px; landscape frame 1600x900, portrait 900x1600. Layers listed back-to-front. All images are stored at 2x and drawn into the 1x box given by x/y/w/h.",
  "sources": {
-  "figma": "https://www.figma.com/design/16yLXUk5PRGPCKp1e8L9Xd",
+  "figma": "https://www.figma.com/design/16yLXUk5PRGPCKp1e8L9Xd (stale - no longer synced; art/export is the source of truth)",
   "canva_original": "DAHX7buMybA (shared, view/export-locked)",
   "canva_exportable_copy": "DAHYCtIZPEI",
   "canva_layer_designs": {
@@ -28,18 +28,18 @@
     {
      "layer": "tree-branch",
      "src": "layers/p1-home/tree-branch.png",
-     "x": 0,
-     "y": 0,
-     "w": 648,
-     "h": 432
+     "x": -150,
+     "y": 40,
+     "w": 636,
+     "h": 604
     },
     {
      "layer": "lantern",
      "src": "layers/p1-home/lantern.png",
-     "x": 1352,
-     "y": 56,
-     "w": 248,
-     "h": 357
+     "x": 1250,
+     "y": 170,
+     "w": 289,
+     "h": 660
     },
     {
      "layer": "signpost",
@@ -126,18 +126,18 @@
     {
      "layer": "tree-branch",
      "src": "layers/p1-home/tree-branch.png",
-     "x": -140,
-     "y": -60,
-     "w": 648,
-     "h": 432
+     "x": -260,
+     "y": 726,
+     "w": 636,
+     "h": 604
     },
     {
      "layer": "lantern",
      "src": "layers/p1-home/lantern.png",
-     "x": 650,
-     "y": 40,
-     "w": 248,
-     "h": 357
+     "x": 600,
+     "y": 620,
+     "w": 260,
+     "h": 594
     },
     {
      "layer": "signpost",

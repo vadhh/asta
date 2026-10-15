@@ -1,5 +1,5 @@
 {
- "note": "Text-free ASTA art. Coordinates in px; landscape frame 1600x900, portrait 900x1600. Layers listed back-to-front.",
+ "note": "Text-free ASTA art. Coordinates in px; landscape frame 1600x900, portrait 900x1600. Layers listed back-to-front. Backgrounds are stored at 2x (3200x1800 / 1800x3200, Upscayl) and drawn into the 1x box given by w/h.",
  "sources": {
   "figma": "https://www.figma.com/design/16yLXUk5PRGPCKp1e8L9Xd",
   "canva_original": "DAHX7buMybA (shared, view/export-locked)",

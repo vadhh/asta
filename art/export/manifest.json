@@ -28,18 +28,18 @@
     {
      "layer": "tree-branch",
      "src": "layers/p1-home/tree-branch.png",
-     "x": -150,
-     "y": 40,
-     "w": 636,
-     "h": 604
+     "x": 0,
+     "y": 0,
+     "w": 654,
+     "h": 449
     },
     {
      "layer": "lantern",
      "src": "layers/p1-home/lantern.png",
-     "x": 1250,
-     "y": 170,
-     "w": 289,
-     "h": 660
+     "x": 1000,
+     "y": 385,
+     "w": 217,
+     "h": 495
     },
     {
      "layer": "signpost",
@@ -52,10 +52,10 @@
     {
      "layer": "fence",
      "src": "layers/p1-home/fence.png",
-     "x": 857,
-     "y": 693,
-     "w": 629,
-     "h": 170
+     "x": 790,
+     "y": 630,
+     "w": 650,
+     "h": 287
     },
     {
      "layer": "asta-wave",
@@ -126,34 +126,34 @@
     {
      "layer": "tree-branch",
      "src": "layers/p1-home/tree-branch.png",
-     "x": -260,
-     "y": 726,
-     "w": 636,
-     "h": 604
+     "x": 0,
+     "y": 0,
+     "w": 590,
+     "h": 405
     },
     {
      "layer": "lantern",
      "src": "layers/p1-home/lantern.png",
-     "x": 600,
-     "y": 620,
-     "w": 260,
-     "h": 594
+     "x": 680,
+     "y": 975,
+     "w": 217,
+     "h": 495
     },
     {
      "layer": "signpost",
      "src": "layers/p1-home/signpost.png",
-     "x": 720,
-     "y": 830,
+     "x": -10,
+     "y": 1000,
      "w": 191,
      "h": 432
     },
     {
      "layer": "fence",
      "src": "layers/p1-home/fence.png",
-     "x": 300,
-     "y": 1070,
-     "w": 629,
-     "h": 170
+     "x": 330,
+     "y": 1290,
+     "w": 650,
+     "h": 287
     },
     {
      "layer": "asta-wave",

@@ -9,8 +9,9 @@ export default function Home({ onStart }: { onStart: () => void }) {
   const u = union(btn)
   return (
     <>
-      {/* whole tree sways gently from its trunk; the lamp post stands still */}
-      <Img r={L('tree-branch')} animate={{ rotate: [0, 0.8, 0] }} transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }} style={{ transformOrigin: '50% 100%' }} />
+      {/* canopy is pinned to the top-left screen corner; it breathes by scaling from that corner (rotating would
+          open a gap along a pinned edge). The lamp post stands still. */}
+      <Img r={L('tree-branch')} animate={{ scale: [1, 1.025, 1] }} transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }} style={{ transformOrigin: '0 0' }} />
       <Img r={L('lantern')} />
       <Img r={L('signpost')} />
       <Img r={L('fence')} />

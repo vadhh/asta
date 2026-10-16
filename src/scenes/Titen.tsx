@@ -36,7 +36,7 @@ const devRound = () => {
 // Frame-px layout. Bank text is long, so landscape uses two columns (question + options | explanation).
 const LAY = {
   portrait: {
-    question: { x: 50, y: 185, w: 800, h: 200 },
+    question: { x: 50, y: 180, w: 800, h: 186 }, // leaves room above option A for its answer tag
     opt: (i: number): Rect => ({ x: 50, y: 400 + i * 166, w: 800, h: 150 }),
     tip: { x: 32, y: 900, w: 837, h: 480 },
     dots: { x: 250, y: 1400, w: 400, h: 40 },
@@ -47,7 +47,7 @@ const LAY = {
     endBtns: { x: 200, y: 700, w: 500, h: 290 },
   },
   landscape: {
-    question: { x: 160, y: 180, w: 700, h: 150 },
+    question: { x: 160, y: 172, w: 700, h: 134 }, // leaves room above option A for its answer tag
     opt: (i: number): Rect => ({ x: 160, y: 345 + i * 155, w: 700, h: 140 }),
     tip: { x: 880, y: 175, w: 600, h: 510 },
     dots: { x: 880, y: 700, w: 400, h: 40 },
@@ -129,7 +129,7 @@ function Question({ q, qi, total, picked, onPick, onNext }: {
     if (i === q.answer) {
       sfx('correct')
       buzz(40)
-    } else sfx('tap') // no "wrong" sound: a different answer is not a failure
+    } else sfx('try-again') // soft question tone, not a buzzer
   }
 
   // Explanation panel, with its header tab, leaf and sparkles kept where the export puts them relative to it.
@@ -149,11 +149,14 @@ function Question({ q, qi, total, picked, onPick, onNext }: {
         </Box>
         {q.options.map((text, i) => {
           const s = Y.opt(i)
+          // After answering: the right option is green with a check; a different pick is marked as the child's
+          // choice (soft amber, 'Pilihanmu'), never with a red cross.
           const right = answered && i === q.answer
+          const mine = answered && i === picked && i !== q.answer
           return (
             <motion.button
               key={i}
-              className={`layer option tn-opt ${answered && !right ? 'rest' : ''}`}
+              className={`layer option tn-opt ${answered && !right && !mine ? 'rest' : ''} ${mine ? 'mine' : ''}`}
               style={box(s)}
               onClick={() => choose(i)}
               aria-pressed={i === picked}
@@ -167,6 +170,8 @@ function Question({ q, qi, total, picked, onPick, onNext }: {
                 slice={34}
               />
               {right && <img className="layer check" src={artSrc('layers/p8-titen/icon-check.webp')} alt="" style={{ right: -22, top: -34, width: 84, height: 66 }} />}
+              {right && picked !== q.answer && <span className="layer tn-tag right">{T.rightTag.text}</span>}
+              {mine && <span className="layer tn-tag mine">{T.mineTag.text}</span>}
               <Box r={inset({ x: 0, y: 0, w: s.w, h: s.h }, [14, 30, 18, 30])} className="center-y t-option" fit>
                 <span className="tn-letter">{'ABC'[i]}.</span> {text}
               </Box>
@@ -192,6 +197,7 @@ function Question({ q, qi, total, picked, onPick, onNext }: {
         aria-live="polite"
       >
         {!answered && T.hint.text}
+        {answered && picked === q.answer && <p className="tn-kind tn-yes">{T.correct.text}</p>}
         {answered && picked !== q.answer && <p className="tn-kind">{T.tryAgain}</p>}
         {answered && <p>{q.edu}</p>}
       </Box>

@@ -12,3 +12,13 @@
 .tn-end.portrait { flex-direction: column; align-items: stretch; }
 .tn-end.landscape { flex-direction: row; align-items: center; }
 .tn-end .pill { flex: 1; min-height: 110px; font-size: 40px; line-height: 1.1; }
+/* The child's own pick when it isn't the right one: soft amber, never red. */
+.tn-opt.mine .panel-art, .tn-opt.mine > div:first-child { filter: sepia(0.35) saturate(1.6) hue-rotate(-10deg); }
+.tn-opt.mine { outline: 6px solid #f0b54a; outline-offset: -6px; border-radius: 22px; }
+.tn-tag {
+  top: -24px; left: 26px; padding: 1px 16px; border-radius: 999px;
+  font-size: 28px; font-weight: 800; line-height: 1.25; white-space: nowrap; pointer-events: none;
+}
+.tn-tag.right { background: #4cb944; color: #fff; }
+.tn-tag.mine { background: #f0b54a; color: #5b3518; }
+.tn-yes { color: #2e7d4f; }

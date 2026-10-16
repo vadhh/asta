@@ -32,9 +32,18 @@
       "text": "Tidak ada jawaban yang salah. Kamu juga boleh melewati bagian ini."
     },
     "recs": [
-      { "to": "adventure", "label": "Berpetualang" },
-      { "to": "rest", "label": "Mengambil jeda" },
-      { "to": "company", "label": "Berbicara dengan pendamping" }
+      {
+        "to": "adventure",
+        "label": "Berpetualang"
+      },
+      {
+        "to": "rest",
+        "label": "Mengambil jeda"
+      },
+      {
+        "to": "company",
+        "label": "Berbicara dengan pendamping"
+      }
     ],
     "items": [
       {
@@ -456,6 +465,18 @@
     "progress": {
       "draft": true,
       "text": "Soal {n} dari {total}"
+    },
+    "correct": {
+      "draft": true,
+      "text": "Tepat! Jawabanmu sudah benar."
+    },
+    "rightTag": {
+      "draft": true,
+      "text": "Jawaban tepat"
+    },
+    "mineTag": {
+      "draft": true,
+      "text": "Pilihanmu"
     }
   },
   "complete": {
@@ -507,9 +528,28 @@
         "tab": "Memulai Sesi",
         "draft": true,
         "blocks": [
-          { "p": "ASTA adalah media dukungan psikososial untuk anak terdampak bencana. ASTA bukan alat diagnosis dan tidak menggantikan layanan profesional." },
-          { "h": "Sebelum mulai", "ul": ["Siapkan tempat yang tenang dan aman, serta ponsel, tablet, atau laptop.", "Tidak perlu membuat akun. Jangan memasukkan nama atau identitas anak.", "Pilihan dan jawaban anak tidak disimpan."] },
-          { "h": "Langkah sesi", "ul": ["Buka ASTA dan tekan \"Mulai Petualangan\".", "Bacakan petunjuk bersama anak. Tekankan bahwa anak boleh memilih, melewati, atau berhenti kapan saja.", "Di Dunia ASTA, anak boleh memulai dari Emotional Check-in atau langsung memilih aktivitas.", "Jika anak memilih perasaan, bacakan pesan validasinya. Rekomendasi aktivitas hanyalah pilihan.", "Setelah aktivitas, anak kembali ke Dunia ASTA atau membuka halaman Penutup.", "Akhiri sesi tanpa meminta penilaian atau cerita tambahan dari anak."] }
+          {
+            "p": "ASTA adalah media dukungan psikososial untuk anak terdampak bencana. ASTA bukan alat diagnosis dan tidak menggantikan layanan profesional."
+          },
+          {
+            "h": "Sebelum mulai",
+            "ul": [
+              "Siapkan tempat yang tenang dan aman, serta ponsel, tablet, atau laptop.",
+              "Tidak perlu membuat akun. Jangan memasukkan nama atau identitas anak.",
+              "Pilihan dan jawaban anak tidak disimpan."
+            ]
+          },
+          {
+            "h": "Langkah sesi",
+            "ul": [
+              "Buka ASTA dan tekan \"Mulai Petualangan\".",
+              "Bacakan petunjuk bersama anak. Tekankan bahwa anak boleh memilih, melewati, atau berhenti kapan saja.",
+              "Di Dunia ASTA, anak boleh memulai dari Emotional Check-in atau langsung memilih aktivitas.",
+              "Jika anak memilih perasaan, bacakan pesan validasinya. Rekomendasi aktivitas hanyalah pilihan.",
+              "Setelah aktivitas, anak kembali ke Dunia ASTA atau membuka halaman Penutup.",
+              "Akhiri sesi tanpa meminta penilaian atau cerita tambahan dari anak."
+            ]
+          }
         ]
       },
       {
@@ -517,12 +557,55 @@
         "tab": "Aktivitas",
         "draft": true,
         "blocks": [
-          { "p": "Durasi di bawah ini hanya perkiraan dan perlu diuji bersama pengguna. Anak boleh berhenti kapan saja." },
-          { "h": "Emotional Check-in", "ul": ["Tujuan: membantu anak mengenali dan memberi nama pada perasaannya.", "Perlengkapan: perangkat ASTA.", "Durasi perkiraan: 2–3 menit.", "Cara: anak memilih satu dari delapan perasaan, atau menekan \"Lewati\". Anak tidak perlu menjelaskan penyebabnya."] },
-          { "h": "TATAATI — menenangkan diri", "ul": ["Tujuan: memperkenalkan latihan napas dan perhatian sederhana.", "Perlengkapan: perangkat ASTA, tempat duduk yang nyaman.", "Durasi perkiraan: 1–2 menit.", "Cara: anak mengikuti animasi selama merasa nyaman. Jangan meminta anak menahan napas atau menarik napas dalam-dalam. Hentikan jika anak pusing atau tidak nyaman."] },
-          { "h": "Ekspresi Kreatif (Reronce)", "ul": ["Tujuan: memberi ruang untuk berekspresi lewat gambar atau cerita.", "Perlengkapan: perangkat ASTA; boleh juga kertas dan alat gambar.", "Durasi perkiraan: 5–10 menit.", "Cara: anak memilih menggambar atau bercerita. Jangan menilai atau menafsirkan hasil karya anak, dan jangan memaksa anak membagikannya."] },
-          { "h": "Sahabat Hewan", "ul": ["Tujuan: mendorong interaksi, komunikasi, dan kerja sama lewat permainan.", "Perlengkapan: perangkat ASTA dan kartu fisik Sahabat Hewan, untuk kelompok kecil.", "Durasi perkiraan: 10–15 menit.", "Cara: jelaskan aturan, lalu pemain bergiliran mengambil kartu dan melakukan tantangan sederhana. Anak boleh menolak tantangan. Tidak ada pemain yang dikeluarkan karena salah."] },
-          { "h": "Aktivitas Belajar (Titen)", "ul": ["Tujuan: mengenalkan keterampilan sosial-emosional lewat Kuis Sahabat Rasa (48 soal dalam 8 topik, misalnya Kenali Perasaan dan Berani Meminta Bantuan).", "Perlengkapan: perangkat ASTA.", "Durasi perkiraan: 5–10 menit.", "Cara: setiap putaran berisi 10 soal yang dipilih acak dari seluruh bank soal, dengan urutan pilihan jawaban yang juga diacak. Anak menjawab satu per satu, tanpa batas waktu dan tanpa skor. Setelah menjawab, bacakan penjelasan singkatnya bersama anak. Jawaban yang kurang tepat tidak dihukum: ASTA menunjukkan jawaban yang lebih tepat dan mengajak melihatnya bersama-sama.", "Anak boleh menekan \"Lewati\", berhenti kapan saja, atau memilih \"Main lagi\" untuk 10 soal acak yang baru. Soal tidak meminta anak menceritakan pengalaman bencananya. Kuis ini untuk belajar, bukan untuk menilai kondisi anak."] }
+          {
+            "p": "Durasi di bawah ini hanya perkiraan dan perlu diuji bersama pengguna. Anak boleh berhenti kapan saja."
+          },
+          {
+            "h": "Emotional Check-in",
+            "ul": [
+              "Tujuan: membantu anak mengenali dan memberi nama pada perasaannya.",
+              "Perlengkapan: perangkat ASTA.",
+              "Durasi perkiraan: 2–3 menit.",
+              "Cara: anak memilih satu dari delapan perasaan, atau menekan \"Lewati\". Anak tidak perlu menjelaskan penyebabnya."
+            ]
+          },
+          {
+            "h": "TATAATI — menenangkan diri",
+            "ul": [
+              "Tujuan: memperkenalkan latihan napas dan perhatian sederhana.",
+              "Perlengkapan: perangkat ASTA, tempat duduk yang nyaman.",
+              "Durasi perkiraan: 1–2 menit.",
+              "Cara: anak mengikuti animasi selama merasa nyaman. Jangan meminta anak menahan napas atau menarik napas dalam-dalam. Hentikan jika anak pusing atau tidak nyaman."
+            ]
+          },
+          {
+            "h": "Ekspresi Kreatif (Reronce)",
+            "ul": [
+              "Tujuan: memberi ruang untuk berekspresi lewat gambar atau cerita.",
+              "Perlengkapan: perangkat ASTA; boleh juga kertas dan alat gambar.",
+              "Durasi perkiraan: 5–10 menit.",
+              "Cara: anak memilih menggambar atau bercerita. Jangan menilai atau menafsirkan hasil karya anak, dan jangan memaksa anak membagikannya."
+            ]
+          },
+          {
+            "h": "Sahabat Hewan",
+            "ul": [
+              "Tujuan: mendorong interaksi, komunikasi, dan kerja sama lewat permainan.",
+              "Perlengkapan: perangkat ASTA dan kartu fisik Sahabat Hewan, untuk kelompok kecil.",
+              "Durasi perkiraan: 10–15 menit.",
+              "Cara: jelaskan aturan, lalu pemain bergiliran mengambil kartu dan melakukan tantangan sederhana. Anak boleh menolak tantangan. Tidak ada pemain yang dikeluarkan karena salah."
+            ]
+          },
+          {
+            "h": "Aktivitas Belajar (Titen)",
+            "ul": [
+              "Tujuan: mengenalkan keterampilan sosial-emosional lewat Kuis Sahabat Rasa (48 soal dalam 8 topik, misalnya Kenali Perasaan dan Berani Meminta Bantuan).",
+              "Perlengkapan: perangkat ASTA.",
+              "Durasi perkiraan: 5–10 menit.",
+              "Cara: setiap putaran berisi 10 soal yang dipilih acak dari seluruh bank soal, dengan urutan pilihan jawaban yang juga diacak. Anak menjawab satu per satu, tanpa batas waktu dan tanpa skor. Setelah menjawab, bacakan penjelasan singkatnya bersama anak. Jawaban yang kurang tepat tidak dihukum: ASTA menunjukkan jawaban yang lebih tepat dan mengajak melihatnya bersama-sama.",
+              "Anak boleh menekan \"Lewati\", berhenti kapan saja, atau memilih \"Main lagi\" untuk 10 soal acak yang baru. Soal tidak meminta anak menceritakan pengalaman bencananya. Kuis ini untuk belajar, bukan untuk menilai kondisi anak."
+            ]
+          }
         ]
       },
       {
@@ -530,24 +613,57 @@
         "tab": "Komunikasi",
         "draft": true,
         "blocks": [
-          { "h": "Prinsip komunikasi ramah anak", "ul": ["Gunakan kalimat pendek dan bahasa yang sederhana.", "Duduk sejajar dengan anak dan bicara dengan tenang.", "Dengarkan tanpa menghakimi. Semua perasaan boleh dirasakan.", "Jangan memaksa anak menceritakan pengalamannya.", "Beri anak pilihan, dan hormati jika anak menolak atau ingin berhenti.", "Jangan menjanjikan hal yang tidak bisa dipastikan, misalnya \"semuanya pasti baik-baik saja\".", "Hindari membandingkan anak dengan anak lain atau memberi peringkat."] }
+          {
+            "h": "Prinsip komunikasi ramah anak",
+            "ul": [
+              "Gunakan kalimat pendek dan bahasa yang sederhana.",
+              "Duduk sejajar dengan anak dan bicara dengan tenang.",
+              "Dengarkan tanpa menghakimi. Semua perasaan boleh dirasakan.",
+              "Jangan memaksa anak menceritakan pengalamannya.",
+              "Beri anak pilihan, dan hormati jika anak menolak atau ingin berhenti.",
+              "Jangan menjanjikan hal yang tidak bisa dipastikan, misalnya \"semuanya pasti baik-baik saja\".",
+              "Hindari membandingkan anak dengan anak lain atau memberi peringkat."
+            ]
+          }
         ]
       },
       {
         "id": "observe",
         "tab": "Observasi",
         "blocks": [
-          { "p": "Pendamping dapat memperhatikan apakah anak:" },
-          { "ul": ["Bersedia atau tidak bersedia mengikuti kegiatan.", "Tampak nyaman atau tidak nyaman selama aktivitas.", "Meminta istirahat atau pendampingan.", "Membutuhkan bantuan lebih lanjut."] },
-          { "warn": "Observasi tersebut bukan diagnosis. Pendamping tidak diminta menafsirkan perilaku anak sebagai bukti PTSD atau gangguan tertentu." }
+          {
+            "p": "Pendamping dapat memperhatikan apakah anak:"
+          },
+          {
+            "ul": [
+              "Bersedia atau tidak bersedia mengikuti kegiatan.",
+              "Tampak nyaman atau tidak nyaman selama aktivitas.",
+              "Meminta istirahat atau pendampingan.",
+              "Membutuhkan bantuan lebih lanjut."
+            ]
+          },
+          {
+            "warn": "Observasi tersebut bukan diagnosis. Pendamping tidak diminta menafsirkan perilaku anak sebagai bukti PTSD atau gangguan tertentu."
+          }
         ]
       },
       {
         "id": "uncomfortable",
         "tab": "Jika Tidak Nyaman",
         "blocks": [
-          { "h": "Jika anak mengalami ketidaknyamanan", "ul": ["Hentikan atau jeda aktivitas.", "Dengarkan anak tanpa menghakimi.", "Pastikan anak berada di tempat yang aman.", "Jangan memaksa anak menjelaskan pengalaman.", "Hubungkan anak dengan orang dewasa tepercaya atau tenaga profesional sesuai kebutuhan."] },
-          { "warn": "Jika terdapat ancaman keselamatan langsung, pendamping perlu mengikuti prosedur perlindungan anak dan layanan darurat setempat." }
+          {
+            "h": "Jika anak mengalami ketidaknyamanan",
+            "ul": [
+              "Hentikan atau jeda aktivitas.",
+              "Dengarkan anak tanpa menghakimi.",
+              "Pastikan anak berada di tempat yang aman.",
+              "Jangan memaksa anak menjelaskan pengalaman.",
+              "Hubungkan anak dengan orang dewasa tepercaya atau tenaga profesional sesuai kebutuhan."
+            ]
+          },
+          {
+            "warn": "Jika terdapat ancaman keselamatan langsung, pendamping perlu mengikuti prosedur perlindungan anak dan layanan darurat setempat."
+          }
         ]
       },
       {
@@ -555,10 +671,24 @@
         "tab": "Layanan Bantuan",
         "draft": true,
         "blocks": [
-          { "warn": "Perlu diverifikasi: daftar layanan ini belum diperiksa oleh tim. Pastikan nomor masih aktif dan sesuai wilayah sebelum digunakan." },
-          { "h": "112 — Panggilan darurat", "p": "Untuk keadaan darurat yang mengancam keselamatan.", "draft": true },
-          { "h": "SAPA 129 — KemenPPPA", "p": "Layanan Sahabat Perempuan dan Anak untuk pengaduan dan perlindungan anak.", "draft": true },
-          { "h": "Layanan setempat", "p": "[Diisi tim: puskesmas, UPTD PPA, posko pengungsian, atau layanan psikososial di wilayah ini.]", "draft": true }
+          {
+            "warn": "Perlu diverifikasi: daftar layanan ini belum diperiksa oleh tim. Pastikan nomor masih aktif dan sesuai wilayah sebelum digunakan."
+          },
+          {
+            "h": "112 — Panggilan darurat",
+            "p": "Untuk keadaan darurat yang mengancam keselamatan.",
+            "draft": true
+          },
+          {
+            "h": "SAPA 129 — KemenPPPA",
+            "p": "Layanan Sahabat Perempuan dan Anak untuk pengaduan dan perlindungan anak.",
+            "draft": true
+          },
+          {
+            "h": "Layanan setempat",
+            "p": "[Diisi tim: puskesmas, UPTD PPA, posko pengungsian, atau layanan psikososial di wilayah ini.]",
+            "draft": true
+          }
         ]
       }
     ]

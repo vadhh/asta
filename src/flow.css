@@ -70,3 +70,12 @@ img.contain { object-fit: contain; }
 /* Icon + label centred as one group (default for icon buttons is a left-aligned list row). */
 .plank-btn.has-icon.centered { justify-content: center; }
 .plank-btn.has-icon.centered .plank-label { flex: 0 1 auto; text-align: center; }
+/* Emotional check-in: the picked emotion's description in the tip panel (30px ≈ 13 css px on a phone). */
+.t-tip { font-size: 30px; line-height: 1.3; }
+.tip-under { background: #feead0; border-radius: 24px; }
+/* Validation: suggestions centred, evenly spaced, in the space under the title and note. */
+.rec-buttons { flex: 1; justify-content: center; gap: 18px; }
+.valid-nav .pill { flex: 0 1 calc(50% - 10px); }
+.paper-clean { background: #feedd8; box-shadow: 0 0 14px 8px #feedd8; border-radius: 12px; }
+/* The map's compass is pale blue; a soft dark outline keeps it legible on the yellow plank. */
+.rec-compass .plank-icon img { filter: drop-shadow(0 0 2px #2c5f7a) drop-shadow(0 0 1px #2c5f7a); }

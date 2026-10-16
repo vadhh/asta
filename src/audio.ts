@@ -18,8 +18,31 @@ const track = (t: Track) => {
   return h
 }
 let current: Track | null = null
+let currentVol = MUSIC_VOL
+
+// iPhone: Web Audio follows the ring/silent switch, so a phone on silent plays nothing. The 'playback' audio
+// session (Safari 17+) makes the game play like a media app. Older Safaris ignore this.
+try {
+  const session = (navigator as Navigator & { audioSession?: { type: string } }).audioSession
+  if (session) session.type = 'playback'
+} catch {
+  /* not supported */
+}
+
+// Browsers keep audio locked until the first tap, and a track started before that never begins. On the first
+// tap anywhere, start the current screen's track if it isn't playing yet (e.g. the title music on Home).
+const startOnFirstTap = () => {
+  document.removeEventListener('pointerdown', startOnFirstTap, true)
+  const h = current && tracks.get(current)
+  if (h && !h.playing()) {
+    h.play()
+    h.fade(0, currentVol, FADE)
+  }
+}
+document.addEventListener('pointerdown', startOnFirstTap, true)
 
 export function playMusic(t: Track, vol = MUSIC_VOL) {
+  currentVol = vol
   const h = track(t)
   if (current === t) {
     h.fade(h.volume(), vol, FADE)

@@ -35,48 +35,56 @@
       {
         "id": "takut",
         "label": "Takut",
+        "description": "Takut adalah perasaan yang wajar, terutama saat kita merasa tidak aman. Kamu boleh mencari tempat yang nyaman dan meminta bantuan orang yang kamu percaya. Kamu tidak harus menghadapi semuanya sendirian.",
         "validation": "Tidak apa-apa merasa takut. Kamu boleh mencari tempat yang aman dan meminta seseorang menemanimu.",
         "recs": [{ "to": "tataati", "label": "TATAATI" }, { "to": "reronce", "label": "Menggambar tempat aman" }, { "to": "company", "label": "Menemui pendamping" }]
       },
       {
         "id": "sedih",
         "label": "Sedih",
+        "description": "Sedih adalah perasaan yang wajar. Kamu boleh menangis, bercerita, atau beristirahat ketika membutuhkannya. Tidak apa-apa jika kamu membutuhkan waktu untuk merasa lebih baik.",
         "validation": "Tidak apa-apa merasa sedih. Kamu tidak harus buru-buru merasa senang.",
         "recs": [{ "to": "reronce", "label": "Menggambar atau bercerita" }, { "to": "rest", "label": "Beristirahat" }]
       },
       {
         "id": "marah",
         "label": "Marah",
+        "description": "Marah adalah perasaan yang boleh dirasakan. Kamu boleh mengungkapkan kemarahanmu, sambil belajar melakukannya tanpa menyakiti diri sendiri atau orang lain.",
         "validation": "Tidak apa-apa merasa marah. Kamu boleh mengungkapkannya dengan cara yang aman.",
         "recs": [{ "to": "reronce", "label": "Menggambar" }, { "to": "rest", "label": "Mengambil jeda" }, { "to": "company", "label": "Berbicara dengan pendamping" }]
       },
       {
         "id": "bingung",
         "label": "Bingung",
+        "description": "Bingung adalah hal yang wajar ketika kita belum memahami sesuatu atau menghadapi banyak hal sekaligus. Kamu boleh bertanya, meminta bantuan, atau mengambil waktu untuk memahami apa yang sedang kamu rasakan.",
         "validation": "Tidak apa-apa kalau kamu belum mengerti. Kita bisa mencari tahu sedikit demi sedikit.",
         "recs": [{ "to": "reronce", "label": "Cerita" }, { "to": "company", "label": "Meminta bantuan" }]
       },
       {
         "id": "lelah",
         "label": "Lelah",
+        "description": "Lelah adalah tanda bahwa tubuh atau pikiranmu mungkin membutuhkan istirahat. Kamu boleh berhenti sejenak, menarik napas perlahan, dan beristirahat sebelum melanjutkan aktivitas.",
         "validation": "Kamu boleh beristirahat. Tidak semua hal harus diselesaikan sekarang.",
         "recs": [{ "to": "rest", "label": "Beristirahat" }, { "to": "tataati", "label": "Kegiatan tenang" }]
       },
       {
         "id": "cemas",
         "label": "Cemas",
+        "description": "Cemas adalah perasaan yang bisa muncul ketika kita memikirkan sesuatu yang belum terjadi atau membuat kita khawatir. Kamu boleh menceritakan kekhawatiranmu kepada orang yang kamu percaya. Kamu tidak harus menyelesaikan semuanya sekaligus.",
         "validation": "Kita bisa berhenti sebentar dan menghadapi satu hal dalam satu waktu.",
         "recs": [{ "to": "tataati", "label": "TATAATI, jika nyaman" }, { "to": "company", "label": "Menemui pendamping" }]
       },
       {
         "id": "senang",
-        "label": "Senang",
+        "label": "Bahagia",
+        "description": "Bahagia adalah perasaan yang menyenangkan. Kamu boleh menikmati hal-hal yang membuatmu bahagia dan membagikan kebahagiaan itu bersama orang lain.",
         "validation": "Kamu boleh menikmati dan membagikan kebahagiaanmu.",
         "recs": [{ "to": "srawung", "label": "Sahabat Hewan" }, { "to": "reronce", "label": "Menggambar" }]
       },
       {
         "id": "tenang",
         "label": "Tenang",
+        "description": "Tenang adalah perasaan ketika tubuh dan pikiran terasa lebih nyaman. Kamu boleh menikmati perasaan ini, beristirahat sejenak, atau melakukan hal sederhana yang membuatmu merasa aman.",
         "validation": "Kamu boleh menikmati waktu yang terasa nyaman ini.",
         "recs": [{ "to": "reronce", "label": "Cerita" }, { "to": "titen", "label": "Kuis" }, { "to": "srawung", "label": "Sahabat Hewan" }]
       }

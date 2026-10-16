@@ -1,7 +1,7 @@
 import { Img, Box, Btn, useArt, useOrient, inset, rel, union, float, pop, box, pick, artSrc, type Rect } from '../stage'
 import { sfx } from '../audio'
 import { ISLANDS, type Island, type Scene } from '../App'
-import { PlankBtn, face } from './ui'
+import { PlankBtn, face as emoFace } from './ui'
 import C from '../content.json'
 
 const SIGN = 'layers/p4-map/sign-reronce.webp'
@@ -17,6 +17,8 @@ export default function MapScene({ done, onOpen }: { done: Island[]; onOpen: (s:
     [{ x: 160, y: 762, w: 490, h: 112 }, { x: 690, y: 762, w: 240, h: 112 }, { x: 970, y: 762, w: 240, h: 112 }],
   )
   const tap = (s: Scene) => () => (sfx('tap'), onOpen(s))
+  // The sign's flat face spans 12%–96% of its width (notched left end), so pad to that face, not the image.
+  const face = (r: Rect): [number, number] => [Math.round(r.w * 0.12) + 6, Math.round(r.w * 0.04) + 6]
   const decor = ['book-corner', 'dice', 'coin', 'coin-small', 'gem', 'chest', 'spyglass', 'compass']
   return (
     <>
@@ -51,13 +53,13 @@ export default function MapScene({ done, onOpen }: { done: Island[]; onOpen: (s:
         {C.map.speech}
       </Box>
       <Img r={L('asta-peek')} {...float(0, 8)} />
-      <PlankBtn src={SIGN} slice={40} pad={[34, 34]} padY={[6, 22]} iconSize={60} icon={face('senang')} className="layer map-btn" style={box(checkIn)} onClick={tap('emotion')}>
+      <PlankBtn src={SIGN} slice={40} pad={face(checkIn)} padY={[2, 8]} iconSize={60} icon={emoFace('senang')} className="layer map-btn centered" style={box(checkIn)} onClick={tap('emotion')}>
         {C.map.checkIn}
       </PlankBtn>
-      <PlankBtn src={SIGN} slice={40} pad={[34, 34]} padY={[6, 22]} iconSize={60} className="layer map-btn" style={box(help)} onClick={tap('guide')}>
+      <PlankBtn src={SIGN} slice={40} pad={face(help)} padY={[2, 8]} className="layer map-btn" style={box(help)} onClick={tap('guide')}>
         {C.map.help}
       </PlankBtn>
-      <PlankBtn src={SIGN} slice={40} pad={[34, 34]} padY={[6, 22]} iconSize={60} className="layer map-btn" style={box(closing)} onClick={tap('closing')}>
+      <PlankBtn src={SIGN} slice={40} pad={face(closing)} padY={[2, 8]} className="layer map-btn" style={box(closing)} onClick={tap('closing')}>
         {C.map.closing}
       </PlankBtn>
     </>

@@ -67,3 +67,6 @@ img.contain { object-fit: contain; }
 .liked.landscape .t-heading { font-size: 38px; white-space: nowrap; }
 .liked.landscape .chips { grid-template-columns: repeat(4, 1fr); gap: 10px; }
 .liked.landscape .chip-btn { font-size: 26px; padding: 14px 8px; line-height: 1.1; }
+/* Icon + label centred as one group (default for icon buttons is a left-aligned list row). */
+.plank-btn.has-icon.centered { justify-content: center; }
+.plank-btn.has-icon.centered .plank-label { flex: 0 1 auto; text-align: center; }

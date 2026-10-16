@@ -3,10 +3,10 @@ import { useOrient, box, pick, pop, artSrc, type Rect } from '../stage'
 import type { Island } from '../App'
 import C from '../content.json'
 
-/** Celebration card shown over the stage when an island is finished. */
-export default function Complete({ island, onBack }: { island: Island; onBack: () => void }) {
+/** Thank-you card shown over the stage when an island is finished. */
+export default function Complete({ island, onBack, onClose }: { island: Island; onBack: () => void; onClose: () => void }) {
   const o = useOrient()
-  const r = pick<Rect>(o, { x: 90, y: 480, w: 720, h: 640 }, { x: 450, y: 170, w: 700, h: 560 })
+  const r = pick<Rect>(o, { x: 40, y: 480, w: 820, h: 640 }, { x: 390, y: 170, w: 820, h: 560 })
   return (
     <>
       <motion.div className="layer scrim" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} />
@@ -19,9 +19,14 @@ export default function Complete({ island, onBack }: { island: Island; onBack: (
         />
         <h2 className="t-logo t-logo-sm">{C.complete.title}</h2>
         <p className="t-body center-text">{C.complete.messages[island]}</p>
-        <button className="pill green" onClick={onBack} autoFocus>
-          {C.complete.back}
-        </button>
+        <div className="nav-row">
+          <button className="pill brown" onClick={onClose}>
+            {C.complete.close}
+          </button>
+          <button className="pill green" onClick={onBack} autoFocus>
+            {C.complete.back}
+          </button>
+        </div>
       </motion.div>
     </>
   )

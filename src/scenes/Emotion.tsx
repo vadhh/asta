@@ -2,17 +2,25 @@ import { useState } from 'react'
 import { motion } from 'motion/react'
 import { Img, Box, Btn, Panel, useArt, useOrient, inset, box, rel, union, pick, float, pop, artSrc, type Rect } from '../stage'
 import { sfx, buzz } from '../audio'
+import type { Target } from '../App'
+import Validation from './Validation'
+import { face } from './ui'
 import C from '../content.json'
 
-export default function Emotion({ onNext }: { onNext: () => void }) {
+// Tiles are drawn in CSS on the exported card grid, in PRD order (the export's own card names don't match).
+const SLOTS = ['card-senang', 'card-sedih-selected', 'card-marah', 'card-takut', 'card-cemas', 'card-bingung', 'card-kesepian', 'card-lelah']
+
+/** Emotional Check-in, then its validation. Nothing picked here is stored. */
+export default function Emotion({ onOpen, onMap }: { onOpen: (t: Target) => void; onMap: () => void }) {
   const L = useArt('p3-emotion')
   const o = useOrient()
   const [picked, setPicked] = useState<string | null>(null)
-  const item = C.emotion.items.find((e) => e.id === picked) ?? C.emotion.empty
-  // Tiles are drawn in CSS on the exported card grid (only "sedih" was exported in its selected look).
-  const tileRect = (id: string) => L(id === 'sedih' ? 'card-sedih-selected' : `card-${id}`)
+  const [validate, setValidate] = useState(false)
+  const item = C.emotion.items.find((e) => e.id === picked)
+  if (validate && item) return <Validation item={item} onOpen={onOpen} onMap={onMap} />
   // Landscape: the tip panel grows downward (9-slice) for readable text, so the Lanjut button moves down with it.
   const next = [L('button-green'), L('icon-arrow-white')].map((l) => pick(o, l, { ...l, y: l.y + 30 }))
+  const skip = { ...next[0], layer: 'skip', src: 'layers/p1-home/button-wood.webp', x: next[0].x - pick(o, 260, 262), slice: 46 }
   // Portrait: the exported board leaves a tall empty strip under the tiles and the tip panel is too
   // small for the response text, so shorten the board and grow the tip panel (9-slice, no stretching).
   const board = pick<Rect>(o, { ...L('board'), h: 530 }, L('board'))
@@ -40,7 +48,7 @@ export default function Emotion({ onNext }: { onNext: () => void }) {
           <motion.button
             key={e.id}
             className={`layer tile ${on ? 'on' : ''}`}
-            style={box(inset(tileRect(e.id), [8, 8, 8, 8]))}
+            style={box(inset(L(SLOTS[i]), [8, 8, 8, 8]))}
             aria-pressed={on}
             aria-label={e.label}
             onClick={() => (sfx('emotion-select'), buzz(), setPicked(e.id))}
@@ -49,7 +57,7 @@ export default function Emotion({ onNext }: { onNext: () => void }) {
             whileTap={{ scale: 0.92 }}
             transition={{ type: 'spring', stiffness: 400, damping: 17, delay: on ? 0 : 0.1 + i * 0.04 }}
           >
-            <img src={artSrc(`layers/extra/face-${e.id}.webp`)} alt="" draggable={false} />
+            <img src={artSrc(face(e.id))} alt="" draggable={false} />
             <span>{e.label}</span>
             {on && <img className="check" src={artSrc('layers/p8-titen/icon-check.webp')} alt="" />}
           </motion.button>
@@ -60,14 +68,14 @@ export default function Emotion({ onNext }: { onNext: () => void }) {
       <Img r={{ ...badge, src: L('asta-head-badge').src }} animate={{ rotate: picked ? [0, -8, 8, 0] : 0 }} key={`badge-${picked}`} />
       <motion.div key={picked ?? 'none'} className="layer fill" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} aria-live="polite">
         <Box r={inset(tipHeader, [4, 28, 10, 28])} className="center t-chip nowrap" fit>
-          {item.title}
+          {item?.label ?? C.emotion.hint.title}
         </Box>
         <Box
           r={inset(tip, [tipHeader.y + tipHeader.h - tip.y + pick(o, 16, 10), pick(o, 40, 62), pick(o, 26, 30), badge.x + badge.w - tip.x + pick(o, 24, 16)])}
           className="center-y t-body"
           fit
         >
-          {item.text}
+          {C.emotion.hint.text}
         </Box>
       </motion.div>
       <Img r={L('asta-full')} {...float(0, 10)} />
@@ -75,7 +83,12 @@ export default function Emotion({ onNext }: { onNext: () => void }) {
       <Box r={inset(bubble, [24, 26, 56, 32])} className="center t-small" fit {...pop(0.55)}>
         {C.emotion.speech}
       </Box>
-      <Btn layers={next} label={C.emotion.next} disabled={!picked} onClick={() => (sfx('tap'), onNext())} className={picked ? 'pulse' : 'dim'}>
+      <Btn layers={[skip]} label={C.emotion.skip} onClick={() => (sfx('tap'), onMap())}>
+        <Box r={inset(rel(skip, skip), [8, 20, 18, 20])} className="center t-button t-button-sm nowrap" fit>
+          {C.emotion.skip}
+        </Box>
+      </Btn>
+      <Btn layers={next} label={C.emotion.next} disabled={!picked} onClick={() => (sfx('tap'), setValidate(true))} className={picked ? 'pulse' : 'dim'}>
         <Box r={inset(rel(next[0], union(next)), [10, 80, 22, 24])} className="center t-button t-button-sm" fit>
           {C.emotion.next}
         </Box>

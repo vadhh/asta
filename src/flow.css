@@ -1,0 +1,62 @@
+/* Hub, check-in validation, closing and companion guide (sizes in frame px, like styles.css). */
+img.contain { object-fit: contain; }
+.t-button-xs { font-size: 42px; }
+
+/* Art-backed button in normal flow: a thin real border, the art drawn 9-slice across it (see PlankBtn). */
+.plank-btn {
+  display: flex; align-items: center; justify-content: center; gap: 18px;
+  border: 6px solid transparent; background: none; padding: 0 30px; min-height: 96px;
+  font-weight: 800; line-height: 1.1; text-align: center;
+}
+.plank-btn img { height: 76px; width: auto; flex: none; pointer-events: none; }
+
+.map-btn { font-size: 34px; color: var(--brown); padding: 0 24px 8px; } /* the sign's bottom edge is its frame */
+.map-btn img { height: 72px; }
+
+.rec-list { gap: 14px; }
+.rec-list p { margin: 0; }
+.rec { font-size: 36px; color: var(--brown); justify-content: flex-start; padding-left: 40px; }
+
+.nav-row { display: flex; gap: 20px; justify-content: center; align-items: stretch; }
+.nav-row .pill { flex: 1; min-height: 92px; line-height: 1.1; }
+.done-card .nav-row { align-self: stretch; }
+
+.info-text p { margin: 0 0 0.5em; }
+.info-text p:last-child { margin: 0; font-weight: 700; }
+
+/* Closing */
+.liked { gap: 8px; }
+.liked p { margin: 0; }
+.chips { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 10px; }
+.chip-btn {
+  min-height: 92px; padding: 6px 14px; font-size: 32px; font-weight: 800; color: var(--brown); line-height: 1.05;
+  background: #fbe7cf; border: 5px solid var(--wood); border-radius: 26px; box-shadow: 0 6px 0 #c89a66;
+}
+.chip-btn.on { background: #ffe45c; border-color: var(--green-ring); box-shadow: 0 0 0 4px #b8f09a, 0 6px 0 #3e9a2a; }
+.choice-list { gap: 16px; }
+.choice { flex: 1; font-size: 38px; color: #fff7e6; -webkit-text-stroke: 7px #6b3a17; paint-order: stroke fill; justify-content: flex-start; padding-left: 44px; }
+.note-text .fit-inner > p { margin: 0 0 0.6em; }
+.note-text .fit-inner > p:last-child { margin: 0; }
+
+/* Guide */
+.guide-tabs { display: grid; gap: 12px; }
+.guide-tabs.portrait { grid-template-columns: 1fr 1fr; }
+.guide-tabs .pill { font-size: 32px; padding: 8px 18px; line-height: 1.1; }
+.guide-scroll {
+  overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; touch-action: pan-y;
+  font-size: 30px; line-height: 1.4; color: var(--ink); padding-right: 14px;
+  user-select: text; -webkit-user-select: text;
+}
+.guide-scroll section + section { margin-top: 16px; }
+.guide-scroll h3 { font-size: 36px; color: var(--brown); margin: 0 0 6px; line-height: 1.2; }
+.guide-scroll p { margin: 0; }
+.guide-scroll ul { margin: 0; padding-left: 38px; }
+.guide-scroll li + li { margin-top: 6px; }
+.guide-scroll .warn { background: #ffe9b8; border-left: 10px solid #e0902a; border-radius: 14px; padding: 12px 18px; font-weight: 600; }
+
+/* Home: give the play icon its width up front (77×95 art) so the label is fitted before the image loads. */
+.play-label img { width: 1.135em; }
+/* Island sign subtitles stay ≥ 11 css px on phones. */
+.island .t-sign-sub { font-size: 0.84em; }
+.map-btn { white-space: nowrap; }
+.valid-msg { font-size: 46px; }

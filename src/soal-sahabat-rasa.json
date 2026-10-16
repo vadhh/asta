@@ -1,0 +1,532 @@
+{
+ "categories": [
+  {
+   "name": "Kenali Perasaan",
+   "goal": "Membantu anak mengenali dan memahami berbagai perasaan yang dapat muncul dalam situasi sehari-hari.",
+   "questions": [
+    {
+     "q": "Rani sudah membuat gambar, tetapi hasilnya belum sesuai dengan yang ia bayangkan. Perasaan apa yang mungkin dirasakan Rani?",
+     "options": [
+      "Kecewa",
+      "Bangga",
+      "Lega"
+     ],
+     "answer": 0,
+     "edu": "Merasa kecewa saat hasil tidak sesuai harapan adalah hal yang wajar. Rani boleh beristirahat sejenak atau mencoba kembali ketika sudah siap."
+    },
+    {
+     "q": "Dito akan mengikuti permainan bersama teman-teman yang belum dikenalnya. Ia merasa sedikit gugup. Apa yang dapat Dito pahami dari perasaannya?",
+     "options": [
+      "Ia tidak cocok berteman dengan orang baru.",
+      "Ia mungkin membutuhkan waktu untuk merasa nyaman.",
+      "Ia harus langsung merasa percaya diri."
+     ],
+     "answer": 1,
+     "edu": "Bertemu orang baru bisa menimbulkan rasa gugup. Dito boleh mengenal teman-temannya secara perlahan dan meminta ditemani jika diperlukan."
+    },
+    {
+     "q": "Mira merasa senang karena bermain bersama teman, tetapi juga sedih karena permainan segera berakhir. Apakah kedua perasaan itu bisa muncul bersamaan?",
+     "options": [
+      "Tidak, seseorang hanya boleh memiliki satu perasaan.",
+      "Bisa, tetapi salah satu perasaan harus disembunyikan.",
+      "Bisa, seseorang dapat merasakan lebih dari satu perasaan."
+     ],
+     "answer": 2,
+     "edu": "Perasaan senang dan sedih dapat muncul bersamaan. Kita tidak harus memilih satu perasaan saja untuk menggambarkan apa yang sedang dirasakan."
+    },
+    {
+     "q": "Beni membantu merapikan alat permainan bersama teman-temannya. Setelah selesai, ia merasa senang dengan apa yang telah dilakukannya. Apa yang mungkin dirasakan Beni?",
+     "options": [
+      "Bangga",
+      "Takut",
+      "Kesal"
+     ],
+     "answer": 0,
+     "edu": "Kita bisa merasa bangga ketika melakukan sesuatu yang baik atau berusaha menyelesaikan tugas. Menghargai usaha sendiri merupakan bagian dari mengenali diri."
+    },
+    {
+     "q": "Salsa ditanya tentang perasaannya hari ini, tetapi ia belum tahu harus menjawab apa. Apa yang boleh ia lakukan?",
+     "options": [
+      "Memilih perasaan secara asal agar cepat selesai.",
+      "Mengatakan bahwa ia belum tahu perasaannya.",
+      "Mengikuti jawaban teman supaya sama."
+     ],
+     "answer": 1,
+     "edu": "Tidak selalu mudah mengenali perasaan sendiri. Kita boleh mengatakan belum tahu, mengambil waktu, atau mencoba mengenalinya secara perlahan."
+    },
+    {
+     "q": "Arga senang karena akan mengikuti kegiatan baru, tetapi ia juga khawatir melakukan kesalahan. Apa yang dapat Arga pahami?",
+     "options": [
+      "Rasa khawatir berarti ia tidak boleh mengikuti kegiatan.",
+      "Ia harus menghilangkan rasa khawatir sebelum mencoba.",
+      "Ia bisa merasa senang sekaligus khawatir."
+     ],
+     "answer": 2,
+     "edu": "Perasaan yang berbeda dapat muncul bersamaan, terutama saat mencoba sesuatu yang baru. Arga boleh mencoba secara bertahap dan meminta bantuan jika membutuhkannya."
+    }
+   ]
+  },
+  {
+   "name": "Sahabat Diri",
+   "goal": "Membantu anak menerima perasaan, menghargai usaha diri, dan memahami bahwa setiap orang memiliki proses belajar yang berbeda.",
+   "questions": [
+    {
+     "q": "Salsa merasa sedih karena belum sempat bermain dengan temannya. Apa yang dapat ia lakukan?",
+     "options": [
+      "Mengabaikan perasaannya dan berpura-pura selalu senang.",
+      "Mengakui bahwa ia sedang sedih dan mencari kegiatan yang nyaman.",
+      "Menyalahkan temannya karena membuatnya sedih."
+     ],
+     "answer": 1,
+     "edu": "Sedih bukan berarti kita lemah. Mengenali perasaan membantu kita memahami kebutuhan diri, seperti beristirahat, melakukan kegiatan yang disukai, atau berbicara dengan orang tepercaya."
+    },
+    {
+     "q": "Bima sedang belajar membuat kerajinan. Hasil pertamanya belum berhasil. Sikap apa yang dapat membantunya belajar?",
+     "options": [
+      "Mencoba lagi ketika siap dan meminta bantuan jika perlu.",
+      "Membandingkan hasilnya dengan semua teman.",
+      "Berhenti belajar karena percobaan pertama gagal."
+     ],
+     "answer": 0,
+     "edu": "Belajar membutuhkan proses. Kesalahan dapat membantu kita mengetahui bagian yang perlu diperbaiki, dan kita tidak harus menyelesaikan semuanya sendirian."
+    },
+    {
+     "q": "Nina tidak sengaja membuat bentuk gambar yang berbeda dari rencana awalnya. Apa yang sebaiknya ia pahami?",
+     "options": [
+      "Gambar yang berbeda selalu berarti ia gagal.",
+      "Ia perlu mengulang semuanya agar hasilnya sama dengan teman.",
+      "Ia dapat melihat hasilnya, belajar, atau mengembangkan ide baru."
+     ],
+     "answer": 2,
+     "edu": "Tidak semua hasil harus sama dengan rencana. Terkadang, kita justru menemukan ide baru dari kesalahan atau perubahan yang tidak disengaja."
+    },
+    {
+     "q": "Setelah mengikuti beberapa kegiatan, Fajar merasa lelah dan sulit berkonsentrasi. Apa yang bisa ia lakukan?",
+     "options": [
+      "Memaksakan diri agar tidak tertinggal.",
+      "Beristirahat sejenak dan memberi tahu pendamping jika masih lelah.",
+      "Berpura-pura tidak lelah agar bisa terus bermain."
+     ],
+     "answer": 1,
+     "edu": "Tubuh dan pikiran juga membutuhkan istirahat. Mengenali rasa lelah membantu kita menentukan apakah perlu berhenti sebentar atau meminta bantuan."
+    },
+    {
+     "q": "Mira melihat gambar temannya terlihat berbeda dari gambar yang ia buat. Apa sikap yang baik terhadap diri sendiri dan temannya?",
+     "options": [
+      "Menghargai karya masing-masing dan tetap belajar sesuai kemampuan.",
+      "Menganggap karya sendiri tidak berharga karena berbeda.",
+      "Meminta temannya mengubah gambar agar sama dengannya."
+     ],
+     "answer": 0,
+     "edu": "Setiap orang memiliki ide, kemampuan, dan cara berkarya yang berbeda. Kita dapat menghargai karya sendiri sekaligus menghargai karya orang lain."
+    },
+    {
+     "q": "Dito merasa kesal karena pendapatnya tidak dipilih dalam permainan kelompok. Apa yang bisa ia lakukan sebelum menanggapi teman?",
+     "options": [
+      "Langsung membalas dengan kata-kata keras.",
+      "Meninggalkan kelompok tanpa memberi tahu siapa pun.",
+      "Berhenti sejenak, mengenali perasaannya, lalu menyampaikan pendapat dengan tenang."
+     ],
+     "answer": 2,
+     "edu": "Saat kesal, kita boleh mengambil waktu untuk menenangkan diri. Setelah lebih siap, kita dapat menyampaikan pendapat tanpa merendahkan orang lain."
+    }
+   ]
+  },
+  {
+   "name": "Tenangkan Diri",
+   "goal": "Mengenalkan pilihan sederhana untuk menghadapi rasa kesal, lelah, atau tidak nyaman secara aman.",
+   "questions": [
+    {
+     "q": "Ruang kegiatan terasa ramai sehingga Nina sulit berkonsentrasi. Apa yang bisa ia lakukan?",
+     "options": [
+      "Memarahi semua anak yang sedang berbicara.",
+      "Meminta bantuan pendamping untuk mencari tempat yang lebih nyaman.",
+      "Memaksakan diri mengikuti kegiatan meskipun merasa tidak nyaman."
+     ],
+     "answer": 1,
+     "edu": "Lingkungan yang ramai dapat membuat sebagian orang tidak nyaman. Kita boleh menyampaikan kebutuhan dan meminta bantuan untuk menemukan tempat yang lebih sesuai."
+    },
+    {
+     "q": "Arga kesal karena permainan yang sedang ia susun berulang kali gagal. Apa pilihan yang dapat membantunya?",
+     "options": [
+      "Berhenti sejenak, memilih cara menenangkan diri yang nyaman, lalu menentukan langkah berikutnya.",
+      "Membanting alat permainan supaya rasa kesalnya hilang.",
+      "Terus mencoba tanpa berhenti meskipun semakin kesal."
+     ],
+     "answer": 0,
+     "edu": "Saat merasa kesal, kita dapat mengambil jeda, duduk dengan nyaman, atau meminta pendamping menemani. Tidak semua cara menenangkan diri cocok untuk setiap orang."
+    },
+    {
+     "q": "Mira belum siap mengikuti permainan kelompok karena sedang ingin beristirahat. Apa yang bisa ia lakukan?",
+     "options": [
+      "Memaksakan diri ikut supaya tidak dianggap berbeda.",
+      "Menyalahkan teman karena mengajaknya bermain.",
+      "Memberi tahu pendamping bahwa ia ingin beristirahat atau memilih kegiatan lain."
+     ],
+     "answer": 2,
+     "edu": "Kita boleh menyampaikan bahwa kita belum siap mengikuti kegiatan. Pendamping dapat membantu mencari pilihan yang aman dan nyaman."
+    },
+    {
+     "q": "Beni sedang membuat bangunan dari balok, tetapi susunannya beberapa kali roboh. Ia mulai merasa kesal. Apa yang bisa dicoba?",
+     "options": [
+      "Menyembunyikan semua balok agar tidak ada yang memakainya.",
+      "Mengambil jeda, lalu mencoba cara menyusun yang berbeda jika sudah siap.",
+      "Meminta semua teman berhenti bermain karena ia sedang kesal."
+     ],
+     "answer": 1,
+     "edu": "Ketika sesuatu belum berhasil, jeda dapat membantu kita berpikir lebih jernih. Setelah itu, kita dapat mencoba cara lain atau meminta bantuan."
+    },
+    {
+     "q": "Salsa mencoba latihan menarik dan mengembuskan napas, tetapi ia merasa tidak nyaman. Apa yang sebaiknya dilakukan?",
+     "options": [
+      "Berhenti dari latihan tersebut dan memilih cara lain yang terasa nyaman.",
+      "Melanjutkan latihan sampai selesai meskipun tidak nyaman.",
+      "Menganggap dirinya gagal karena tidak menyukai latihan itu."
+     ],
+     "answer": 0,
+     "edu": "Latihan menenangkan diri tidak harus dilakukan dengan satu cara. Anak boleh berhenti jika tidak nyaman dan meminta pendamping membantu mencari pilihan lain."
+    },
+    {
+     "q": "Dito kesal karena teman-temannya memiliki pendapat berbeda tentang permainan. Apa yang dapat ia lakukan?",
+     "options": [
+      "Mengulang pendapatnya dengan suara lebih keras agar dipilih.",
+      "Menghentikan permainan supaya semua mengikuti pendapatnya.",
+      "Mengambil jeda, lalu mendengarkan pendapat teman dan menyampaikan idenya dengan sopan."
+     ],
+     "answer": 2,
+     "edu": "Perbedaan pendapat adalah hal yang wajar. Kita bisa menenangkan diri, mendengarkan orang lain, dan mencari kesepakatan tanpa harus memaksakan kehendak."
+    }
+   ]
+  },
+  {
+   "name": "Kenali Kebutuhan Diri",
+   "goal": "Membantu anak mengenali kebutuhan, menyampaikan ketidaknyamanan, serta meminta informasi atau bantuan ketika diperlukan.",
+   "questions": [
+    {
+     "q": "Raka tidak dapat mendengar instruksi permainan dengan jelas karena ruangan ramai. Apa yang dapat ia lakukan?",
+     "options": [
+      "Menebak aturan permainan tanpa bertanya.",
+      "Meminta pendamping menjelaskan kembali di tempat yang lebih tenang.",
+      "Mengikuti gerakan teman meskipun belum memahami aturannya."
+     ],
+     "answer": 1,
+     "edu": "Memahami instruksi adalah kebutuhan yang wajar. Kita boleh meminta penjelasan ulang atau meminta agar informasi disampaikan dengan cara yang lebih mudah dipahami."
+    },
+    {
+     "q": "Nina masih ingin bermain, tetapi ia juga merasa lelah. Apa yang dapat ia lakukan?",
+     "options": [
+      "Memeriksa kebutuhannya, beristirahat bila perlu, lalu memutuskan apakah ingin bermain lagi.",
+      "Terus bermain karena sudah telanjur ingin ikut.",
+      "Langsung meninggalkan kegiatan tanpa memberi tahu pendamping."
+     ],
+     "answer": 0,
+     "edu": "Kita dapat menginginkan sesuatu sekaligus membutuhkan istirahat. Mengenali kondisi diri membantu kita memilih kegiatan yang sesuai."
+    },
+    {
+     "q": "Bima belum memahami aturan permainan yang baru. Apa yang sebaiknya ia lakukan?",
+     "options": [
+      "Diam saja dan mengikuti teman meskipun bingung.",
+      "Mengubah aturan sendiri agar lebih mudah.",
+      "Meminta penjelasan atau contoh dari pendamping."
+     ],
+     "answer": 2,
+     "edu": "Bertanya bukan berarti tidak mampu. Meminta penjelasan dapat membantu kita memahami kegiatan dan ikut berpartisipasi dengan lebih nyaman."
+    },
+    {
+     "q": "Salsa ingin bergabung dengan kelompok permainan, tetapi ia masih merasa ragu. Apa pilihan yang bisa ia ambil?",
+     "options": [
+      "Memaksa diri langsung memimpin permainan.",
+      "Mengamati permainan terlebih dahulu atau meminta seseorang menemaninya.",
+      "Menganggap dirinya tidak akan pernah bisa bermain bersama teman."
+     ],
+     "answer": 1,
+     "edu": "Kita boleh memulai dari langkah kecil. Mengamati, bertanya, atau meminta ditemani dapat membantu kita merasa lebih siap untuk bergabung."
+    },
+    {
+     "q": "Dito mengetahui bahwa tempat kegiatan berpindah ke ruangan lain. Ia belum tahu lokasi barunya. Apa yang bisa ia lakukan?",
+     "options": [
+      "Bertanya kepada pendamping atau petugas yang bertanggung jawab.",
+      "Mengikuti siapa saja tanpa memastikan tujuan.",
+      "Tetap berada di tempat lama meskipun kegiatan sudah berpindah."
+     ],
+     "answer": 0,
+     "edu": "Ketika informasi belum jelas, kita boleh bertanya kepada orang yang bertanggung jawab. Pastikan kita memahami lokasi dan arahan sebelum berpindah tempat."
+    },
+    {
+     "q": "Mira belum siap menjawab pertanyaan dalam kuis. Apa yang sebaiknya tersedia baginya?",
+     "options": [
+      "Ia harus menjawab agar bisa melanjutkan kegiatan.",
+      "Ia harus menjelaskan alasan mengapa belum siap.",
+      "Ia boleh melewati pertanyaan atau beristirahat tanpa harus menjelaskan alasannya."
+     ],
+     "answer": 2,
+     "edu": "Anak berhak menentukan apakah siap mengikuti suatu aktivitas. Melewati pertanyaan tidak berarti gagal, dan anak tidak harus menceritakan hal pribadi untuk melanjutkan kegiatan."
+    }
+   ]
+  },
+  {
+   "name": "Sahabat Empati",
+   "goal": "Membantu anak memahami bahwa orang lain dapat memiliki perasaan dan kebutuhan berbeda serta belajar menunjukkan kepedulian tanpa memaksa.",
+   "questions": [
+    {
+     "q": "Maya terlihat sedih setelah kalah dalam permainan. Apa yang bisa dilakukan temannya?",
+     "options": [
+      "Mengatakan bahwa ia tidak perlu sedih karena hanya permainan.",
+      "Bertanya dengan lembut apakah Maya ingin ditemani atau beristirahat.",
+      "Menceritakan kesedihan Maya kepada semua teman agar mereka tahu."
+     ],
+     "answer": 1,
+     "edu": "Empati berarti berusaha memahami perasaan orang lain. Kita dapat menawarkan dukungan tanpa meremehkan perasaannya atau memaksanya untuk bercerita."
+    },
+    {
+     "q": "Seorang teman belum ingin ikut bermain meskipun sudah diajak. Apa sikap yang tepat?",
+     "options": [
+      "Menghargai pilihannya dan menawarkan kesempatan lain jika ia ingin bergabung.",
+      "Terus mengajaknya sampai ia mau bermain.",
+      "Mengatakan bahwa ia bukan teman yang baik karena menolak."
+     ],
+     "answer": 0,
+     "edu": "Setiap anak memiliki kebutuhan dan kesiapan yang berbeda. Menghargai pilihan teman merupakan salah satu cara menunjukkan kepedulian."
+    },
+    {
+     "q": "Maya terlihat kecewa setelah hasil kerajinan kelompoknya tidak sesuai harapan. Apa yang sebaiknya dilakukan teman?",
+     "options": [
+      "Langsung memberinya nasihat panjang tanpa bertanya.",
+      "Mengatakan bahwa hasilnya tidak penting sehingga ia tidak perlu kecewa.",
+      "Menanyakan apa yang ia butuhkan dan memberi waktu jika ia ingin menenangkan diri."
+     ],
+     "answer": 2,
+     "edu": "Saat seseorang kecewa, dukungan tidak selalu berarti memberi nasihat. Mendengarkan, memberi waktu, dan menanyakan kebutuhannya dapat menjadi bentuk kepedulian."
+    },
+    {
+     "q": "Dito tidak tertawa ketika teman-temannya tertawa saat bermain. Apa yang perlu dipahami teman-temannya?",
+     "options": [
+      "Dito pasti tidak menyukai mereka.",
+      "Setiap orang dapat memiliki reaksi dan perasaan yang berbeda.",
+      "Dito harus tertawa agar dapat diterima kelompok."
+     ],
+     "answer": 1,
+     "edu": "Kita tidak selalu mengetahui alasan seseorang bereaksi dengan cara tertentu. Hindari langsung menebak perasaannya dan berikan ruang untuk menjadi diri sendiri."
+    },
+    {
+     "q": "Salsa melihat temannya kesulitan membawa alat permainan. Apa yang bisa ia lakukan?",
+     "options": [
+      "Menawarkan bantuan dan menghargai jawaban temannya.",
+      "Langsung mengambil semua barang tanpa bertanya.",
+      "Menunggu sampai temannya benar-benar kesulitan baru menawarkan bantuan."
+     ],
+     "answer": 0,
+     "edu": "Membantu orang lain dapat dimulai dengan bertanya apakah mereka membutuhkan bantuan. Kita juga perlu menghargai ketika seseorang ingin mencoba sendiri."
+    },
+    {
+     "q": "Dito mengetahui bahwa seorang teman sedang sedih, tetapi temannya belum ingin bercerita. Apa yang dapat Dito lakukan?",
+     "options": [
+      "Terus bertanya sampai temannya menjelaskan semuanya.",
+      "Meminta teman lain mencari tahu penyebab kesedihannya.",
+      "Menghargai keputusannya dan memberi tahu bahwa ia siap menemani jika diperlukan."
+     ],
+     "answer": 2,
+     "edu": "Kita dapat menunjukkan kepedulian tanpa memaksa seseorang bercerita. Jika ada masalah keselamatan atau anak membutuhkan pertolongan, bantuan orang dewasa tepercaya tetap penting."
+    }
+   ]
+  },
+  {
+   "name": "Teman yang Mendukung",
+   "goal": "Melatih komunikasi yang baik, menghargai pilihan teman, mendengarkan, dan memberikan dukungan dengan cara yang sesuai.",
+   "questions": [
+    {
+     "q": "Seorang teman merasa sedih setelah kalah dalam permainan. Apa yang dapat kamu katakan?",
+     "options": [
+      "“Kamu tidak boleh sedih karena ini cuma permainan.”",
+      "“Kamu mau ditemani sebentar atau ingin beristirahat?”",
+      "“Aku akan bilang ke semua orang kalau kamu sedang sedih.”"
+     ],
+     "answer": 1,
+     "edu": "Kata-kata yang ramah dapat membuat teman merasa dihargai. Tanyakan dukungan yang ia inginkan dan jangan menyebarkan perasaannya tanpa izin."
+    },
+    {
+     "q": "Seorang teman belum siap bergabung dalam kegiatan kelompok. Bagaimana cara mengajaknya dengan baik?",
+     "options": [
+      "Mengatakan bahwa ia harus ikut karena semua anak ikut.",
+      "Mengabaikannya dan tidak mengajaknya lagi.",
+      "Mengatakan bahwa ia boleh bergabung saat siap dan menawarkan bantuan jika dibutuhkan."
+     ],
+     "answer": 2,
+     "edu": "Mengajak teman perlu disertai penghormatan terhadap pilihannya. Dukungan yang baik memberi kesempatan, bukan tekanan."
+    },
+    {
+     "q": "Seorang teman belum memahami aturan permainan. Apa yang dapat dilakukan anggota kelompok?",
+     "options": [
+      "Menjelaskan aturan secara perlahan dan memberi kesempatan untuk bertanya.",
+      "Meminta teman itu keluar dari permainan agar kegiatan cepat selesai.",
+      "Mengulangi instruksi dengan lebih keras tanpa memeriksa apakah ia paham."
+     ],
+     "answer": 0,
+     "edu": "Komunikasi yang baik bukan hanya menyampaikan informasi, tetapi juga memastikan orang lain mendapat kesempatan untuk memahami dan bertanya."
+    },
+    {
+     "q": "Dalam kegiatan menggambar bersama, dua anak memiliki ide yang berbeda. Apa yang dapat mereka lakukan?",
+     "options": [
+      "Memilih ide anak yang berbicara paling keras.",
+      "Saling mendengarkan dan membicarakan ide yang dapat disepakati bersama.",
+      "Membiarkan satu anak mengerjakan semuanya tanpa berdiskusi."
+     ],
+     "answer": 1,
+     "edu": "Kerja sama membutuhkan komunikasi dan sikap saling menghargai. Perbedaan ide dapat dibicarakan agar setiap anggota merasa didengarkan."
+    },
+    {
+     "q": "Beni melihat seorang teman tidak sengaja menjatuhkan alat permainan. Apa yang dapat ia lakukan?",
+     "options": [
+      "Menertawakan teman itu agar suasana menjadi ramai.",
+      "Membiarkan alat berserakan karena bukan miliknya.",
+      "Menawarkan bantuan merapikan alat dan mengingatkan dengan sopan jika diperlukan."
+     ],
+     "answer": 2,
+     "edu": "Kesalahan yang tidak disengaja dapat ditanggapi dengan cara yang baik. Menawarkan bantuan dan berbicara dengan sopan dapat menjaga hubungan pertemanan."
+    },
+    {
+     "q": "Seorang teman bercerita bahwa ia sedang menghadapi masalah dan meminta agar ceritanya tidak disebarkan. Apa yang sebaiknya dilakukan?",
+     "options": [
+      "Menjaga privasinya, tetapi tetap mencari bantuan orang dewasa tepercaya jika ada masalah keselamatan.",
+      "Menceritakannya kepada semua teman agar mereka bisa ikut membantu.",
+      "Berjanji untuk merahasiakan semuanya dalam keadaan apa pun."
+     ],
+     "answer": 0,
+     "edu": "Cerita teman perlu dihargai dan tidak disebarkan sembarangan. Namun, jika ada ancaman keselamatan atau seseorang membutuhkan pertolongan, memberi tahu orang dewasa tepercaya merupakan langkah penting."
+    }
+   ]
+  },
+  {
+   "name": "Menyelesaikan Masalah Bersama",
+   "goal": "Membantu anak mempertimbangkan pilihan, berdiskusi, bertanggung jawab, dan mencari solusi yang aman serta adil.",
+   "questions": [
+    {
+     "q": "Dua anak ingin menggunakan bola yang sama pada waktu bersamaan. Apa yang bisa mereka lakukan?",
+     "options": [
+      "Merebut bola terlebih dahulu agar bisa bermain.",
+      "Membicarakan giliran atau membuat kesepakatan yang adil.",
+      "Membatalkan permainan tanpa mencoba mencari jalan keluar."
+     ],
+     "answer": 1,
+     "edu": "Ketika menghadapi masalah bersama, kita dapat mencari solusi yang mempertimbangkan kebutuhan setiap orang. Bergiliran adalah salah satu cara menyelesaikan konflik sederhana."
+    },
+    {
+     "q": "Kelompok Dito belum sepakat memilih permainan. Apa langkah yang dapat membantu mereka?",
+     "options": [
+      "Mendengarkan usulan setiap anggota lalu mencari pilihan yang disepakati.",
+      "Mengikuti pilihan anggota yang paling banyak berbicara.",
+      "Membiarkan satu anggota menentukan semuanya tanpa diskusi."
+     ],
+     "answer": 0,
+     "edu": "Keputusan kelompok sebaiknya mempertimbangkan pendapat anggota. Mendengarkan dan berdiskusi membantu kelompok menemukan jalan keluar yang lebih adil."
+    },
+    {
+     "q": "Dito tidak sengaja merusak kerajinan milik temannya. Apa yang sebaiknya ia lakukan?",
+     "options": [
+      "Menyembunyikan kerajinan itu agar tidak diketahui.",
+      "Menyalahkan teman lain yang berada di dekatnya.",
+      "Mengakui kejadian tersebut, meminta maaf, dan menawarkan bantuan memperbaikinya."
+     ],
+     "answer": 2,
+     "edu": "Jika melakukan kesalahan, kita dapat bertanggung jawab dengan jujur, meminta maaf, dan membantu memperbaiki keadaan. Kita tidak perlu menyalahkan orang lain."
+    },
+    {
+     "q": "Mira dan temannya ingin menggambar tema yang berbeda pada kertas kelompok. Apa yang dapat mereka lakukan?",
+     "options": [
+      "Meminta salah satu anak mengalah tanpa membahas idenya.",
+      "Membicarakan kedua ide dan menggabungkannya jika keduanya setuju.",
+      "Membagi kertas tanpa berdiskusi meskipun hasilnya tidak sesuai kesepakatan."
+     ],
+     "answer": 1,
+     "edu": "Masalah dapat diselesaikan melalui diskusi dan kesepakatan. Menggabungkan ide bisa menjadi pilihan, tetapi setiap anak tetap boleh menyampaikan pendapatnya."
+    },
+    {
+     "q": "Dalam sebuah permainan kelompok, beberapa anak merasa aturan yang digunakan tidak adil. Apa yang bisa mereka lakukan?",
+     "options": [
+      "Menyampaikan masalah kepada pendamping dan mengusulkan aturan yang lebih adil.",
+      "Mengubah aturan diam-diam agar kelompoknya menang.",
+      "Membalas kelompok lain dengan cara yang sama."
+     ],
+     "answer": 0,
+     "edu": "Jika aturan terasa tidak adil, kita dapat menjelaskan masalahnya dengan sopan dan meminta bantuan untuk mencari solusi. Membalas dengan tindakan yang sama dapat membuat masalah semakin besar."
+    },
+    {
+     "q": "Kegiatan kelompok harus berpindah ruangan karena tempat sebelumnya tidak dapat digunakan. Beberapa anak belum mengetahui lokasi baru. Apa yang sebaiknya dilakukan?",
+     "options": [
+      "Berpindah sendiri tanpa memastikan lokasi.",
+      "Tetap berada di ruangan lama tanpa mencari informasi.",
+      "Mendengarkan arahan pendamping dan bertanya jika informasi belum jelas."
+     ],
+     "answer": 2,
+     "edu": "Perubahan rencana dapat membuat kita bingung. Memastikan informasi dari pendamping membantu kita berpindah dengan lebih aman dan mengetahui apa yang harus dilakukan."
+    }
+   ]
+  },
+  {
+   "name": "Berani Meminta Bantuan",
+   "goal": "Membantu anak mengetahui kapan perlu mencari bantuan, siapa yang dapat dihubungi, dan bagaimana menyampaikan kebutuhan atau ketidaknyamanan.",
+   "questions": [
+    {
+     "q": "Seorang anak berada di tempat pengungsian dan belum mengetahui lokasi pembagian makanan. Apa yang dapat ia lakukan?",
+     "options": [
+      "Mengikuti orang yang tidak dikenal tanpa memastikan tujuannya.",
+      "Bertanya kepada pendamping atau petugas yang bertanggung jawab di tempat tersebut.",
+      "Pergi sendiri mencari makanan ke tempat yang belum diketahuinya."
+     ],
+     "answer": 1,
+     "edu": "Saat membutuhkan informasi atau bantuan, anak dapat bertanya kepada pendamping atau petugas yang bertanggung jawab. Jika merasa tidak aman, anak dapat tetap berada di tempat yang aman dan mencari bantuan orang dewasa tepercaya."
+    },
+    {
+     "q": "Nina merasa tidak nyaman karena seorang anak berulang kali mengganggunya saat kegiatan berlangsung. Apa yang dapat ia lakukan?",
+     "options": [
+      "Menjauh ke tempat yang aman dan memberi tahu pendamping atau orang dewasa tepercaya.",
+      "Membalas gangguan itu agar anak tersebut berhenti.",
+      "Diam saja meskipun gangguan terus terjadi."
+     ],
+     "answer": 0,
+     "edu": "Anak berhak merasa aman. Jika gangguan terus terjadi, anak tidak harus menghadapinya sendiri dan boleh meminta bantuan orang dewasa yang dapat melindunginya."
+    },
+    {
+     "q": "Bima belum memahami instruksi kegiatan meskipun sudah mendengarkan penjelasan. Apa yang dapat ia lakukan?",
+     "options": [
+      "Menebak langkah berikutnya agar tidak perlu bertanya.",
+      "Menunggu sampai kegiatan selesai tanpa memberi tahu siapa pun.",
+      "Meminta pendamping menjelaskan kembali dengan cara yang lebih mudah dipahami."
+     ],
+     "answer": 2,
+     "edu": "Setiap anak dapat membutuhkan cara penjelasan yang berbeda. Meminta contoh, penjelasan ulang, atau bantuan bukanlah sesuatu yang perlu membuat anak malu."
+    },
+    {
+     "q": "Salsa merasa sedih selama beberapa waktu dan mulai kesulitan mengikuti kegiatan sehari-hari. Apa yang sebaiknya ia lakukan?",
+     "options": [
+      "Menyimpan semua perasaannya karena harus menyelesaikan masalah sendiri.",
+      "Memberi tahu orang dewasa tepercaya dan meminta bantuan yang sesuai.",
+      "Memaksa dirinya tetap mengikuti semua kegiatan tanpa beristirahat."
+     ],
+     "answer": 1,
+     "edu": "Jika perasaan tidak nyaman berlangsung lama atau mengganggu kegiatan sehari-hari, anak boleh meminta bantuan. Orang dewasa tepercaya dapat membantu mencari dukungan yang sesuai dengan kebutuhannya."
+    },
+    {
+     "q": "Seorang anak sudah meminta bantuan kepada satu orang dewasa, tetapi masalahnya belum terselesaikan. Apa yang dapat ia lakukan?",
+     "options": [
+      "Meminta bantuan orang dewasa tepercaya lainnya atau petugas yang bertanggung jawab.",
+      "Menganggap dirinya tidak boleh meminta bantuan lagi.",
+      "Berhenti mencari bantuan meskipun masalahnya masih membuatnya tidak aman."
+     ],
+     "answer": 0,
+     "edu": "Jika bantuan pertama belum menyelesaikan masalah, anak boleh mencoba meminta bantuan kepada orang dewasa tepercaya lainnya. Anak berhak terus mencari pertolongan sampai kebutuhannya ditangani."
+    },
+    {
+     "q": "Mira merasa tidak nyaman mengikuti sebuah kegiatan dan ingin berhenti sejenak. Apa yang dapat ia lakukan?",
+     "options": [
+      "Tetap mengikuti kegiatan karena sudah dimulai.",
+      "Pergi diam-diam tanpa memberi tahu pendamping.",
+      "Menyampaikan kepada pendamping bahwa ia ingin berhenti atau beristirahat."
+     ],
+     "answer": 2,
+     "edu": "Anak boleh menyampaikan batasan dan kebutuhannya. Pendamping perlu menghargai permintaan tersebut, membantu anak merasa aman, dan menawarkan pilihan lain tanpa memaksa."
+    }
+   ]
+  }
+ ]
+}

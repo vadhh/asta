@@ -433,95 +433,35 @@
     ]
   },
   "titen": {
-    "title": "TITEN",
-    "sub": "KUIS & EDUKASI",
-    "tipTitle": "Yuk, pahami bersama!",
-    "pick": {
+    "title": "KUIS SAHABAT RASA",
+    "sub": "TITEN",
+    "random": "Acak",
+    "prompt": {
       "draft": true,
-      "text": "Pilih jawaban yang menurutmu paling tepat."
+      "text": "Mau belajar tentang apa? Pilih satu topik, atau Acak."
     },
-    "questions": [
-      {
-        "q": "Saat merasa cemas, apa yang bisa kamu lakukan untuk membantu dirimu lebih tenang?",
-        "options": [
-          {
-            "text": "Menarik napas perlahan",
-            "icon": "icon-calm-cloud",
-            "correct": true
-          },
-          {
-            "text": "Memendam semua perasaan",
-            "icon": "icon-storm-cloud",
-            "draft": true,
-            "feedback": "Memendam perasaan bisa membuat hati makin berat. Coba pilih lagi, ya."
-          },
-          {
-            "text": "Memarahi diri sendiri",
-            "icon": "icon-angry",
-            "draft": true,
-            "feedback": "Kamu pantas diperlakukan dengan lembut, termasuk oleh dirimu sendiri. Coba lagi, ya."
-          }
-        ],
-        "explain": "Menarik napas perlahan dapat membantu tubuh lebih rileks. Coba tarik napas dengan lembut, lalu embuskan pelan-pelan. Kamu tidak harus langsung merasa tenang—beri dirimu waktu."
-      },
-      {
-        "draft": true,
-        "q": "Temanmu terlihat sedih dan diam saja. Apa yang bisa kamu lakukan?",
-        "options": [
-          {
-            "text": "Menertawakannya",
-            "feedback": "Ditertawakan bisa membuat temanmu makin sedih. Coba pilih lagi, ya."
-          },
-          {
-            "text": "Bertanya, \"Kamu ingin ditemani?\"",
-            "correct": true
-          },
-          {
-            "text": "Memaksanya bercerita",
-            "feedback": "Temanmu butuh waktu. Biarkan ia bercerita saat ia siap. Coba lagi, ya."
-          }
-        ],
-        "explain": "Menemani dan mendengarkan tanpa menghakimi membuat temanmu merasa aman. Biarkan ia bercerita saat ia siap."
-      },
-      {
-        "draft": true,
-        "q": "Saat kamu merasa sangat marah, apa yang sebaiknya kamu lakukan?",
-        "options": [
-          {
-            "text": "Membanting barang",
-            "feedback": "Membanting barang bisa menyakiti dirimu atau orang lain. Coba pilih lagi, ya."
-          },
-          {
-            "text": "Berteriak pada teman",
-            "feedback": "Berteriak bisa membuat temanmu sedih atau takut. Coba lagi, ya."
-          },
-          {
-            "text": "Berhenti sejenak dan menarik napas",
-            "correct": true
-          }
-        ],
-        "explain": "Marah itu boleh. Berhenti sejenak membantumu tenang, lalu kamu bisa menyampaikan perasaanmu tanpa menyakiti siapa pun."
-      },
-      {
-        "draft": true,
-        "q": "Kalau kamu merasa takut atau bingung, siapa yang bisa kamu mintai bantuan?",
-        "options": [
-          {
-            "text": "Orang dewasa yang kamu percaya",
-            "correct": true
-          },
-          {
-            "text": "Tidak ada, harus sendiri",
-            "feedback": "Kamu tidak harus menghadapi semuanya sendirian. Coba pilih lagi, ya."
-          },
-          {
-            "text": "Orang asing di internet",
-            "feedback": "Orang asing belum tentu aman. Pilih orang yang kamu kenal dan percaya, ya."
-          }
-        ],
-        "explain": "Kamu tidak harus menghadapi semuanya sendirian. Guru, orang tua, atau keluarga yang kamu percaya siap membantumu."
-      }
-    ]
+    "tipTitle": "Yuk, pahami bersama!",
+    "hint": {
+      "draft": true,
+      "text": "Pilih jawaban yang menurutmu paling tepat. Kamu juga boleh melewati soal ini."
+    },
+    "tryAgain": "Terima kasih sudah mencoba. Yuk, kita lihat kembali jawabannya bersama-sama.",
+    "skip": "Lewati",
+    "next": "Lanjut",
+    "end": {
+      "draft": true,
+      "text": "Terima kasih sudah belajar bersama! Kamu boleh bermain lagi, memilih topik lain, atau berhenti dulu."
+    },
+    "again": "Main lagi",
+    "other": {
+      "draft": true,
+      "text": "Pilih topik lain"
+    },
+    "done": "Selesai",
+    "progress": {
+      "draft": true,
+      "text": "Soal {n} dari {total}"
+    }
   },
   "complete": {
     "draft": true,
@@ -587,7 +527,7 @@
           { "h": "TATAATI — menenangkan diri", "ul": ["Tujuan: memperkenalkan latihan napas dan perhatian sederhana.", "Perlengkapan: perangkat ASTA, tempat duduk yang nyaman.", "Durasi perkiraan: 1–2 menit.", "Cara: anak mengikuti animasi selama merasa nyaman. Jangan meminta anak menahan napas atau menarik napas dalam-dalam. Hentikan jika anak pusing atau tidak nyaman."] },
           { "h": "Ekspresi Kreatif (Reronce)", "ul": ["Tujuan: memberi ruang untuk berekspresi lewat gambar atau cerita.", "Perlengkapan: perangkat ASTA; boleh juga kertas dan alat gambar.", "Durasi perkiraan: 5–10 menit.", "Cara: anak memilih menggambar atau bercerita. Jangan menilai atau menafsirkan hasil karya anak, dan jangan memaksa anak membagikannya."] },
           { "h": "Sahabat Hewan", "ul": ["Tujuan: mendorong interaksi, komunikasi, dan kerja sama lewat permainan.", "Perlengkapan: perangkat ASTA dan kartu fisik Sahabat Hewan, untuk kelompok kecil.", "Durasi perkiraan: 10–15 menit.", "Cara: jelaskan aturan, lalu pemain bergiliran mengambil kartu dan melakukan tantangan sederhana. Anak boleh menolak tantangan. Tidak ada pemain yang dikeluarkan karena salah."] },
-          { "h": "Aktivitas Belajar (Titen)", "ul": ["Tujuan: menjaga anak tetap terlibat dalam belajar.", "Perlengkapan: perangkat ASTA.", "Durasi perkiraan: 5–10 menit.", "Cara: anak menjawab satu pertanyaan dalam satu waktu tanpa batas waktu. Kesalahan tidak dihukum; ajak anak melihat jawabannya bersama-sama."] }
+          { "h": "Aktivitas Belajar (Titen)", "ul": ["Tujuan: mengenalkan keterampilan sosial-emosional lewat Kuis Sahabat Rasa (48 soal dalam 8 topik, misalnya Kenali Perasaan dan Berani Meminta Bantuan).", "Perlengkapan: perangkat ASTA.", "Durasi perkiraan: 5–10 menit.", "Cara: anak memilih satu topik atau \"Acak\", lalu menjawab sekitar 5 soal, satu per satu, tanpa batas waktu dan tanpa skor. Setelah menjawab, bacakan penjelasan singkatnya bersama anak. Jawaban yang kurang tepat tidak dihukum: ASTA menunjukkan jawaban yang lebih tepat dan mengajak melihatnya bersama-sama.", "Anak boleh menekan \"Lewati\", berhenti kapan saja, atau memilih \"Main lagi\" dan topik lain. Soal tidak meminta anak menceritakan pengalaman bencananya. Kuis ini untuk belajar, bukan untuk menilai kondisi anak."] }
         ]
       },
       {

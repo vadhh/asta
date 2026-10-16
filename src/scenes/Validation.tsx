@@ -21,7 +21,7 @@ export default function Validation({ item, onOpen, onMap }: { item: Item; onOpen
   const board = pick<Rect>(o, { x: 50, y: 180, w: 800, h: 560 }, { x: 40, y: 150, w: 620, h: 720 })
   const header = pick<Rect>(o, { x: 97, y: 200, w: 706, h: 114 }, { x: 70, y: 170, w: 560, h: 104 })
   const faceR = pick<Rect>(o, { x: 350, y: 322, w: 200, h: 200 }, { x: 240, y: 290, w: 220, h: 220 })
-  const msg = pick<Rect>(o, { x: 110, y: 525, w: 680, h: 160 }, { x: 90, y: 520, w: 520, h: 270 })
+  const msg = pick<Rect>(o, { x: 110, y: 525, w: 640, h: 160 }, { x: 90, y: 520, w: 490, h: 270 }) // right side clear of the board's leaf
   const tip = pick<Rect>(o, { x: 40, y: 760, w: 820, h: 620 }, { x: 690, y: 40, w: 770, h: 710 })
   const nav = pick<Rect>(o, { x: 30, y: 1410, w: 840, h: 110 }, { x: 690, y: 770, w: 880, h: 110 })
   return (
@@ -44,7 +44,7 @@ export default function Validation({ item, onOpen, onMap }: { item: Item; onOpen
         <p className="t-heading">{others ? V.copy.othersTitle : V.copy.recTitle}</p>
         <p className="t-small t-muted">{V.copy.note}</p>
         {list.map((r) => (
-          <PlankBtn key={r.to} src="layers/p6-reronce/label-draw.webp" slice={34} icon={ICONS[r.to]} className="rec" onClick={() => (sfx('tap'), onOpen(r.to))}>
+          <PlankBtn key={r.to} src="layers/p6-reronce/label-draw.webp" slice={30} pad={[34, 44]} padY={[0, 6]} iconSize={60} icon={ICONS[r.to]} className="rec" onClick={() => (sfx('tap'), onOpen(r.to))}>
             {r.label}
           </PlankBtn>
         ))}

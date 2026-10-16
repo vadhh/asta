@@ -88,8 +88,10 @@ export default function Reronce({ onDone }: { onDone: () => void }) {
               </motion.div>
             )
           })}
+          {/* landscape: the arrow drops below the Bercerita card, and its leaf is decoration outside the tap area */}
+          {o === 'landscape' && <Img r={{ ...L('leaf'), y: L('leaf').y + 46 }} />}
           <Btn
-            layers={[L('button-next-blue'), L('leaf')]}
+            layers={o === 'landscape' ? [{ ...L('button-next-blue'), y: L('button-next-blue').y + 46 }] : [L('button-next-blue'), L('leaf')]}
             label="Lanjut"
             disabled={!mode}
             className={mode ? 'pulse' : 'dim'}

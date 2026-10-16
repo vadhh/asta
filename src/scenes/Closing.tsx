@@ -37,13 +37,13 @@ export default function Closing({ step, setStep, onMap, onEnd }: { step: Step; s
       <Panel r={ask} src="layers/p5-tataati/paper-page.webp" slice={50} {...pop(0.35)} />
       <Liked r={ask} />
       <motion.div className="layer col choice-list" style={box(choices)} {...pop(0.5)}>
-        <PlankBtn src={WOOD} slice={52} icon="layers/p4-map/compass.webp" className="choice" onClick={() => (sfx('tap'), onMap())}>
+        <PlankBtn src={WOOD} slice={56} pad={[62, 62]} padY={[4, 14]} iconSize={66} icon="layers/p4-map/compass.webp" className="choice" onClick={() => (sfx('tap'), onMap())}>
           {E.choices.continue}
         </PlankBtn>
-        <PlankBtn src={WOOD} slice={52} icon={ICONS.rest} className="choice" onClick={() => (sfx('tap'), setStep('rest'))}>
+        <PlankBtn src={WOOD} slice={56} pad={[62, 62]} padY={[4, 14]} iconSize={66} icon={ICONS.rest} className="choice" onClick={() => (sfx('tap'), setStep('rest'))}>
           {E.choices.rest}
         </PlankBtn>
-        <PlankBtn src={WOOD} slice={52} icon={ICONS.company} className="choice" onClick={() => (sfx('tap'), setStep('company'))}>
+        <PlankBtn src={WOOD} slice={56} pad={[62, 62]} padY={[4, 14]} iconSize={66} icon={ICONS.company} className="choice" onClick={() => (sfx('tap'), setStep('company'))}>
           {E.choices.company}
         </PlankBtn>
       </motion.div>
@@ -54,10 +54,11 @@ export default function Closing({ step, setStep, onMap, onEnd }: { step: Step; s
 
 /** The optional reflection question: tap any activities you liked. Lives only in this component's state. */
 function Liked({ r }: { r: Rect }) {
+  const o = useOrient()
   const [liked, setLiked] = useState<string[]>([])
   const Q = E.question
   return (
-    <motion.div className="layer col liked" style={box({ x: r.x + 64, y: r.y + 34, w: r.w - 112, h: r.h - 62 })} {...pop(0.4)}>
+    <motion.div className={`layer col liked ${o}`} style={box({ x: r.x + 64, y: r.y + 34, w: r.w - 112, h: r.h - 62 })} {...pop(0.4)}>
       <p className="t-heading">{Q.text}</p>
       <p className="t-small t-muted" aria-live="polite">{liked.length ? Q.thanks : Q.hint}</p>
       <div className="chips">

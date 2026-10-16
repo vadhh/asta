@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useLayoutEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react'
 import { AnimatePresence, motion, type HTMLMotionProps } from 'motion/react'
 import manifest from './manifest.json'
+import artScale from './art-scale.json'
 
 export type Orient = 'portrait' | 'landscape'
 export type Rect = { x: number; y: number; w: number; h: number }
@@ -118,9 +119,14 @@ export function Img({ r, bleed = true, onBg, style, className = '', ...rest }: I
   return <motion.img src={artSrc(r.src)} alt="" draggable={false} className={`layer ${className}`} style={{ ...box({ ...r, x, y }), ...style }} {...rest} />
 }
 
+/** CSS border-image for art drawn 9-slice. `slice` is the corner size in frame px; the shipped file is
+ *  higher-res (art-scale.json), so the slice into the file is scaled to match. */
+export const borderArt = (src: string, slice: number) =>
+  `url(${artSrc(src)}) ${Math.round(slice * ((artScale as Record<string, number>)[src] ?? 1))} fill / ${slice}px stretch`
+
 type PanelProps = Omit<HTMLMotionProps<'div'>, 'children'> & { r: Rect; src: string; slice: number }
 /** A panel/plank/bubble art layer drawn 9-slice, so it can be resized to `r` without stretching its
- *  corners. `slice` is the corner size in art px (layers are exported 1:1 with frame px). */
+ *  corners. `slice` is the corner size in frame px. */
 export function Panel({ r, src, slice, style, className = '', ...rest }: PanelProps) {
   return (
     <motion.div
@@ -129,7 +135,7 @@ export function Panel({ r, src, slice, style, className = '', ...rest }: PanelPr
         ...box(r),
         borderStyle: 'solid',
         borderWidth: slice,
-        borderImage: `url(${artSrc(src)}) ${slice} fill / ${slice}px stretch`,
+        borderImage: borderArt(src, slice),
         ...style,
       }}
       {...rest}

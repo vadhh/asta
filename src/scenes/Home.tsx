@@ -41,7 +41,7 @@ export default function Home({ onStart, onGuide }: { onStart: () => void; onGuid
         {C.home.about.text}
       </Box>
       <Btn layers={[guide]} label={C.home.guide} onClick={() => (sfx('tap'), onGuide())}>
-        <Box r={inset(rel(guide, guide), [10, 30, 22, 30])} className="center t-button t-button-xs nowrap" fit>
+        <Box r={inset(rel(guide, guide), [12, 62, 24, 62])} className="center t-button t-button-xs nowrap" fit>
           {C.home.guide}
         </Box>
       </Btn>

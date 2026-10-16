@@ -13,8 +13,8 @@ export default function MapScene({ done, onOpen }: { done: Island[]; onOpen: (s:
   const bubble = L('speech-bubble')
   const [checkIn, help, closing] = pick<Rect[]>(
     o,
-    [{ x: 370, y: 1340, w: 500, h: 112 }, { x: 370, y: 1466, w: 242, h: 106 }, { x: 628, y: 1466, w: 242, h: 106 }],
-    [{ x: 170, y: 762, w: 500, h: 112 }, { x: 686, y: 762, w: 250, h: 112 }, { x: 952, y: 762, w: 250, h: 112 }],
+    [{ x: 370, y: 1336, w: 500, h: 112 }, { x: 370, y: 1466, w: 232, h: 106 }, { x: 638, y: 1466, w: 232, h: 106 }],
+    [{ x: 160, y: 762, w: 490, h: 112 }, { x: 690, y: 762, w: 240, h: 112 }, { x: 970, y: 762, w: 240, h: 112 }],
   )
   const tap = (s: Scene) => () => (sfx('tap'), onOpen(s))
   const decor = ['book-corner', 'dice', 'coin', 'coin-small', 'gem', 'chest', 'spyglass', 'compass']
@@ -51,13 +51,13 @@ export default function MapScene({ done, onOpen }: { done: Island[]; onOpen: (s:
         {C.map.speech}
       </Box>
       <Img r={L('asta-peek')} {...float(0, 8)} />
-      <PlankBtn src={SIGN} slice={40} icon={face('senang')} className="layer map-btn" style={box(checkIn)} onClick={tap('emotion')}>
+      <PlankBtn src={SIGN} slice={40} pad={[34, 34]} padY={[6, 22]} iconSize={60} icon={face('senang')} className="layer map-btn" style={box(checkIn)} onClick={tap('emotion')}>
         {C.map.checkIn}
       </PlankBtn>
-      <PlankBtn src={SIGN} slice={40} className="layer map-btn" style={box(help)} onClick={tap('guide')}>
+      <PlankBtn src={SIGN} slice={40} pad={[34, 34]} padY={[6, 22]} iconSize={60} className="layer map-btn" style={box(help)} onClick={tap('guide')}>
         {C.map.help}
       </PlankBtn>
-      <PlankBtn src={SIGN} slice={40} className="layer map-btn" style={box(closing)} onClick={tap('closing')}>
+      <PlankBtn src={SIGN} slice={40} pad={[34, 34]} padY={[6, 22]} iconSize={60} className="layer map-btn" style={box(closing)} onClick={tap('closing')}>
         {C.map.closing}
       </PlankBtn>
     </>

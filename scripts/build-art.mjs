@@ -41,6 +41,8 @@ async function cutEdges(file) {
 }
 
 const cut = {}
+// px of the shipped file per frame px, so 9-slice insets (written in frame px) can be scaled to the file.
+const scale = {}
 await Promise.all(
   [...files].map(async (src) => {
     const out = join(OUT, toWebp(src))
@@ -48,7 +50,8 @@ await Promise.all(
     const isBg = src.startsWith('backgrounds/')
     if (!isBg) cut[src] = await cutEdges(join(SRC, src))
     const width = drawWidth[src] && Math.round(drawWidth[src] * MAX_SCALE)
-    await sharp(join(SRC, src)).resize({ width, withoutEnlargement: true }).webp({ quality: isBg ? 78 : 85, alphaQuality: 90, effort: 5 }).toFile(out)
+    const info = await sharp(join(SRC, src)).resize({ width, withoutEnlargement: true }).webp({ quality: isBg ? 78 : 85, alphaQuality: 90, effort: 5 }).toFile(out)
+    if (drawWidth[src]) scale[toWebp(src)] = +(info.width / drawWidth[src]).toFixed(3)
   }),
 )
 
@@ -59,4 +62,5 @@ for (const [scene, layouts] of Object.entries(manifest.scenes)) {
     scenes[scene][orient] = layers.map(({ layer, src, x, y, w, h }) => ({ layer, src: toWebp(src), x, y, w, h, ...(cut[src] && { cut: cut[src] }) }))
 }
 await writeFile('src/manifest.json', JSON.stringify(scenes))
+await writeFile('src/art-scale.json', JSON.stringify(scale))
 console.log(`wrote ${files.size} images to ${OUT}`)

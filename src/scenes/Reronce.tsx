@@ -7,13 +7,14 @@ import './activities.css'
 
 type Step = 'choose' | 'draw' | 'tell'
 const R = C.reronce
+// 'Pelangi ceria' palette, chosen by the team. Swatches show the exact colour as a dot.
 const COLORS = [
-  { c: '#e5483b', crayon: 'crayon-red' },
-  { c: '#3a7fd6', crayon: 'crayon-blue' },
-  { c: '#f5c431', crayon: 'crayon-yellow' },
-  { c: '#4fae4a' },
-  { c: '#9a62d8' },
-  { c: '#5b3518' },
+  { c: '#E53935', name: 'Merah' },
+  { c: '#FB8C00', name: 'Oranye' },
+  { c: '#FDD835', name: 'Kuning' },
+  { c: '#43A047', name: 'Hijau' },
+  { c: '#1E88E5', name: 'Biru' },
+  { c: '#8E24AA', name: 'Ungu' },
 ]
 const PAPER = '#fffaf0'
 // Drawing paper is narrower in landscape to make room for two tool columns; the story paper is taller in portrait.
@@ -200,12 +201,12 @@ function DrawPad({ hint = C.reronce.drawing.hint, onDone }: { hint?: string; onD
           key={c.c}
           className={`layer swatch ${!eraser && color === c.c ? 'on' : ''}`}
           style={box(tool(i, 0))}
-          aria-label={`Warna ${i + 1}`}
+          aria-label={`Warna ${c.name}`}
           aria-pressed={!eraser && color === c.c}
           whileTap={{ scale: 0.88 }}
           onClick={() => (sfx('tap'), setColor(c.c), setEraser(false))}
         >
-          {c.crayon ? <img src={artSrc(`layers/p6-reronce/${c.crayon}.webp`)} alt="" /> : <span style={{ background: c.c }} />}
+          <span style={{ background: c.c }} />
         </motion.button>
       ))}
       <motion.button

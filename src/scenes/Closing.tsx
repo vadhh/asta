@@ -24,8 +24,8 @@ export default function Closing({ step, setStep, onMap, onEnd }: { step: Step; s
 
   const asta = pick<Rect>(o, { x: 0, y: 70, w: 330, h: 368 }, { x: 10, y: 440, w: 400, h: 446 })
   const speech = pick<Rect>(o, { x: 320, y: 60, w: 550, h: 400 }, { x: 40, y: 40, w: 560, h: 380 })
-  const ask = pick<Rect>(o, { x: 40, y: 480, w: 820, h: 420 }, { x: 640, y: 30, w: 820, h: 360 })
-  const choices = pick<Rect>(o, { x: 50, y: 925, w: 800, h: 370 }, { x: 640, y: 410, w: 820, h: 340 })
+  const ask = pick<Rect>(o, { x: 40, y: 480, w: 820, h: 420 }, { x: 640, y: 30, w: 820, h: 344 })
+  const choices = pick<Rect>(o, { x: 50, y: 925, w: 800, h: 370 }, { x: 640, y: 420, w: 820, h: 330 })
   return (
     <>
       <Img r={L('bush-left')} />

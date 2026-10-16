@@ -11,71 +11,73 @@ import Tataati from './scenes/Tataati'
 import Reronce from './scenes/Reronce'
 import Srawung from './scenes/Srawung'
 import Titen from './scenes/Titen'
-import Ending from './scenes/Ending'
+import Closing from './scenes/Closing'
+import Guide from './scenes/Guide'
 import Complete from './scenes/Complete'
+import './flow.css'
 
 export type Island = 'tataati' | 'reronce' | 'srawung' | 'titen'
-export type Scene = 'home' | 'greeting' | 'emotion' | 'map' | Island | 'ending'
+export type Scene = 'home' | 'greeting' | 'map' | 'emotion' | Island | 'closing' | 'guide'
+/** Closing page sub-screen: the reflection question, the rest screen, or "ingin ditemani". */
+export type Step = 'ask' | 'rest' | 'company'
+/** Anything a recommendation can open. */
+export type Target = Island | Exclude<Step, 'ask'>
 export const ISLANDS: Island[] = ['reronce', 'titen', 'tataati', 'srawung']
 
 const ART: Record<Scene, Art> = {
   home: 'p1-home', greeting: 'p2-greeting', emotion: 'p3-emotion', map: 'p4-map',
-  tataati: 'p5-tataati', reronce: 'p6-reronce', srawung: 'p6-reronce', titen: 'p8-titen', ending: 'p1-home',
+  tataati: 'p5-tataati', reronce: 'p6-reronce', srawung: 'p6-reronce', titen: 'p8-titen', closing: 'p1-home', guide: 'p6-reronce',
 }
 const MUSIC: Record<Scene, Track> = {
   home: 'title', greeting: 'cottage', emotion: 'cottage', map: 'map',
-  tataati: 'breathing', reronce: 'games', srawung: 'games', titen: 'games', ending: 'title',
-}
-
-const PROGRESS_KEY = 'asta.done'
-const loadDone = (): Island[] => {
-  try {
-    return JSON.parse(localStorage.getItem(PROGRESS_KEY) ?? '[]')
-  } catch {
-    return []
-  }
+  tataati: 'breathing', reronce: 'games', srawung: 'games', titen: 'games', closing: 'title', guide: 'cottage',
 }
 
 export default function App() {
   // Dev shortcut: ?scene=titen jumps straight to a screen.
-  const [scene, setScene] = useState<Scene>(() => (import.meta.env.DEV && (new URLSearchParams(location.search).get('scene') as Scene)) || 'home')
-  const [done, setDone] = useState<Island[]>(loadDone)
+  const dev = new URLSearchParams(import.meta.env.DEV ? location.search : '')
+  const [scene, setScene] = useState<Scene>((dev.get('scene') as Scene) || 'home')
+  const [step, setStep] = useState<Step>((dev.get('step') as Step) || 'ask')
+  const [guideFrom, setGuideFrom] = useState<Scene>('home')
+  // Islands visited this session only: a shared tablet must not show one child's trail to the next.
+  const [done, setDone] = useState<Island[]>([])
   const [celebrate, setCelebrate] = useState<Island | null>(null)
   const [muted, setMutedState] = useState(isMuted)
 
   // Browsers keep audio locked until the first tap (Mulai); Howler plays the queued track then.
-  useEffect(() => playMusic(MUSIC[scene], scene === 'tataati' ? 0.25 : MUSIC_VOL), [scene])
+  const rest = scene === 'closing' && step === 'rest'
+  useEffect(() => playMusic(rest ? 'breathing' : MUSIC[scene], scene === 'tataati' || rest ? 0.25 : MUSIC_VOL), [scene, rest])
 
-  const go = (s: Scene) => setScene(s)
+  const go = (s: Scene, st: Step = 'ask') => {
+    if (s === 'guide') setGuideFrom(scene)
+    setStep(st)
+    setScene(s)
+  }
+  const open = (t: Target) => (t === 'rest' || t === 'company' ? go('closing', t) : go(t))
   const complete = (island: Island) => {
     sfx('complete')
     setCelebrate(island)
   }
-  const leaveCelebration = () => {
+  const leaveCelebration = (to: Scene) => {
     const island = celebrate!
-    const next = done.includes(island) ? done : [...done, island]
-    setDone(next)
-    try {
-      localStorage.setItem(PROGRESS_KEY, JSON.stringify(next))
-    } catch {
-      /* progress lasts for this visit only */
-    }
+    if (!done.includes(island)) setDone([...done, island])
     setCelebrate(null)
     sfx('island-unlock')
-    go(next.length === ISLANDS.length && !done.includes(island) ? 'ending' : 'map')
+    go(to)
   }
 
   const isIsland = (ISLANDS as Scene[]).includes(scene)
   const screens: Record<Scene, ReactElement> = {
-    home: <Home onStart={() => go('greeting')} />,
-    greeting: <Greeting onNext={() => go('emotion')} />,
-    emotion: <Emotion onNext={() => go('map')} />,
+    home: <Home onStart={() => go('greeting')} onGuide={() => go('guide')} />,
+    greeting: <Greeting onNext={() => go('map')} />,
     map: <MapScene done={done} onOpen={go} />,
+    emotion: <Emotion onOpen={open} onMap={() => go('map')} />,
     tataati: <Tataati onDone={() => complete('tataati')} />,
     reronce: <Reronce onDone={() => complete('reronce')} />,
     srawung: <Srawung onDone={() => complete('srawung')} />,
     titen: <Titen onDone={() => complete('titen')} />,
-    ending: <Ending onMap={() => go('map')} />,
+    closing: <Closing step={step} setStep={setStep} onMap={() => go('map')} onEnd={() => (setDone([]), go('home'))} />,
+    guide: <Guide onBack={() => go(guideFrom)} />,
   }
 
   return (
@@ -93,7 +95,7 @@ export default function App() {
             {screens[scene]}
           </motion.div>
         </AnimatePresence>
-        <AnimatePresence>{celebrate && <Complete key="done" island={celebrate} onBack={leaveCelebration} />}</AnimatePresence>
+        <AnimatePresence>{celebrate && <Complete key="done" island={celebrate} onBack={() => leaveCelebration('map')} onClose={() => leaveCelebration('closing')} />}</AnimatePresence>
       </Viewport>
       <div className="hud">
         {isIsland && !celebrate ? (

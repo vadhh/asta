@@ -3,103 +3,125 @@
   "home": {
     "title": "ASTA",
     "tagline": "Mengulurkan Tangan, Menumbuhkan Harapan",
-    "start": "Mulai"
+    "start": "Mulai Petualangan",
+    "guide": "Panduan Pendamping",
+    "about": {
+      "draft": true,
+      "text": "ASTA menemanimu mengenali perasaan, menenangkan diri, berkreasi, bermain, dan belajar."
+    }
   },
   "greeting": {
     "speech": "Hai, bagaimana kabarmu hari ini?",
-    "infoLabel": "Info Penting",
-    "info": "Hai, aku disini menjadi teman nyaman dan amanmu. Ceritakan semampumu dan semaumu, aku akan setia mendengarkan kamu."
+    "infoLabel": "Petunjuk",
+    "info": "Di ASTA, kamu boleh memilih kegiatan yang kamu sukai. Kamu tidak harus menceritakan sesuatu yang belum ingin kamu ceritakan. Jika merasa tidak nyaman, kamu boleh berhenti dan meminta bantuan orang dewasa yang kamu percaya.",
+    "noWrong": {
+      "draft": true,
+      "text": "Tidak ada jawaban yang salah saat mengenali perasaanmu."
+    },
+    "next": "Lanjutkan"
   },
   "emotion": {
-    "title": "EMOTIONAL CHECK",
-    "question": "Apa yang sedang kamu rasakan?",
+    "title": "EMOTIONAL CHECK-IN",
+    "question": "Apa yang kamu rasakan sekarang?",
     "speech": "Aku di sini untuk mendengarkanmu.",
-    "next": "Lanjut",
-    "empty": {
+    "next": "Lanjutkan",
+    "skip": "Lewati",
+    "hint": {
       "draft": true,
       "title": "Pilih satu perasaan, ya",
-      "text": "Tidak ada jawaban yang salah. Semua perasaan boleh dirasakan."
+      "text": "Tidak ada jawaban yang salah. Kamu juga boleh melewati bagian ini."
     },
     "items": [
       {
-        "id": "senang",
-        "label": "Senang",
-        "draft": true,
-        "title": "Asyik, kamu merasa senang!",
-        "text": "Senang adalah perasaan yang menyenangkan. Kamu boleh membagikan kebahagiaanmu bersama teman."
+        "id": "takut",
+        "label": "Takut",
+        "validation": "Tidak apa-apa merasa takut. Kamu boleh mencari tempat yang aman dan meminta seseorang menemanimu.",
+        "recs": [{ "to": "tataati", "label": "TATAATI" }, { "to": "reronce", "label": "Menggambar tempat aman" }, { "to": "company", "label": "Menemui pendamping" }]
       },
       {
         "id": "sedih",
         "label": "Sedih",
-        "title": "Tidak apa-apa merasa sedih",
-        "text": "Sedih adalah perasaan yang wajar. Kamu boleh menangis, bercerita, atau beristirahat ketika membutuhkannya."
+        "validation": "Tidak apa-apa merasa sedih. Kamu tidak harus buru-buru merasa senang.",
+        "recs": [{ "to": "reronce", "label": "Menggambar atau bercerita" }, { "to": "rest", "label": "Beristirahat" }]
       },
       {
         "id": "marah",
         "label": "Marah",
-        "draft": true,
-        "title": "Tidak apa-apa merasa marah",
-        "text": "Marah boleh dirasakan. Coba tarik napas pelan-pelan, lalu ceritakan perasaanmu tanpa menyakiti siapa pun."
-      },
-      {
-        "id": "takut",
-        "label": "Takut",
-        "draft": true,
-        "title": "Tidak apa-apa merasa takut",
-        "text": "Kamu tidak harus menghadapinya sendirian. Kamu boleh meminta bantuan orang dewasa yang kamu percaya."
-      },
-      {
-        "id": "cemas",
-        "label": "Cemas",
-        "draft": true,
-        "title": "Tidak apa-apa merasa cemas",
-        "text": "Coba tarik napas perlahan dan hembuskan pelan-pelan. Kita bisa berlatih bersama di Pulau Tataati."
+        "validation": "Tidak apa-apa merasa marah. Kamu boleh mengungkapkannya dengan cara yang aman.",
+        "recs": [{ "to": "reronce", "label": "Menggambar" }, { "to": "rest", "label": "Mengambil jeda" }, { "to": "company", "label": "Berbicara dengan pendamping" }]
       },
       {
         "id": "bingung",
         "label": "Bingung",
-        "draft": true,
-        "title": "Tidak apa-apa merasa bingung",
-        "text": "Bingung itu wajar. Kamu boleh bertanya dan mencari jawabannya pelan-pelan bersama orang lain."
-      },
-      {
-        "id": "kesepian",
-        "label": "Kesepian",
-        "draft": true,
-        "title": "Tidak apa-apa merasa kesepian",
-        "text": "Kamu tidak sendirian, aku ada di sini menemanimu. Coba sapa teman atau keluarga yang kamu sayangi, ya."
+        "validation": "Tidak apa-apa kalau kamu belum mengerti. Kita bisa mencari tahu sedikit demi sedikit.",
+        "recs": [{ "to": "reronce", "label": "Cerita" }, { "to": "company", "label": "Meminta bantuan" }]
       },
       {
         "id": "lelah",
         "label": "Lelah",
-        "draft": true,
-        "title": "Tidak apa-apa merasa lelah",
-        "text": "Tubuh dan pikiranmu butuh istirahat. Kamu boleh berhenti sejenak, minum air, atau tidur sebentar."
+        "validation": "Kamu boleh beristirahat. Tidak semua hal harus diselesaikan sekarang.",
+        "recs": [{ "to": "rest", "label": "Beristirahat" }, { "to": "tataati", "label": "Kegiatan tenang" }]
+      },
+      {
+        "id": "cemas",
+        "label": "Cemas",
+        "validation": "Kita bisa berhenti sebentar dan menghadapi satu hal dalam satu waktu.",
+        "recs": [{ "to": "tataati", "label": "TATAATI, jika nyaman" }, { "to": "company", "label": "Menemui pendamping" }]
+      },
+      {
+        "id": "senang",
+        "label": "Senang",
+        "validation": "Kamu boleh menikmati dan membagikan kebahagiaanmu.",
+        "recs": [{ "to": "srawung", "label": "Sahabat Hewan" }, { "to": "reronce", "label": "Menggambar" }]
+      },
+      {
+        "id": "tenang",
+        "label": "Tenang",
+        "validation": "Kamu boleh menikmati waktu yang terasa nyaman ini.",
+        "recs": [{ "to": "reronce", "label": "Cerita" }, { "to": "titen", "label": "Kuis" }, { "to": "srawung", "label": "Sahabat Hewan" }]
       }
     ]
   },
-  "map": {
-    "speech": "Yuk, jelajahi setiap posnya!",
-    "speechProgress": {
+  "validation": {
+    "others": "Pilih Aktivitas Lain",
+    "back": "Kembali ke Dunia ASTA",
+    "copy": {
       "draft": true,
-      "text": "Hebat! Ayo ke pulau berikutnya!"
+      "recTitle": "Kamu bisa mencoba:",
+      "othersTitle": "Aktivitas lainnya:",
+      "note": "Ini hanya pilihan. Kamu boleh memilih yang lain, atau tidak memilih apa pun.",
+      "showRecs": "Lihat Pilihan Tadi"
     },
+    "activities": {
+      "tataati": "TATAATI",
+      "reronce": "Ekspresi Kreatif",
+      "srawung": "Sahabat Hewan",
+      "titen": "Aktivitas Belajar",
+      "rest": "Beristirahat",
+      "company": "Ingin ditemani"
+    }
+  },
+  "map": {
+    "speech": "Kamu boleh memilih kegiatan yang kamu sukai.",
+    "checkIn": "Emotional Check-in",
+    "help": "Bantuan",
+    "closing": "Penutup",
     "islands": {
       "reronce": {
         "name": "RERONCE",
-        "sub": "Aksi menggambar dan bercerita"
+        "sub": "Ekspresi Kreatif"
       },
       "titen": {
         "name": "TITEN",
-        "sub": "Kuis dan edukasi"
+        "sub": "Aktivitas Belajar"
       },
       "tataati": {
         "name": "TATAATI",
-        "sub": "Menata hati dengan pernapasan"
+        "sub": "Menenangkan diri"
       },
       "srawung": {
         "name": "SRAWUNG",
-        "sub": "Membangun kepedulian melalui permainan"
+        "sub": "Sahabat Hewan"
       }
     }
   },
@@ -333,20 +355,107 @@
   "complete": {
     "draft": true,
     "title": "Hebat!",
-    "back": "Kembali ke Peta",
+    "back": "Kembali ke Dunia ASTA",
+    "close": "Penutup",
     "messages": {
-      "tataati": "Kamu sudah berlatih menata hati dengan pernapasan.",
-      "reronce": "Terima kasih sudah mengekspresikan perasaanmu.",
-      "srawung": "Kamu sudah belajar cara peduli pada perasaan teman.",
-      "titen": "Kamu sudah menyelesaikan semua kuis. Kamu pintar!"
+      "tataati": "Terima kasih sudah mencoba latihan TATAATI.",
+      "reronce": "Terima kasih sudah berkreasi bersamaku.",
+      "srawung": "Terima kasih sudah bermain Sahabat Hewan.",
+      "titen": "Terima kasih sudah mencoba kuisnya."
     }
   },
-  "ending": {
-    "draft": true,
-    "title": "Hebat!",
-    "tagline": "Kamu sudah menjelajahi semua pulau",
-    "speech": "Terima kasih sudah bermain bersamaku. Semua perasaanmu berharga, dan kamu tidak sendirian!",
-    "button": "Ke Peta"
+  "closing": {
+    "message": "Terima kasih sudah meluangkan waktu untuk kegiatan ini. Kamu boleh melanjutkan kegiatan, beristirahat, atau meminta seseorang menemanimu.",
+    "question": {
+      "draft": true,
+      "text": "Kegiatan apa yang kamu sukai hari ini?",
+      "hint": "Boleh dijawab, boleh juga tidak.",
+      "thanks": "Terima kasih sudah memberi tahu aku."
+    },
+    "choices": {
+      "continue": "Saya ingin melanjutkan kegiatan",
+      "rest": "Saya ingin beristirahat",
+      "company": "Saya ingin ditemani"
+    },
+    "back": "Kembali ke Dunia ASTA",
+    "end": "Selesai",
+    "rest": {
+      "text": "Kamu boleh beristirahat. Tidak semua hal harus diselesaikan sekarang.",
+      "hint": {
+        "draft": true,
+        "text": "Duduklah dengan nyaman. Kalau mau, perhatikan awan yang bergerak pelan."
+      }
+    },
+    "company": {
+      "draft": true,
+      "title": "Tidak apa-apa ingin ditemani.",
+      "text": "Panggil kakak pendamping, guru, atau orang dewasa yang kamu percaya di dekatmu. Kamu tidak harus bercerita kalau belum ingin."
+    }
+  },
+  "guide": {
+    "title": "PANDUAN PENDAMPING",
+    "back": "Kembali",
+    "sections": [
+      {
+        "id": "start",
+        "tab": "Memulai Sesi",
+        "draft": true,
+        "blocks": [
+          { "p": "ASTA adalah media dukungan psikososial untuk anak terdampak bencana. ASTA bukan alat diagnosis dan tidak menggantikan layanan profesional." },
+          { "h": "Sebelum mulai", "ul": ["Siapkan tempat yang tenang dan aman, serta ponsel, tablet, atau laptop.", "Tidak perlu membuat akun. Jangan memasukkan nama atau identitas anak.", "Pilihan dan jawaban anak tidak disimpan."] },
+          { "h": "Langkah sesi", "ul": ["Buka ASTA dan tekan \"Mulai Petualangan\".", "Bacakan petunjuk bersama anak. Tekankan bahwa anak boleh memilih, melewati, atau berhenti kapan saja.", "Di Dunia ASTA, anak boleh memulai dari Emotional Check-in atau langsung memilih aktivitas.", "Jika anak memilih perasaan, bacakan pesan validasinya. Rekomendasi aktivitas hanyalah pilihan.", "Setelah aktivitas, anak kembali ke Dunia ASTA atau membuka halaman Penutup.", "Akhiri sesi tanpa meminta penilaian atau cerita tambahan dari anak."] }
+        ]
+      },
+      {
+        "id": "activities",
+        "tab": "Aktivitas",
+        "draft": true,
+        "blocks": [
+          { "p": "Durasi di bawah ini hanya perkiraan dan perlu diuji bersama pengguna. Anak boleh berhenti kapan saja." },
+          { "h": "Emotional Check-in", "ul": ["Tujuan: membantu anak mengenali dan memberi nama pada perasaannya.", "Perlengkapan: perangkat ASTA.", "Durasi perkiraan: 2–3 menit.", "Cara: anak memilih satu dari delapan perasaan, atau menekan \"Lewati\". Anak tidak perlu menjelaskan penyebabnya."] },
+          { "h": "TATAATI — menenangkan diri", "ul": ["Tujuan: memperkenalkan latihan napas dan perhatian sederhana.", "Perlengkapan: perangkat ASTA, tempat duduk yang nyaman.", "Durasi perkiraan: 1–2 menit.", "Cara: anak mengikuti animasi selama merasa nyaman. Jangan meminta anak menahan napas atau menarik napas dalam-dalam. Hentikan jika anak pusing atau tidak nyaman."] },
+          { "h": "Ekspresi Kreatif (Reronce)", "ul": ["Tujuan: memberi ruang untuk berekspresi lewat gambar atau cerita.", "Perlengkapan: perangkat ASTA; boleh juga kertas dan alat gambar.", "Durasi perkiraan: 5–10 menit.", "Cara: anak memilih menggambar atau bercerita. Jangan menilai atau menafsirkan hasil karya anak, dan jangan memaksa anak membagikannya."] },
+          { "h": "Sahabat Hewan", "ul": ["Tujuan: mendorong interaksi, komunikasi, dan kerja sama lewat permainan.", "Perlengkapan: perangkat ASTA dan kartu fisik Sahabat Hewan, untuk kelompok kecil.", "Durasi perkiraan: 10–15 menit.", "Cara: jelaskan aturan, lalu pemain bergiliran mengambil kartu dan melakukan tantangan sederhana. Anak boleh menolak tantangan. Tidak ada pemain yang dikeluarkan karena salah."] },
+          { "h": "Aktivitas Belajar (Titen)", "ul": ["Tujuan: menjaga anak tetap terlibat dalam belajar.", "Perlengkapan: perangkat ASTA.", "Durasi perkiraan: 5–10 menit.", "Cara: anak menjawab satu pertanyaan dalam satu waktu tanpa batas waktu. Kesalahan tidak dihukum; ajak anak melihat jawabannya bersama-sama."] }
+        ]
+      },
+      {
+        "id": "talk",
+        "tab": "Komunikasi",
+        "draft": true,
+        "blocks": [
+          { "h": "Prinsip komunikasi ramah anak", "ul": ["Gunakan kalimat pendek dan bahasa yang sederhana.", "Duduk sejajar dengan anak dan bicara dengan tenang.", "Dengarkan tanpa menghakimi. Semua perasaan boleh dirasakan.", "Jangan memaksa anak menceritakan pengalamannya.", "Beri anak pilihan, dan hormati jika anak menolak atau ingin berhenti.", "Jangan menjanjikan hal yang tidak bisa dipastikan, misalnya \"semuanya pasti baik-baik saja\".", "Hindari membandingkan anak dengan anak lain atau memberi peringkat."] }
+        ]
+      },
+      {
+        "id": "observe",
+        "tab": "Observasi",
+        "blocks": [
+          { "p": "Pendamping dapat memperhatikan apakah anak:" },
+          { "ul": ["Bersedia atau tidak bersedia mengikuti kegiatan.", "Tampak nyaman atau tidak nyaman selama aktivitas.", "Meminta istirahat atau pendampingan.", "Membutuhkan bantuan lebih lanjut."] },
+          { "warn": "Observasi tersebut bukan diagnosis. Pendamping tidak diminta menafsirkan perilaku anak sebagai bukti PTSD atau gangguan tertentu." }
+        ]
+      },
+      {
+        "id": "uncomfortable",
+        "tab": "Jika Tidak Nyaman",
+        "blocks": [
+          { "h": "Jika anak mengalami ketidaknyamanan", "ul": ["Hentikan atau jeda aktivitas.", "Dengarkan anak tanpa menghakimi.", "Pastikan anak berada di tempat yang aman.", "Jangan memaksa anak menjelaskan pengalaman.", "Hubungkan anak dengan orang dewasa tepercaya atau tenaga profesional sesuai kebutuhan."] },
+          { "warn": "Jika terdapat ancaman keselamatan langsung, pendamping perlu mengikuti prosedur perlindungan anak dan layanan darurat setempat." }
+        ]
+      },
+      {
+        "id": "help",
+        "tab": "Layanan Bantuan",
+        "draft": true,
+        "blocks": [
+          { "warn": "Perlu diverifikasi: daftar layanan ini belum diperiksa oleh tim. Pastikan nomor masih aktif dan sesuai wilayah sebelum digunakan." },
+          { "h": "112 — Panggilan darurat", "p": "Untuk keadaan darurat yang mengancam keselamatan.", "draft": true },
+          { "h": "SAPA 129 — KemenPPPA", "p": "Layanan Sahabat Perempuan dan Anak untuk pengaduan dan perlindungan anak.", "draft": true },
+          { "h": "Layanan setempat", "p": "[Diisi tim: puskesmas, UPTD PPA, posko pengungsian, atau layanan psikososial di wilayah ini.]", "draft": true }
+        ]
+      }
+    ]
   },
   "hud": {
     "map": "Kembali ke peta",

@@ -107,44 +107,55 @@
     "title": "TATAATI",
     "sub": "Menata hati dengan pernapasan",
     "photo": [
-      "Tarik...",
-      "Tahan...",
-      "Hembuskan..."
+      "Tarik napas...",
+      "Embuskan..."
     ],
     "whatTitle": "Apa itu Tataati?",
     "what": "Tataati adalah kegiatan menata hati melalui pernapasan. Saat kita merasa lelah, cemas, atau marah, kita bisa berhenti sejenak, menarik napas dengan tenang, dan menghembuskannya perlahan. Ini membantu tubuh dan pikiran menjadi lebih rileks.",
+    "ready": {
+      "draft": true,
+      "text": "Bernapaslah dengan caramu sendiri, tidak perlu dipaksa. Kalau kamu merasa pusing atau tidak nyaman, berhenti saja, ya."
+    },
+    "start": "Mulai",
     "exerciseTitle": {
       "draft": true,
       "text": "Ayo bernapas bersama"
     },
-    "phases": [
-      {
-        "id": "in",
-        "label": "Tarik napas...",
-        "seconds": 4
-      },
-      {
-        "id": "hold",
-        "label": "Tahan...",
-        "seconds": 2
-      },
-      {
-        "id": "out",
-        "label": "Hembuskan perlahan...",
-        "seconds": 5
-      }
-    ],
-    "rounds": 3,
-    "round": {
+    "in": "Tarik napas perlahan...",
+    "out": {
       "draft": true,
-      "text": "Putaran {n} dari {total}"
+      "text": "Embuskan dengan nyaman..."
     },
+    "follow": {
+      "draft": true,
+      "text": "Ikuti Asta selama kamu merasa nyaman."
+    },
+    "paused": {
+      "draft": true,
+      "text": "Istirahat dulu. Tekan Lanjutkan kalau kamu mau mencoba lagi."
+    },
+    "pause": "Jeda",
+    "resume": "Lanjutkan",
+    "stop": "Selesai",
+    "groundTitle": {
+      "draft": true,
+      "text": "Lihat sekelilingmu"
+    },
+    "ground": {
+      "draft": true,
+      "text": "Rasakan kakimu menyentuh lantai dan tubuhmu yang sedang duduk atau berdiri. Lalu lihat sekelilingmu: apa saja yang bisa kamu lihat dan dengar?"
+    },
+    "next": "Lanjut",
     "rememberTitle": "Ingat ya!",
-    "remember": "Pernapasan yang tenang dapat membantu kita merasa lebih baik dan siap menghadapi aktivitas berikutnya.",
+    "remember": {
+      "draft": true,
+      "text": "Kamu boleh mencoba bernapas pelan seperti ini kapan saja kamu mau. Kalau butuh bantuan, mintalah kakak pendamping menemanimu."
+    },
     "doneText": {
       "draft": true,
-      "text": "Hebat! Kamu sudah bernapas dengan tenang. Bagaimana perasaanmu sekarang?"
-    }
+      "text": "Terima kasih sudah mencoba. Apa pun yang kamu rasakan sekarang, tidak apa-apa."
+    },
+    "done": "Selesai"
   },
   "reronce": {
     "title": "RERONCE",
@@ -159,16 +170,59 @@
       "desc": "Ceritakan apa yang kamu rasakan dengan kata-kata."
     },
     "drawing": {
-      "draft": true,
-      "hint": "Gambarlah apa yang kamu rasakan hari ini",
+      "hint": "Gambarlah sesuatu yang membuatmu merasa nyaman",
+      "eraser": "Penghapus",
+      "sizes": {
+        "draft": true,
+        "text": [
+          "Kuas kecil",
+          "Kuas sedang",
+          "Kuas besar"
+        ]
+      },
       "clear": "Hapus",
       "save": "Simpan",
-      "done": "Selesai"
+      "done": "Selesai",
+      "privacy": {
+        "draft": true,
+        "text": "Gambarmu tidak dikirim ke mana pun. Simpan hanya ke perangkat ini."
+      }
     },
     "telling": {
-      "draft": true,
-      "hint": "Ceritakan apa yang kamu rasakan hari ini...",
-      "privacy": "Ceritamu tidak disimpan dan tidak dikirim ke mana pun.",
+      "pick": {
+        "draft": true,
+        "text": "Pilih satu pertanyaan yang kamu suka"
+      },
+      "prompts": [
+        "Apa kegiatan yang kamu sukai?",
+        "Hal apa yang membuatmu merasa nyaman?",
+        "Jika kamu ingin membuat tempat yang menyenangkan, seperti apa tempat itu?"
+      ],
+      "hint": {
+        "draft": true,
+        "text": "Tulis jawabanmu di sini, atau ceritakan kepada pendamping..."
+      },
+      "wordsHint": {
+        "draft": true,
+        "text": "Cukup tulis beberapa kata saja..."
+      },
+      "write": {
+        "draft": true,
+        "text": "Tulis cerita"
+      },
+      "words": {
+        "draft": true,
+        "text": "Kata kunci"
+      },
+      "drawInstead": {
+        "draft": true,
+        "text": "Pakai gambar"
+      },
+      "privacy": {
+        "draft": true,
+        "text": "Ceritamu tidak disimpan dan tidak dikirim ke mana pun."
+      },
+      "skip": "Lewati",
       "done": "Selesai"
     }
   },

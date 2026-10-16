@@ -228,7 +228,124 @@
   },
   "srawung": {
     "title": "SRAWUNG",
-    "sub": "Membangun kepedulian melalui permainan",
+    "sub": "Sahabat Hewan",
+    "pendamping": "Untuk pendamping",
+    "intro": {
+      "draft": true,
+      "heading": "Ayo main Sahabat Hewan!",
+      "goal": "Kita main kartu bersama teman dan pendamping. Di sini kita belajar bekerja sama, saling mendengarkan, dan saling peduli.",
+      "animals": "Kenalan dengan sahabat hewan. Ketuk hewannya!",
+      "tip": "Siapkan kartu hewan dan kartu tantangan. Main dalam kelompok kecil, duduk melingkar bersama anak-anak.",
+      "speech": "Halo! Yuk, main bersama teman-temanmu!",
+      "button": "Lihat aturan"
+    },
+    "rules": {
+      "draft": true,
+      "heading": "Aturan main",
+      "items": [
+        "Duduk melingkar bersama teman.",
+        "Ambil satu kartu, lalu baca atau dengarkan.",
+        "Lakukan tantangannya bersama.",
+        "Tidak ada jawaban yang salah.",
+        "Belum mau? Bilang \"lewati\" saja.",
+        "Tidak ada yang menang atau kalah.",
+        "Boleh main lagi atau berhenti kapan saja."
+      ],
+      "tip": "Bantu jelaskan aturan jika anak belum paham. Bacakan kartu untuk anak yang belum lancar membaca.",
+      "speech": "Ingat, semua boleh ikut bermain!",
+      "button": "Pilih permainan"
+    },
+    "modes": {
+      "draft": true,
+      "heading": "Pilih permainan",
+      "speech": "Mau main yang mana?",
+      "start": "Mulai"
+    },
+    "modeList": [
+      {
+        "id": "kerjasama",
+        "draft": true,
+        "name": "Kerja Sama",
+        "desc": "Selesaikan tantangan bersama kelompok.",
+        "animal": "gajah",
+        "tip": "Ajak semua anak ikut, tapi jangan dipaksa. Puji usaha kelompok, bukan siapa yang paling cepat.",
+        "cards": [
+          "Ceritakan satu cara bekerja sama dengan teman saat bermain.",
+          "Berhitung bersama sampai 10. Setiap orang menyebut satu angka, bergantian.",
+          "Bergandengan tangan dan buat satu lingkaran besar bersama.",
+          "Susun kartu hewan dari yang paling kecil sampai yang paling besar. Diskusikan bersama!",
+          "Tirukan gerakan Gajah berjalan pelan-pelan bersama-sama.",
+          "Buat bentuk bintang besar dengan tangan kalian semua.",
+          "Tirukan suara Burung bersama-sama, dari pelan sampai keras.",
+          "Sebutkan satu hal yang membuat kerja sama jadi menyenangkan."
+        ]
+      },
+      {
+        "id": "diterima",
+        "draft": true,
+        "name": "Saling Menerima",
+        "desc": "Pilih cara agar teman merasa diterima.",
+        "animal": "burung",
+        "tip": "Semua ide baik dihargai. Kalau anak bingung, ajak lihat kartu hewan untuk mencari ide bersama.",
+        "cards": [
+          "Ada teman baru di kelompok. Bagaimana cara kita menyambutnya?",
+          "Seorang teman ingin ikut bermain, tapi malu. Apa yang bisa kamu katakan?",
+          "Teman salah menjawab, lalu ditertawakan. Apa yang bisa kita lakukan?",
+          "Gajah sedang sedih. Apa yang bisa kita lakukan supaya Gajah merasa ditemani?",
+          "Kuda sedang bingung. Bagaimana cara kita membantunya?",
+          "Ikan sedang marah. Apa yang bisa kita lakukan supaya Ikan tenang?",
+          "Burung sedang senang. Bagaimana cara kita ikut senang bersamanya?",
+          "Pilih satu kata baik untuk teman di sebelahmu."
+        ]
+      },
+      {
+        "id": "giliran",
+        "draft": true,
+        "name": "Giliran Bicara",
+        "desc": "Bergantian bicara dan saling mendengarkan.",
+        "animal": "kuda",
+        "tip": "Beri waktu setiap anak untuk bicara. Anak boleh diam atau menjawab singkat saja.",
+        "cards": [
+          "Kalau kamu bisa jadi hewan, hewan apa yang kamu pilih? Kenapa?",
+          "Apa permainan yang paling kamu suka?",
+          "Hewan apa yang menurutmu paling lucu? Kenapa?",
+          "Menurutmu, apa yang membuat seseorang jadi teman yang baik?",
+          "Warna apa yang membuatmu senang? Kenapa?",
+          "Apa satu hal yang kamu suka dari temanmu di kelompok ini?",
+          "Kalau Ikan dan Burung ingin bermain bersama, permainan apa yang cocok?",
+          "Apa hal kecil yang membuatmu tersenyum hari ini?"
+        ]
+      },
+      {
+        "id": "digital",
+        "draft": true,
+        "name": "Kartu Digital",
+        "desc": "Cocokkan hewan dan perasaannya di layar.",
+        "animal": "ikan",
+        "tip": "Untuk anak yang tidak punya kartu fisik. Anak boleh main bergantian di satu layar."
+      }
+    ],
+    "play": {
+      "draft": true,
+      "hint": "Ambil kartu fisik, atau pakai kartu di layar.",
+      "draw": "Ketuk untuk ambil kartu",
+      "next": "Kartu berikutnya",
+      "skip": "Lewati tantangan",
+      "done": "Selesai",
+      "animals": "Kartu hewan",
+      "speech": "Ambil satu kartu, lalu lakukan bersama!",
+      "skipSpeech": "Tidak apa-apa! Kita coba kartu lain, ya.",
+      "close": "Tutup"
+    },
+    "finish": {
+      "draft": true,
+      "heading": "Terima kasih sudah bermain bersama!",
+      "text": "Setiap orang sudah ikut bermain. Bagian mana yang paling kamu suka?",
+      "tip": "Tutup dengan menanyakan perasaan anak setelah bermain. Hargai semua jawaban.",
+      "speech": "Seru sekali main bersama kalian!",
+      "again": "Main lagi",
+      "done": "Selesai"
+    },
     "speech": {
       "draft": true,
       "text": "Cocokkan hewan dengan perasaannya!"

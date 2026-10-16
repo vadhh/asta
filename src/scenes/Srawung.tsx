@@ -1,72 +1,58 @@
-import { useMemo, useState } from 'react'
+import { useState, type ReactNode } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
-import { Img, Box, useArt, useOrient, inset, box, pick, float, pop, artSrc, type Rect, scaledPlank } from '../stage'
+import { Img, Box, useArt, useOrient, box, pick, float, pop, artSrc, type Rect, scaledPlank } from '../stage'
 import { sfx, buzz } from '../audio'
 import C from '../content.json'
+import Memory, { MatchTip, shuffle } from './srawung/Memory'
+import './srawung.css'
 
 const S = C.srawung
-type Card = { pair: number; kind: 'animal' | 'emotion' }
+type Step = 'intro' | 'rules' | 'modes' | 'play' | 'done'
+type Mode = (typeof S.modeList)[number]
 
-const shuffle = <T,>(a: T[]) => {
-  const r = [...a]
-  for (let i = r.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[r[i], r[j]] = [r[j], r[i]]
-  }
-  return r
-}
-
-/** Memory match: each animal pairs with the emotion it shows; a match reveals how to support that friend. */
+/** Sahabat Hewan (PRD fitur 8): a guide for a physical card game played in a small group with a companion.
+ *  Intro → rules → pick a mode → draw challenge cards one at a time (or play the digital memory match) → done.
+ *  No scores; any challenge can be skipped; the game can be replayed or stopped at any time. */
 export default function Srawung({ onDone }: { onDone: () => void }) {
   const L = useArt('p6-reronce')
   const o = useOrient()
-  const deck = useMemo(() => shuffle(S.pairs.flatMap((_, pair): Card[] => [{ pair, kind: 'animal' }, { pair, kind: 'emotion' }])), [])
-  const [open, setOpen] = useState<number[]>([])
-  const [matched, setMatched] = useState<number[]>([])
-  const [tip, setTip] = useState<number | null>(null)
+  const [step, setStep] = useState<Step>('intro')
+  const [mode, setMode] = useState<Mode | null>(null)
+  const [round, setRound] = useState(0) // remounts the game, so a repeat gets a fresh shuffle
+  const [animal, setAnimal] = useState<number | null>(null)
 
-  const flip = (i: number) => {
-    if (open.length === 2 || open.includes(i) || matched.includes(deck[i].pair)) return
+  const go = (s: Step) => {
+    sfx('page')
+    if (s === 'play') setRound((r) => r + 1)
+    setStep(s)
+  }
+  const showAnimal = (i: number) => {
     sfx('card-flip')
-    const next = [...open, i]
-    setOpen(next)
-    if (next.length < 2) return
-    const [a, b] = next
-    if (deck[a].pair === deck[b].pair) {
-      setTimeout(() => {
-        setMatched((m) => [...m, deck[a].pair])
-        setOpen([])
-        sfx('card-match')
-        buzz(40)
-        setTip(deck[a].pair)
-      }, 550)
-    } else {
-      setTimeout(() => setOpen([]), 1100)
-    }
-  }
-  const closeTip = () => {
-    sfx('tap')
-    setTip(null)
-    if (matched.length === S.pairs.length) onDone()
+    setAnimal(i)
   }
 
-  // Grid stays clear of Asta (portrait: bottom-left, landscape: left of the panel).
-  const grid = pick<Rect>(o, { x: 70, y: 250, w: 760, h: 970 }, { x: 450, y: 200, w: 960, h: 545 })
   // Portrait gets a bigger plank: the frame is narrow, so its subtitle would otherwise be tiny on phones.
   const tp = L('title-plank')
   const P = scaledPlank(tp, pick(o, 1.45, 1.4))
-  const plank = P.plank
-  const cols = pick(o, 2, 4)
-  const rows = deck.length / cols
-  const gap = 24
-  const cw = (grid.w - gap * (cols - 1)) / cols
-  const ch = (grid.h - gap * (rows - 1)) / rows
-  const cell = (i: number): Rect => ({ x: grid.x + (i % cols) * (cw + gap), y: grid.y + Math.floor(i / cols) * (ch + gap), w: cw, h: ch })
+  const panel = pick<Rect>(o, { x: 40, y: 255, w: 820, h: step === 'play' ? 1300 : 1090 }, { x: 420, y: 200, w: 1070, h: 650 })
+  const speech = pick<Rect>(o, { x: 250, y: 1375, w: 610, h: 160 }, { x: 40, y: 200, w: 330, h: 150 })
+  const memory = step === 'play' && mode?.id === 'digital'
+
+  const animals = (
+    <div className="sh-animals">
+      {S.pairs.map((p, i) => (
+        <motion.button key={p.animal} className="sh-animal" aria-label={p.animalName} onClick={() => showAnimal(i)} whileTap={{ scale: 0.93 }}>
+          <img src={artSrc(`layers/extra/animal-${p.animal}.webp`)} alt="" />
+          <span>{p.animalName}</span>
+        </motion.button>
+      ))}
+    </div>
+  )
 
   return (
     <>
       {o === 'landscape' && <Img r={L('panel')} />}
-      <Img r={{ ...plank, src: tp.src }} bleed={false} {...pop(0)} />
+      <Img r={{ ...P.plank, src: tp.src }} bleed={false} {...pop(0)} />
       <Img r={L('binder-clip')} />
       <Box r={P.title} className="center t-plank-dark nowrap" fit>
         {S.title}
@@ -75,84 +61,175 @@ export default function Srawung({ onDone }: { onDone: () => void }) {
         {S.sub}
       </Box>
 
-      {deck.map((card, i) => {
-        const up = open.includes(i) || matched.includes(card.pair)
-        const p = S.pairs[card.pair]
-        return (
-          <motion.button
-            key={i}
-            className={`layer flip ${matched.includes(card.pair) ? 'matched' : ''}`}
-            style={box(cell(i))}
-            onClick={() => flip(i)}
-            aria-label={up ? (card.kind === 'animal' ? p.animalName : p.emotionName) : `Kartu ${i + 1}`}
-            aria-pressed={up}
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 + i * 0.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <motion.div className="flip-inner" animate={{ rotateY: up ? 180 : 0 }} transition={{ type: 'spring', stiffness: 260, damping: 22 }}>
-              <div className="face back">
-                <img src={artSrc('layers/p3-emotion/asta-head-badge.webp')} alt="" />
-              </div>
-              <div className="face front">
-                {card.kind === 'animal' ? (
-                  <>
-                    <img className="photo" src={artSrc(`layers/extra/animal-${p.animal}.webp`)} alt="" />
-                    <span className="t-card">{p.animalName}</span>
-                  </>
-                ) : (
-                  <>
-                    <img className="emo" src={artSrc(`layers/extra/face-${p.emotion}.webp`)} alt="" />
-                    <span className="t-card chip">{p.emotionName}</span>
-                  </>
-                )}
-              </div>
-            </motion.div>
-          </motion.button>
-        )
-      })}
-
-      <Box r={pick<Rect>(o, { x: 250, y: 1350, w: 420, h: 130 }, { x: 40, y: 200, w: 300, h: 150 })} className="center t-small speech-box" fit {...pop(0.6)}>
-        {S.speech.text}
-      </Box>
-      <Img r={L('asta-wave')} {...float(0.3, 10)} />
+      {memory ? (
+        <Memory key={round} onFinish={() => go('done')} />
+      ) : (
+        <>
+          <motion.div key={step} className={`layer box sh ${o} sh-${step}`} style={box(panel)} {...pop(0.05)}>
+            {step === 'intro' && (
+              <>
+                <h2 className="t-heading">{S.intro.heading}</h2>
+                <p className="t-body sh-goal">{S.intro.goal}</p>
+                <div className="sh-cards">
+                  <p className="t-small sh-label">{S.intro.animals}</p>
+                  {animals}
+                </div>
+                <Tip text={S.intro.tip} />
+                <button className="pill green" onClick={() => go('rules')}>
+                  {S.intro.button}
+                </button>
+              </>
+            )}
+            {step === 'rules' && (
+              <>
+                <h2 className="t-heading">{S.rules.heading}</h2>
+                <ol className="t-body sh-list sh-scroll">
+                  {S.rules.items.map((r) => (
+                    <li key={r}>{r}</li>
+                  ))}
+                </ol>
+                <Tip text={S.rules.tip} />
+                <button className="pill green" onClick={() => go('modes')}>
+                  {S.rules.button}
+                </button>
+              </>
+            )}
+            {step === 'modes' && (
+              <>
+                <h2 className="t-heading">{S.modes.heading}</h2>
+                <div className="sh-mode-grid">
+                  {S.modeList.map((m) => (
+                    <motion.button
+                      key={m.id}
+                      className={`sh-mode ${mode?.id === m.id ? 'on' : ''}`}
+                      aria-pressed={mode?.id === m.id}
+                      onClick={() => (sfx('emotion-select'), buzz(), setMode(m))}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      {m.id === 'digital' ? (
+                        <span className="sh-mini-back">
+                          <img src={artSrc('layers/p3-emotion/asta-head-badge.webp')} alt="" />
+                        </span>
+                      ) : (
+                        <img src={artSrc(`layers/extra/animal-${m.animal}.webp`)} alt="" />
+                      )}
+                      <span className="sh-mode-text">
+                        <span className="t-card">{m.name}</span>
+                        <span className="t-small">{m.desc}</span>
+                      </span>
+                    </motion.button>
+                  ))}
+                </div>
+                {mode ? <Tip text={mode.tip} /> : <div className="sh-tip-space" />}
+                <button className={`pill green ${mode ? 'pulse' : ''}`} disabled={!mode} onClick={() => go('play')}>
+                  {S.modes.start}
+                </button>
+              </>
+            )}
+            {step === 'play' && mode?.cards && <Play key={round} mode={mode} animals={animals} onFinish={() => go('done')} />}
+            {step === 'done' && (
+              <>
+                <h2 className="t-heading">{S.finish.heading}</h2>
+                <img className="sh-done-art" src={artSrc('layers/p3-emotion/asta-head-badge.webp')} alt="" />
+                <p className="t-body">{S.finish.text}</p>
+                <Tip text={S.finish.tip} />
+                <div className="sh-actions">
+                  <button className="pill blue" onClick={() => go('modes')}>
+                    {S.finish.again}
+                  </button>
+                  <button className="pill green" onClick={() => (sfx('tap'), onDone())}>
+                    {S.finish.done}
+                  </button>
+                </div>
+              </>
+            )}
+          </motion.div>
+          {step !== 'play' && <Speech r={speech} text={{ intro: S.intro.speech, rules: S.rules.speech, modes: S.modes.speech, done: S.finish.speech }[step]} />}
+          {(step !== 'play' || o === 'landscape') && <Img r={L('asta-wave')} {...float(0.3, 10)} />}
+        </>
+      )}
 
       <AnimatePresence>
-        {tip !== null && <MatchTip key={tip} pair={tip} onNext={closeTip} />}
+        {animal !== null && <MatchTip key={animal} pair={animal} label={S.play.close} onNext={() => (sfx('tap'), setAnimal(null))} />}
       </AnimatePresence>
     </>
   )
 }
 
-function MatchTip({ pair, onNext }: { pair: number; onNext: () => void }) {
+/** Challenge cards drawn one at a time. Skipping is always fine and never counted; the deck ends at "done". */
+function Play({ mode, animals, onFinish }: { mode: Mode; animals: ReactNode; onFinish: () => void }) {
   const o = useOrient()
-  const p = S.pairs[pair]
-  const r = pick<Rect>(o, { x: 60, y: 230, w: 780, h: 1140 }, { x: 230, y: 60, w: 1140, h: 790 })
+  const [deck] = useState(() => shuffle(mode.cards ?? []))
+  const [i, setI] = useState(-1)
+  const [skipped, setSkipped] = useState(false)
+  const draw = (skip = false) => {
+    sfx(skip ? 'tap' : 'card-flip')
+    setSkipped(skip)
+    if (i + 1 < deck.length) setI(i + 1)
+    else onFinish()
+  }
   return (
     <>
-      <motion.div className="layer scrim" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} />
-      <motion.div className={`layer tip-card ${o}`} role="dialog" aria-label={`${p.animalName} ${p.emotionName}`} style={{ ...box(r), height: 'auto', maxHeight: r.h, top: r.y + r.h / 2, y: '-50%' }} {...pop(0.05)}>
-        <div className="tip-top">
-          <img className="photo" src={artSrc(`layers/extra/animal-${p.animal}.webp`)} alt="" />
-          <span className="t-heading">+</span>
-          <img className="emo" src={artSrc(`layers/extra/face-${p.emotion}.webp`)} alt="" />
-          <div className="col">
-            <span className="t-heading">{p.animalName}</span>
-            <span className="t-card chip">{p.emotionName}</span>
-          </div>
-        </div>
-        <p className="tip-summary t-body">{p.summary}</p>
-        <p className="t-heading aksi">{S.aksi} 💡</p>
-        <ul className="t-body aksi-list">
-          {p.aksi.map((a) => (
-            <li key={a}>{a}</li>
-          ))}
-        </ul>
-        <button className="pill green" onClick={onNext} autoFocus>
-          {S.next}
+      <div className="sh-head">
+        <h2 className="t-heading">{mode.name}</h2>
+        <p className="t-small t-muted">{skipped ? S.play.skipSpeech : S.play.hint}</p>
+      </div>
+      <AnimatePresence mode="wait">
+        {i < 0 ? (
+          <motion.button key="back" className="sh-card back" onClick={() => draw()} exit={{ rotateY: 90, opacity: 0 }} transition={{ duration: 0.2 }}>
+            <img src={artSrc('layers/p3-emotion/asta-head-badge.webp')} alt="" />
+            <span className="t-label-light">{S.play.draw}</span>
+          </motion.button>
+        ) : (
+          <motion.div
+            key={i}
+            className="sh-card"
+            role="status"
+            initial={{ rotateY: -90, opacity: 0 }}
+            animate={{ rotateY: 0, opacity: 1 }}
+            exit={{ rotateY: 90, opacity: 0 }}
+            transition={{ duration: 0.25 }}
+          >
+            <span className="t-question">{deck[i]}</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <div className="sh-cards">
+        <p className="t-small sh-label">{S.play.animals}</p>
+        {animals}
+      </div>
+      <Tip text={mode.tip} />
+      <div className={`sh-actions ${o}`}>
+        {i >= 0 && (
+          <>
+            <button className="pill brown" onClick={() => draw(true)}>
+              {S.play.skip}
+            </button>
+            <button className="pill blue" onClick={() => draw()}>
+              {S.play.next}
+            </button>
+          </>
+        )}
+        <button className="pill green" onClick={() => (sfx('tap'), onFinish())}>
+          {S.play.done}
         </button>
-      </motion.div>
+      </div>
     </>
+  )
+}
+
+function Tip({ text }: { text: string }) {
+  return (
+    <p className="sh-tip">
+      <b>{S.pendamping}</b> {text}
+    </p>
+  )
+}
+
+function Speech({ r, text }: { r: Rect; text: string }) {
+  return (
+    <Box key={text} r={r} className="center t-small speech-box" fit {...pop(0.4)}>
+      {text}
+    </Box>
   )
 }

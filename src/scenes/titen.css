@@ -1,5 +1,4 @@
 /* Titen: Kuis Sahabat Rasa. Base .option / .speech-box / .pill / .dots live in styles.css. */
-.tn-cat { line-height: 1.1; }
 .tn-opt.rest { opacity: 0.8; }
 .tn-opt[aria-disabled='true'] { cursor: default; }
 .tn-opt .t-option { text-align: left; font-size: 34px; line-height: 1.18; }

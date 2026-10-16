@@ -435,11 +435,6 @@
   "titen": {
     "title": "KUIS SAHABAT RASA",
     "sub": "TITEN",
-    "random": "Acak",
-    "prompt": {
-      "draft": true,
-      "text": "Mau belajar tentang apa? Pilih satu topik, atau Acak."
-    },
     "tipTitle": "Yuk, pahami bersama!",
     "hint": {
       "draft": true,
@@ -450,13 +445,9 @@
     "next": "Lanjut",
     "end": {
       "draft": true,
-      "text": "Terima kasih sudah belajar bersama! Kamu boleh bermain lagi, memilih topik lain, atau berhenti dulu."
+      "text": "Terima kasih sudah belajar bersama! Kamu boleh bermain lagi dengan soal yang lain, atau berhenti dulu."
     },
     "again": "Main lagi",
-    "other": {
-      "draft": true,
-      "text": "Pilih topik lain"
-    },
     "done": "Selesai",
     "progress": {
       "draft": true,
@@ -527,7 +518,7 @@
           { "h": "TATAATI — menenangkan diri", "ul": ["Tujuan: memperkenalkan latihan napas dan perhatian sederhana.", "Perlengkapan: perangkat ASTA, tempat duduk yang nyaman.", "Durasi perkiraan: 1–2 menit.", "Cara: anak mengikuti animasi selama merasa nyaman. Jangan meminta anak menahan napas atau menarik napas dalam-dalam. Hentikan jika anak pusing atau tidak nyaman."] },
           { "h": "Ekspresi Kreatif (Reronce)", "ul": ["Tujuan: memberi ruang untuk berekspresi lewat gambar atau cerita.", "Perlengkapan: perangkat ASTA; boleh juga kertas dan alat gambar.", "Durasi perkiraan: 5–10 menit.", "Cara: anak memilih menggambar atau bercerita. Jangan menilai atau menafsirkan hasil karya anak, dan jangan memaksa anak membagikannya."] },
           { "h": "Sahabat Hewan", "ul": ["Tujuan: mendorong interaksi, komunikasi, dan kerja sama lewat permainan.", "Perlengkapan: perangkat ASTA dan kartu fisik Sahabat Hewan, untuk kelompok kecil.", "Durasi perkiraan: 10–15 menit.", "Cara: jelaskan aturan, lalu pemain bergiliran mengambil kartu dan melakukan tantangan sederhana. Anak boleh menolak tantangan. Tidak ada pemain yang dikeluarkan karena salah."] },
-          { "h": "Aktivitas Belajar (Titen)", "ul": ["Tujuan: mengenalkan keterampilan sosial-emosional lewat Kuis Sahabat Rasa (48 soal dalam 8 topik, misalnya Kenali Perasaan dan Berani Meminta Bantuan).", "Perlengkapan: perangkat ASTA.", "Durasi perkiraan: 5–10 menit.", "Cara: anak memilih satu topik atau \"Acak\", lalu menjawab sekitar 5 soal, satu per satu, tanpa batas waktu dan tanpa skor. Setelah menjawab, bacakan penjelasan singkatnya bersama anak. Jawaban yang kurang tepat tidak dihukum: ASTA menunjukkan jawaban yang lebih tepat dan mengajak melihatnya bersama-sama.", "Anak boleh menekan \"Lewati\", berhenti kapan saja, atau memilih \"Main lagi\" dan topik lain. Soal tidak meminta anak menceritakan pengalaman bencananya. Kuis ini untuk belajar, bukan untuk menilai kondisi anak."] }
+          { "h": "Aktivitas Belajar (Titen)", "ul": ["Tujuan: mengenalkan keterampilan sosial-emosional lewat Kuis Sahabat Rasa (48 soal dalam 8 topik, misalnya Kenali Perasaan dan Berani Meminta Bantuan).", "Perlengkapan: perangkat ASTA.", "Durasi perkiraan: 5–10 menit.", "Cara: setiap putaran berisi 10 soal yang dipilih acak dari seluruh bank soal, dengan urutan pilihan jawaban yang juga diacak. Anak menjawab satu per satu, tanpa batas waktu dan tanpa skor. Setelah menjawab, bacakan penjelasan singkatnya bersama anak. Jawaban yang kurang tepat tidak dihukum: ASTA menunjukkan jawaban yang lebih tepat dan mengajak melihatnya bersama-sama.", "Anak boleh menekan \"Lewati\", berhenti kapan saja, atau memilih \"Main lagi\" untuk 10 soal acak yang baru. Soal tidak meminta anak menceritakan pengalaman bencananya. Kuis ini untuk belajar, bukan untuk menilai kondisi anak."] }
         ]
       },
       {

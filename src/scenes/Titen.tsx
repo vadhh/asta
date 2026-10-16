@@ -6,24 +6,29 @@ import C from '../content.json'
 import BANK from '../soal-sahabat-rasa.json'
 import './titen.css'
 
-// Kuis Sahabat Rasa (PRD Fitur 9 + the bank's "Panduan Penerapan"): pick a topic or Acak, then a short random set,
-// one question at a time. No score, timer or retry-until-right; any answer shows the bank's explanation.
+// Kuis Sahabat Rasa (PRD Fitur 9 + the bank's "Panduan Penerapan"): a round of 10 questions drawn at random from the
+// whole bank, options shuffled, one at a time. No score, timer or retry-until-right; any answer shows the explanation.
 const T = C.titen
 type Q = (typeof BANK.categories)[number]['questions'][number] & { cat: string }
-const ACAK = -1
-const SET = 5
+const ROUND = 10
 const ALL: Q[] = BANK.categories.flatMap((c) => c.questions.map((q) => ({ ...q, cat: c.name })))
 
-const draw = (cat: number): Q[] => {
-  const pool = cat === ACAK ? [...ALL] : ALL.filter((q) => q.cat === BANK.categories[cat].name)
-  for (let i = pool.length - 1; i > 0; i--) {
+const shuffle = <T,>(a: T[]): T[] => {
+  a = [...a]
+  for (let i = a.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1))
-    ;[pool[i], pool[j]] = [pool[j], pool[i]]
+    ;[a[i], a[j]] = [a[j], a[i]]
   }
-  return pool.slice(0, SET)
+  return a
 }
-// Dev shortcut for QA: ?scene=titen&soal=4,36,43 starts a set of those bank numbers (1–48).
-const devSet = () => {
+// Options are shuffled too, so the right answer's position isn't predictable; `answer` follows its option.
+const draw = (): Q[] =>
+  shuffle(ALL).slice(0, ROUND).map((q) => {
+    const order = shuffle([0, 1, 2])
+    return { ...q, options: order.map((i) => q.options[i]), answer: order.indexOf(q.answer) }
+  })
+// Dev shortcut for QA: ?scene=titen&soal=4,36,43 plays those bank numbers (1–48) in bank option order.
+const devRound = () => {
   const s = import.meta.env.DEV && new URLSearchParams(location.search).get('soal')
   return s ? s.split(',').map((n) => ALL[Number(n) - 1]) : null
 }
@@ -31,8 +36,6 @@ const devSet = () => {
 // Frame-px layout. Bank text is long, so landscape uses two columns (question + options | explanation).
 const LAY = {
   portrait: {
-    prompt: { x: 60, y: 190, w: 780, h: 110 },
-    cat: (i: number): Rect => (i < 8 ? { x: 50 + (i % 2) * 410, y: 320 + Math.floor(i / 2) * 190, w: 390, h: 170 } : { x: 50, y: 1080, w: 800, h: 150 }),
     question: { x: 50, y: 185, w: 800, h: 200 },
     opt: (i: number): Rect => ({ x: 50, y: 400 + i * 166, w: 800, h: 150 }),
     tip: { x: 32, y: 900, w: 837, h: 480 },
@@ -41,20 +44,18 @@ const LAY = {
     next: { x: 700, y: 1400 },
     asta: { x: 0, y: 1390, w: 145, h: 210 },
     end: { x: 80, y: 260, w: 740, h: 380 },
-    endBtns: { x: 200, y: 700, w: 500, h: 420 },
+    endBtns: { x: 200, y: 700, w: 500, h: 290 },
   },
   landscape: {
-    prompt: { x: 250, y: 172, w: 1100, h: 90 },
-    cat: (i: number): Rect => ({ x: 420 + (i % 3) * 350, y: 275 + Math.floor(i / 3) * 170, w: 330, h: 150 }),
     question: { x: 160, y: 180, w: 700, h: 150 },
     opt: (i: number): Rect => ({ x: 160, y: 345 + i * 155, w: 700, h: 140 }),
     tip: { x: 880, y: 175, w: 600, h: 510 },
-    dots: { x: 900, y: 700, w: 360, h: 40 },
+    dots: { x: 880, y: 700, w: 400, h: 40 },
     skip: { x: 930, y: 752, w: 300, h: 96 },
     next: { x: 1300, y: 690 },
     asta: null,
     end: { x: 420, y: 230, w: 980, h: 300 },
-    endBtns: { x: 420, y: 590, w: 980, h: 130 },
+    endBtns: { x: 520, y: 590, w: 780, h: 130 },
   },
 }
 
@@ -62,15 +63,13 @@ export default function Titen({ onDone }: { onDone: () => void }) {
   const L = useArt('p8-titen')
   const o = useOrient()
   const Y = LAY[o]
-  const [cat, setCat] = useState(ACAK)
-  const [set, setSet] = useState<Q[] | null>(devSet)
+  const [round, setRound] = useState<Q[]>(() => devRound() ?? draw())
   const [qi, setQi] = useState(0)
   const [picked, setPicked] = useState<number | null>(null)
 
-  const start = (c: number) => {
+  const again = () => {
     sfx('tap')
-    setCat(c)
-    setSet(draw(c))
+    setRound(draw())
     setQi(0)
     setPicked(null)
   }
@@ -89,9 +88,7 @@ export default function Titen({ onDone }: { onDone: () => void }) {
     const l = L(n)
     return { ...l, x: plank.x + (l.x - tp.x) * k, y: plank.y + (l.y - tp.y) * k, w: l.w * k, h: l.h * k }
   }
-  const q = set?.[qi]
-  // Plank subtitle: the island name on the picker, then the current question's topic (also in an Acak set).
-  const sub = !set ? T.sub : q ? q.cat : cat === ACAK ? T.random : BANK.categories[cat].name
+  const q = round[qi]
 
   return (
     <>
@@ -104,45 +101,17 @@ export default function Titen({ onDone }: { onDone: () => void }) {
         {T.title}
       </Box>
       <Box r={inset(plank, [61 * k, 80 * k, 19 * k, 80 * k])} className="center t-plank-sub nowrap" fit>
-        {sub}
+        {q ? q.cat : T.sub}
       </Box>
 
-      {!set && <Picker onPick={start} />}
-      {set && q && <Question key={`${qi}-${q.q}`} q={q} qi={qi} total={set.length} picked={picked} onPick={setPicked} onNext={next} />}
-      {set && !q && (
-        <End
-          onAgain={() => start(cat)}
-          onOther={() => (sfx('tap'), setSet(null))}
-          onDone={() => (sfx('tap'), onDone())}
-        />
+      {q ? (
+        <Question key={`${qi}-${q.q}`} q={q} qi={qi} total={round.length} picked={picked} onPick={setPicked} onNext={next} />
+      ) : (
+        <End onAgain={again} onDone={() => (sfx('tap'), onDone())} />
       )}
 
-      {(Y.asta || !set || !q) && <Img r={Y.asta ? { ...L('asta-wave'), ...Y.asta } : L('asta-wave')} {...float(0.2, 10)} />}
+      {(Y.asta || !q) && <Img r={Y.asta ? { ...L('asta-wave'), ...Y.asta } : L('asta-wave')} {...float(0.2, 10)} />}
     </>
-  )
-}
-
-function Picker({ onPick }: { onPick: (c: number) => void }) {
-  const Y = LAY[useOrient()]
-  const names = [...BANK.categories.map((c) => c.name), T.random]
-  return (
-    <motion.div className="layer fill" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-      <Box r={Y.prompt} className="center t-question" fit>
-        {T.prompt.text}
-      </Box>
-      {names.map((name, i) => {
-        const r = Y.cat(i)
-        const acak = i === 8
-        return (
-          <motion.button key={name} className="layer option" style={box(r)} onClick={() => onPick(acak ? ACAK : i)} whileTap={{ scale: 0.95 }} {...pop(0.05 * i)}>
-            <Panel r={{ x: 0, y: 0, w: r.w, h: r.h }} src={`layers/p8-titen/${acak ? 'card-c' : 'card-b'}.webp`} slice={34} />
-            <Box r={inset({ x: 0, y: 0, w: r.w, h: r.h }, [20, 30, 26, 30])} className="center t-card tn-cat" fit>
-              {name}
-            </Box>
-          </motion.button>
-        )
-      })}
-    </motion.div>
   )
 }
 
@@ -243,7 +212,7 @@ function Question({ q, qi, total, picked, onPick, onNext }: {
   )
 }
 
-function End({ onAgain, onOther, onDone }: { onAgain: () => void; onOther: () => void; onDone: () => void }) {
+function End({ onAgain, onDone }: { onAgain: () => void; onDone: () => void }) {
   const o = useOrient()
   const Y = LAY[o]
   return (
@@ -254,9 +223,6 @@ function End({ onAgain, onOther, onDone }: { onAgain: () => void; onOther: () =>
       <div className={`layer actions tn-end ${o}`} style={box(Y.endBtns)}>
         <button className="pill green" onClick={onAgain}>
           {T.again}
-        </button>
-        <button className="pill blue" onClick={onOther}>
-          {T.other.text}
         </button>
         <button className="pill brown" onClick={onDone}>
           {T.done}

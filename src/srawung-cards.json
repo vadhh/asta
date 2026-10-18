@@ -1,0 +1,130 @@
+{
+  "_note": "Srawung card set from the team's Canva design DAHYX5J9_CM (8 pages, 4 cards each). Text copied verbatim; photos are art/export/layers/extra/animal-<id>.png (art/srawung_cards.py).",
+  "emotions": {
+    "senang": {
+      "label": "Senang",
+      "emoji": "😊",
+      "desc": "Senang adalah perasaan yang menyenangkan. Kita boleh membagikan kebahagiaan bersama teman.",
+      "aksi": [
+        "Ikut merayakan kebahagiaan teman.",
+        "Berikan pujian yang tulus.",
+        "Ajak teman bermain bersama.",
+        "Dengarkan ceritanya dengan antusias.",
+        "Jangan mengejek atau membandingkan pencapaiannya."
+      ]
+    },
+    "sedih": {
+      "label": "Sedih",
+      "emoji": "😔",
+      "desc": "Sedih adalah perasaan yang wajar. Kamu boleh menangis, bercerita, atau beristirahat ketika membutuhkannya.",
+      "aksi": [
+        "Dengarkan tanpa menghakimi.",
+        "Tanyakan, “Kamu ingin ditemani?”",
+        "Jangan memaksa teman bercerita.",
+        "Ajak orang dewasa tepercaya jika teman membutuhkan bantuan."
+      ]
+    },
+    "bingung": {
+      "label": "Bingung",
+      "emoji": "🥺",
+      "desc": "Rasa bingung dan takut dapat muncul saat kita merasa tidak aman. Kita boleh meminta bantuan dan tidak harus menghadapi semuanya sendirian.",
+      "aksi": [
+        "Dengarkan apa yang membuat teman bingung.",
+        "Jelaskan sesuatu dengan sabar.",
+        "Tawarkan bantuan jika ia kesulitan.",
+        "Ajak mencari jawaban bersama.",
+        "Jangan mengejek teman yang belum memahami sesuatu."
+      ]
+    },
+    "marah": {
+      "label": "Marah",
+      "emoji": "😡",
+      "desc": "Marah adalah perasaan yang boleh dirasakan. Kita bisa belajar menyampaikan kemarahan tanpa menyakiti diri sendiri atau orang lain.",
+      "aksi": [
+        "Beri teman waktu untuk menenangkan diri.",
+        "Jangan membalas dengan ejekan atau teriakan.",
+        "Dengarkan ketika ia siap bercerita.",
+        "Tanyakan apa yang bisa kamu bantu.",
+        "Ajak mencari solusi tanpa menyakiti siapa pun."
+      ]
+    },
+    "tenang": {
+      "label": "Tenang",
+      "emoji": "😌",
+      "desc": "Tenang adalah perasaan ketika tubuh dan pikiran terasa lebih nyaman. Kamu boleh menikmati perasaan ini, beristirahat sejenak, atau melakukan hal sederhana yang membuatmu merasa aman.",
+      "aksi": [
+        "Duduklah dengan nyaman.",
+        "Rasakan napasmu perlahan.",
+        "Pejamkan mata jika kamu merasa nyaman.",
+        "Ingat satu hal yang membuatmu merasa aman."
+      ]
+    },
+    "lelah": {
+      "label": "Lelah",
+      "emoji": "😫",
+      "desc": "Lelah adalah tanda bahwa tubuh atau pikiranmu mungkin membutuhkan istirahat. Kamu boleh berhenti sejenak, menarik napas perlahan, dan beristirahat sebelum melanjutkan aktivitas.",
+      "aksi": [
+        "Berhentilah sejenak dari kegiatanmu.",
+        "Duduk atau berbaringlah dengan nyaman.",
+        "Minumlah air putih.",
+        "Istirahatlah sebelum kembali beraktivitas."
+      ]
+    },
+    "takut": {
+      "label": "Takut",
+      "emoji": "😰",
+      "desc": "Takut adalah perasaan yang wajar, terutama saat kita merasa tidak aman. Kamu boleh mencari tempat yang nyaman dan meminta bantuan orang yang kamu percaya. Kamu tidak harus menghadapi semuanya sendirian.",
+      "aksi": [
+        "Pindahlah ke tempat yang aman.",
+        "Peluk bantal atau boneka kesukaanmu.",
+        "Tarik napas perlahan, lalu embuskan.",
+        "Mintalah bantuan orang dewasa yang kamu percaya."
+      ]
+    },
+    "cemas": {
+      "label": "Cemas",
+      "emoji": "😥",
+      "desc": "Cemas adalah perasaan yang bisa muncul ketika kita memikirkan sesuatu yang belum terjadi atau membuat kita khawatir. Kamu boleh menceritakan kekhawatiranmu kepada orang yang kamu percaya. Kamu tidak harus menyelesaikan semuanya sekaligus.",
+      "aksi": [
+        "Tarik napas perlahan, lalu embuskan.",
+        "Sebutkan tiga benda yang kamu lihat.",
+        "Ingatlah bahwa kamu tidak harus menyelesaikan semuanya sekarang.",
+        "Ceritakan kekhawatiranmu kepada orang yang kamu percaya."
+      ]
+    }
+  },
+  "cards": [
+    { "id": "burung", "name": "Burung", "emotion": "senang" },
+    { "id": "gajah", "name": "Gajah", "emotion": "sedih" },
+    { "id": "kuda", "name": "Kuda", "emotion": "bingung" },
+    { "id": "ikan", "name": "Ikan", "emotion": "marah" },
+    { "id": "harimau", "name": "Harimau", "emotion": "senang" },
+    { "id": "kucing", "name": "Kucing", "emotion": "sedih" },
+    { "id": "pinguin", "name": "Pinguin", "emotion": "bingung" },
+    { "id": "singa", "name": "Singa", "emotion": "marah" },
+    { "id": "katak", "name": "Katak", "emotion": "senang" },
+    { "id": "ayam", "name": "Ayam", "emotion": "sedih" },
+    { "id": "jerapah", "name": "Jerapah", "emotion": "bingung" },
+    { "id": "monyet", "name": "Monyet", "emotion": "marah" },
+    { "id": "elang", "name": "Elang", "emotion": "senang" },
+    { "id": "kelinci", "name": "Kelinci", "emotion": "sedih" },
+    { "id": "sapi", "name": "Sapi", "emotion": "bingung" },
+    { "id": "nyamuk", "name": "Nyamuk", "emotion": "marah" },
+    { "id": "kupu-kupu", "name": "Kupu-Kupu", "emotion": "tenang" },
+    { "id": "ular", "name": "Ular", "emotion": "lelah" },
+    { "id": "bebek", "name": "Bebek", "emotion": "takut" },
+    { "id": "serigala", "name": "Serigala", "emotion": "cemas" },
+    { "id": "panda", "name": "Panda", "emotion": "tenang" },
+    { "id": "buaya", "name": "Buaya", "emotion": "lelah" },
+    { "id": "kura-kura", "name": "Kura-Kura", "emotion": "takut" },
+    { "id": "unta", "name": "Unta", "emotion": "cemas" },
+    { "id": "kambing", "name": "Kambing", "emotion": "tenang" },
+    { "id": "anjing", "name": "Anjing", "emotion": "lelah" },
+    { "id": "lebah", "name": "Lebah", "emotion": "takut" },
+    { "id": "merak", "name": "Merak", "emotion": "cemas" },
+    { "id": "laba-laba", "name": "Laba-Laba", "emotion": "tenang" },
+    { "id": "landak", "name": "Landak", "emotion": "lelah" },
+    { "id": "jangkrik", "name": "Jangkrik", "emotion": "takut" },
+    { "id": "cumi-cumi", "name": "Cumi-Cumi", "emotion": "cemas" }
+  ]
+}

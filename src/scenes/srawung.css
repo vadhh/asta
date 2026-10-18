@@ -1,121 +1,74 @@
 /* Sahabat Hewan (Srawung). Sizes in frame px; keep text >= 28px so it stays >= ~12 css px on phones. */
+
+/* Guide page */
 .sh {
-  background: var(--cream); border: 8px solid var(--wood); border-radius: 36px; padding: 30px 40px;
-  display: flex; flex-direction: column; justify-content: center; gap: 22px;
+  background: var(--cream); border: 8px solid var(--wood); border-radius: 36px; padding: 40px 56px;
+  display: flex; flex-direction: column; justify-content: center; gap: 30px;
   box-shadow: 0 12px 0 rgba(90, 53, 24, 0.3);
 }
 .sh h2, .sh p { margin: 0; }
 .sh .t-heading { text-align: center; }
-.sh .pill { align-self: center; min-width: 300px; }
-.sh-head { display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center; }
-
+.sh-steps { margin: 0; padding-left: 52px; }
+.sh-steps li { margin: 0 0 12px; padding-left: 8px; }
+.sh-steps li:last-child { margin-bottom: 0; }
+.sh-steps li::marker { font-weight: 800; color: var(--brown-mid); }
 .sh-tip {
-  background: #e8f4ff; border: 4px dashed #8cc4ee; border-radius: 22px; padding: 12px 22px;
-  font-size: 28px; line-height: 1.3; color: #2d4b7a;
+  background: #e8f4ff; border: 4px dashed #8cc4ee; border-radius: 22px; padding: 14px 24px;
+  font-size: 30px; line-height: 1.3; color: #2d4b7a;
 }
 .sh-tip b { font-weight: 800; }
 .sh-tip b::after { content: ':'; }
-.sh-tip-space { height: 1px; }
-
-.sh-cards { display: flex; flex-direction: column; gap: 10px; }
-.sh-label { font-weight: 700; color: var(--brown-mid); text-align: center; }
-.sh-animals { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-.sh-animal {
-  display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 8px;
-  background: #fff; border: 6px solid var(--sky); border-radius: 22px; box-shadow: 0 6px 0 rgba(30, 90, 140, 0.3);
-}
-.sh-animal img {
-  width: 100%; height: 150px; object-fit: contain; pointer-events: none;
-  border: 4px solid #3dbb4b; border-radius: 14px; background: #d4f8d4;
-}
-.sh-animal span { font-size: 30px; font-weight: 800; color: var(--brown); line-height: 1.1; }
-
-.sh-scroll { overflow-y: auto; min-height: 0; }
-.sh-list { margin: 0; padding-left: 50px; }
-.sh-list li { margin: 0 0 8px; padding-left: 6px; }
-.sh-list li::marker { font-weight: 800; color: var(--brown-mid); }
-
-.sh-mode-grid { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr; grid-auto-rows: 1fr; gap: 22px; }
-.sh-mode {
-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 16px;
-  text-align: center; background: #fbe7cf; border: 6px solid var(--wood); border-radius: 26px; box-shadow: 0 6px 0 #c89a66;
-}
-.sh-mode.on { background: #ffe45c; border-color: var(--green-ring); box-shadow: 0 0 0 4px #b8f09a, 0 6px 0 #3e9a2a; }
-.sh-mode > img, .sh-mini-back {
-  flex: none; width: 120px; height: 120px; border-radius: 18px; pointer-events: none;
-  object-fit: cover; border: 5px solid #3dbb4b; background: #d4f8d4;
-}
-.sh-mini-back { display: grid; place-items: center; border-color: #fff; background: radial-gradient(circle, #8fd3fb 0 35%, var(--sky) 36%); }
-.sh-mini-back img { width: 62%; }
-.sh-mode-text { display: flex; flex-direction: column; gap: 4px; }
-.sh-mode .t-card { line-height: 1.1; }
-.sh-mode .t-small { line-height: 1.25; color: var(--ink); }
-
-.sh-card {
-  flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; padding: 30px 44px;
-  text-align: center; background: #fff; border: 8px solid var(--sky); border-radius: 30px;
-  box-shadow: 0 8px 0 rgba(30, 90, 140, 0.35);
-}
-.sh-card.back { flex-direction: column; gap: 24px; background: radial-gradient(circle, #8fd3fb 0 30%, var(--sky) 31%); }
-.sh-card.back img { width: 200px; pointer-events: none; }
-.sh-card .t-question { text-wrap: balance; }
-
-.sh-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px 20px; }
-.sh .sh-actions .pill { min-width: 0; font-size: 34px; }
-.sh-done-art { width: 190px; align-self: center; }
-
-/* Landscape: two columns, so everything fits the 615px-tall panel without scrolling. */
-.sh.landscape { display: grid; column-gap: 40px; row-gap: 18px; align-content: center; }
+.sh .sh-start { align-self: center; width: 460px; height: 120px; flex: none; }
+.sh.landscape { padding: 30px 56px; gap: 22px; }
 .sh.landscape .t-body { font-size: 32px; }
-.sh.landscape.sh-intro {
-  grid-template-columns: 1.3fr 1fr;
-  grid-template-areas: 'h cards' 'goal cards' 'tip cards' 'btn cards';
+.sh.landscape .sh-steps li { margin-bottom: 6px; }
+.sh.landscape .sh-start { height: 104px; }
+
+/* The card: white with a thick sky-blue border, like the printed cards. */
+.sc { perspective: 2200px; }
+.flip-inner { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; }
+.sc-face {
+  position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden;
+  background: #fff; border: 14px solid var(--sky); border-radius: 44px; box-shadow: 0 10px 0 rgba(30, 90, 140, 0.35);
 }
-.sh-intro h2 { grid-area: h; }
-.sh-intro .sh-goal { grid-area: goal; }
-.sh-intro .sh-cards { grid-area: cards; }
-.sh-intro .sh-tip { grid-area: tip; }
-.sh-intro .pill { grid-area: btn; }
-.sh.landscape.sh-intro .sh-cards { align-self: center; }
-.sh.landscape.sh-intro .sh-animals { grid-template-columns: 1fr 1fr; }
-.sh.landscape.sh-intro .sh-animal img { height: 120px; }
-
-.sh.landscape.sh-rules { grid-template-columns: 1fr auto; grid-template-areas: 'h h' 'list list' 'tip btn'; }
-.sh-rules h2 { grid-area: h; }
-.sh-rules .sh-list { grid-area: list; }
-.sh-rules .sh-tip { grid-area: tip; }
-.sh-rules .pill { grid-area: btn; }
-.sh.landscape .sh-list { font-size: 30px; display: grid; grid-template-columns: 1fr 1fr; column-gap: 50px; align-content: start; }
-
-.sh.landscape.sh-modes { grid-template-columns: 1fr auto; grid-template-rows: auto 1fr auto; grid-template-areas: 'h h' 'modes modes' 'tip btn'; height: 100%; }
-.sh-modes > h2 { grid-area: h; }
-.sh-modes > .sh-mode-grid { grid-area: modes; }
-.sh-modes > .sh-tip, .sh-modes > .sh-tip-space { grid-area: tip; }
-.sh-modes > .pill { grid-area: btn; }
-.sh.landscape .sh-mode { flex-direction: row; text-align: left; justify-content: flex-start; gap: 18px; }
-
-.sh.landscape.sh-play {
-  grid-template-columns: 1.1fr 1fr; grid-template-rows: auto auto 1fr auto; height: 100%;
-  grid-template-areas: 'card head' 'card cards' 'card tip' 'actions actions';
+.sc-back { transform: rotateY(180deg); }
+.sc-front {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 36px; padding: 36px 40px;
 }
-.sh-play .sh-head { grid-area: head; }
-.sh-play .sh-card { grid-area: card; }
-.sh-play .sh-cards { grid-area: cards; }
-.sh-play .sh-tip { grid-area: tip; }
-.sh-play .sh-actions { grid-area: actions; }
-.sh.landscape.sh-play .sh-animals { gap: 12px; }
-.sh.landscape.sh-play .sh-animal img { height: 80px; }
-.sh.landscape.sh-play .sh-cards .sh-label { display: none; }
-.sh.landscape.sh-play .sh-animal span { font-size: 28px; }
-.sh-actions.landscape { flex-wrap: nowrap; }
-.sh-actions.landscape .pill { white-space: nowrap; padding: 12px 34px; }
+.sc-photo {
+  height: 74%; aspect-ratio: 578 / 673; max-width: 100%; object-fit: cover; pointer-events: none;
+  border: 10px solid #3dbb4b; border-radius: 28px; background: #d4ffd4;
+}
+.sc-front .t-question { margin: 0; text-align: center; font-size: 46px; }
+.sc-front.landscape { flex-direction: row; gap: 48px; padding: 30px 56px 30px 36px; }
+.sc-front.landscape .sc-photo { height: 100%; }
+.sc-front.landscape .t-question { flex: 1; font-size: 54px; }
 
-.sh.landscape.sh-done { grid-template-columns: auto 1fr; grid-template-areas: 'h h' 'art text' 'art tip' 'actions actions'; }
-.sh-done h2 { grid-area: h; }
-.sh-done .sh-done-art { grid-area: art; align-self: center; }
-.sh-done > p.t-body { grid-area: text; }
-.sh-done .sh-tip { grid-area: tip; }
-.sh-done .sh-actions { grid-area: actions; }
-.sh.landscape .sh-list li { margin-bottom: 4px; }
-.sh.landscape .sh-mode > img, .sh.landscape .sh-mini-back { width: 100px; height: 100px; }
-.sh.landscape .sh-mode { padding: 12px 16px; }
+/* Back: everything in em so the Box `fit` can shrink it as one. */
+.sc-back-box { font-size: 38px; padding: 34px 44px; display: flex; flex-direction: column; justify-content: center; }
+.sc-back-box.landscape { font-size: 33px; padding: 30px 52px; }
+.sc-info { display: flex; flex-direction: column; gap: 0.8em; color: var(--brown); line-height: 1.3; }
+.sc-about { display: flex; flex-direction: column; gap: 0.6em; }
+.sc-head { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.3em 0.7em; }
+.sc-head h2 { margin: 0; font-size: 1.5em; font-weight: 800; line-height: 1.1; }
+.sc-chip { background: #ffeec2; border-radius: 999px; padding: 0.15em 0.75em; font-size: 1.15em; font-weight: 800; white-space: nowrap; }
+.sc-desc { margin: 0; background: #ffeec2; border-radius: 24px; padding: 0.6em 0.85em; font-weight: 600; text-align: center; color: var(--ink); }
+.sc-aksi h3 { margin: 0 0 0.25em; font-size: 1.2em; font-weight: 800; text-align: center; }
+.sc-aksi ul { margin: 0; padding-left: 1.3em; font-weight: 600; color: var(--ink); }
+.sc-aksi li { margin: 0 0 0.3em; padding-left: 0.2em; }
+.sc-aksi li:last-child { margin-bottom: 0; }
+.sc-aksi li::marker { color: var(--sky); }
+/* Landscape: two columns whose headings share a row: name + emotion | AKSI, then description | tips. */
+.sc-info.landscape {
+  display: grid; grid-template-columns: 1fr 1.1fr; grid-template-areas: 'head ah' 'desc list';
+  column-gap: 1.6em; row-gap: 0.6em; align-items: center;
+}
+.sc-info.landscape .sc-about, .sc-info.landscape .sc-aksi { display: contents; }
+.sc-info.landscape .sc-head { grid-area: head; }
+.sc-info.landscape .sc-desc { grid-area: desc; align-self: start; }
+.sc-info.landscape .sc-aksi h3 { grid-area: ah; margin: 0; }
+.sc-info.landscape .sc-aksi ul { grid-area: list; align-self: start; }
+
+/* Kembali + Balik Kartu / Lanjut: equal planks, evenly spaced. */
+.sc-actions { display: flex; justify-content: center; gap: 48px; }
+.sc-actions .plank-btn { flex: none; width: 340px; height: 100%; }

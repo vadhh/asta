@@ -56,7 +56,11 @@ export default function Srawung({ onDone }: { onDone: () => void }) {
   // Portrait gets a bigger plank: the frame is narrow, so its subtitle would otherwise be tiny on phones.
   const tp = L('title-plank')
   const P = scaledPlank(tp, pick(o, 1.45, 1.4))
-  // The card takes the whole width (no Asta) so the back's text stays big enough to read together.
+  // Front: the whole printed card (name, photo, emotion) with the guessing question in its own panel beside or
+  // below it. On the flip the card grows to the back's size (the question panel steps aside) so the long Aksi text
+  // stays big enough to read together.
+  const front = pick<Rect>(o, { x: 145, y: 268, w: 610, h: 880 }, { x: 240, y: 226, w: 430, h: 548 })
+  const question = pick<Rect>(o, { x: 145, y: 1180, w: 610, h: 180 }, { x: 720, y: 330, w: 640, h: 340 })
   const card = pick<Rect>(o, { x: 80, y: 272, w: 740, h: 1088 }, { x: 150, y: 226, w: 1300, h: 548 })
   const actions = pick<Rect>(o, { x: 80, y: 1394, w: 740, h: 120 }, { x: 150, y: 790, w: 1300, h: 100 })
 
@@ -77,15 +81,31 @@ export default function Srawung({ onDone }: { onDone: () => void }) {
           <AnimatePresence mode="wait" initial={false}>
             <motion.div
               key={deck[i].id}
-              className="layer sc"
-              style={box(card)}
+              className="layer fill"
               initial={{ x: 120, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               exit={{ x: -120, opacity: 0 }}
               transition={{ duration: 0.25 }}
             >
-              <CardFaces card={deck[i]} flipped={flipped} r={card} />
+              <motion.div
+                className="layer sc"
+                initial={false}
+                style={box(front)}
+                animate={rectAnim(flipped ? card : front)}
+                transition={{ type: 'spring', stiffness: 200, damping: 26 }}
+              >
+                <CardFaces card={deck[i]} flipped={flipped} r={card} />
+              </motion.div>
             </motion.div>
+          </AnimatePresence>
+          <AnimatePresence>
+            {!flipped && (
+              <motion.div key="q" className="layer fill" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0, transition: { duration: 0.15 } }}>
+                <Box r={question} className={`center t-question speech-box sc-question ${o}`} fit>
+                  {S.card.prompt}
+                </Box>
+              </motion.div>
+            )}
           </AnimatePresence>
           <div className="layer sc-actions" style={box(actions)}>
             <Plank onClick={back}>{S.card.back}</Plank>
@@ -124,6 +144,8 @@ export default function Srawung({ onDone }: { onDone: () => void }) {
   )
 }
 
+const rectAnim = (r: Rect) => ({ left: r.x, top: r.y, width: r.w, height: r.h })
+
 function Plank({ onClick, className = '', children }: { onClick: () => void; className?: string; children: string }) {
   return (
     <PlankBtn src={WOOD} slice={56} pad={[62, 62]} padY={[4, 14]} className={`choice ${className}`} onClick={onClick}>
@@ -132,7 +154,8 @@ function Plank({ onClick, className = '', children }: { onClick: () => void; cla
   )
 }
 
-/** The card: front = the animal photo and a guessing prompt; back = name, emotion, what it means and Aksi tips. */
+/** The card: front = the whole printed card (name, photo, emotion chip); back = name, emotion, what it means and
+ *  Aksi tips. */
 function CardFaces({ card, flipped, r }: { card: Card; flipped: boolean; r: Rect }) {
   const o = useOrient()
   const e = EMO[card.emotion]
@@ -140,8 +163,11 @@ function CardFaces({ card, flipped, r }: { card: Card; flipped: boolean; r: Rect
   return (
     <motion.div className="flip-inner" initial={false} animate={{ rotateY: flipped ? 180 : 0 }} transition={{ type: 'spring', stiffness: 200, damping: 22 }}>
       <div className={`sc-face sc-front ${o}`} aria-hidden={flipped}>
+        <h2 className="sc-name">{card.name}</h2>
         <img className="sc-photo" src={artSrc(`layers/extra/animal-${card.id}.webp`)} alt="" />
-        <p className="t-question">{S.card.prompt}</p>
+        <span className="sc-chip">
+          {e.emoji} {e.label}
+        </span>
       </div>
       <div className={`sc-face sc-back ${o}`} aria-hidden={!flipped} role="status">
         <Box r={inner} className={`sc-back-box ${o}`} fit>

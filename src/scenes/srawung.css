@@ -33,16 +33,22 @@
 }
 .sc-back { transform: rotateY(180deg); }
 .sc-front {
-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 36px; padding: 36px 40px;
+  display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 26px 34px 34px;
 }
+/* Front = the printed card: name on top, photo in a green frame, emoji + emotion chip at the bottom. */
+.sc-name { margin: 0; font-size: 64px; font-weight: 800; line-height: 1.1; color: var(--brown); text-align: center; }
+.sc-front .sc-chip { font-size: 46px; padding: 6px 30px; color: var(--brown); }
 .sc-photo {
-  height: 74%; aspect-ratio: 578 / 673; max-width: 100%; object-fit: cover; pointer-events: none;
+  flex: 1; min-height: 0; width: 100%; object-fit: cover; pointer-events: none; margin: 18px 0;
   border: 10px solid #3dbb4b; border-radius: 28px; background: #d4ffd4;
 }
-.sc-front .t-question { margin: 0; text-align: center; font-size: 46px; }
-.sc-front.landscape { flex-direction: row; gap: 48px; padding: 30px 56px 30px 36px; }
-.sc-front.landscape .sc-photo { height: 100%; }
-.sc-front.landscape .t-question { flex: 1; font-size: 54px; }
+.sc-front.landscape { padding: 18px 24px 24px; }
+.sc-front.landscape .sc-name { font-size: 48px; }
+.sc-front.landscape .sc-chip { font-size: 36px; padding: 4px 24px; }
+.sc-front.landscape .sc-photo { margin: 12px 0; }
+/* The guessing question, in its own panel next to (landscape) or under (portrait) the card. */
+.sc-question { font-size: 48px; padding: 24px 36px; }
+.sc-question.landscape { font-size: 56px; padding: 30px 44px; }
 
 /* Back: everything in em so the Box `fit` can shrink it as one. */
 .sc-back-box { font-size: 38px; padding: 34px 44px; display: flex; flex-direction: column; justify-content: center; }

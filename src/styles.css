@@ -162,38 +162,8 @@ textarea.tell {
 .pill.blue { background: #3a8fd6; }
 .pill.brown { background: #b07a45; }
 
-/* Srawung */
-.flip { background: none; border: 0; padding: 0; perspective: 1400px; }
-.flip-inner { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; }
-.face {
-  position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden;
-  border-radius: 26px; border: 8px solid var(--sky); background: #fff;
-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
-  box-shadow: 0 8px 0 rgba(30, 90, 140, 0.35);
-}
-.face.back { background: radial-gradient(circle, #8fd3fb 0 35%, var(--sky) 36%); box-shadow: inset 0 0 0 7px rgba(255, 255, 255, 0.55), 0 8px 0 rgba(30, 90, 140, 0.35); }
-.face.back img { width: 52%; max-height: 70%; object-fit: contain; }
-.face.front { transform: rotateY(180deg); }
-.face .photo, .tip-top .photo {
-  width: 70%; height: 66%; object-fit: cover; border: 6px solid #3dbb4b; border-radius: 18px; background: #d4f8d4;
-}
-.face .emo { height: 56%; max-width: 70%; object-fit: contain; }
-.chip { background: #ffe9b8; border-radius: 999px; padding: 2px 26px; }
-.matched .face.front { box-shadow: 0 0 0 6px #8de07a, 0 8px 0 rgba(30, 90, 140, 0.35); }
+/* Overlays (Complete) */
 .scrim { inset: -2000px; background: rgba(40, 25, 10, 0.5); } /* reaches past the stage to the screen edges */
-.tip-card {
-  background: var(--cream); border: 8px solid var(--sky); border-radius: 36px; padding: 30px 44px;
-  display: flex; flex-direction: column; gap: 14px; overflow: hidden;
-}
-.tip-top { display: flex; align-items: center; gap: 22px; }
-.tip-top .photo { width: 150px; height: 150px; }
-.tip-top .emo { width: 120px; height: 120px; object-fit: contain; }
-.tip-top .col { gap: 6px; align-items: flex-start; }
-.tip-summary { background: #ffe9b8; border-radius: 24px; padding: 16px 26px; margin: 0; font-weight: 600; }
-.aksi { margin: 0; }
-.aksi-list { margin: 0; padding-left: 40px; }
-.aksi-list li { margin: 4px 0; }
-.tip-card .pill { margin-top: 10px; align-self: center; min-width: 320px; }
 
 /* Titen */
 .option { background: none; border: 0; padding: 0; }
@@ -234,15 +204,6 @@ textarea.tell {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
 
-.tip-card.landscape {
-  display: grid; column-gap: 40px; grid-template-columns: 1fr 1.3fr; grid-template-rows: auto 1fr auto;
-  grid-template-areas: 'top aksi' 'summary list' 'btn btn';
-}
-.tip-card.landscape .tip-top { grid-area: top; }
-.tip-card.landscape .tip-summary { grid-area: summary; align-self: start; }
-.tip-card.landscape .aksi { grid-area: aksi; align-self: end; }
-.tip-card.landscape .aksi-list { grid-area: list; }
-.tip-card.landscape .pill { grid-area: btn; }
 .t-button-sm { font-size: 50px; }
 .fit-inner { max-width: 100%; }
 .nowrap { white-space: nowrap; }
@@ -262,7 +223,4 @@ textarea.tell {
 /* Play button: icon + label as one centred group; the icon scales with the fitted label. */
 .play-label .fit-inner { display: flex; align-items: center; gap: 0.12em; }
 .play-label img { height: 1.4em; width: auto; flex: none; margin-top: -0.06em; /* icon art sits a touch low in its file */ }
-.tip-card.landscape { row-gap: 14px; }
-.tip-card.landscape .t-body { font-size: 30px; }
-.tip-card.landscape .pill { justify-self: center; min-width: 320px; margin-top: 0; }
 .t-hint { font-size: 40px; font-weight: 600; color: #c4a98a; text-wrap: balance; }
